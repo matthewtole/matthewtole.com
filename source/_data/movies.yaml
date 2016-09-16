@@ -1,0 +1,271 @@
+movies_2016:
+  - title: The Lobster
+    location: plane
+    date:  01/07/2016
+    poster: https://image.tmdb.org/t/p/w300_and_h450_bestv2/yR60EqMGS9hHq9I5Pkq2hG984TP.jpg
+  - title: Legend
+    location: plane
+    poster: https://image.tmdb.org/t/p/w300_and_h450_bestv2/fVQksuppOoqysj481qJ77LFH387.jpg
+    date: 01/07/2016
+  - title: Everest
+    location: plane
+    poster: https://image.tmdb.org/t/p/w300_and_h450_bestv2/t3ELL46AnqjS9djz1vEVh4MpKv0.jpg
+    date: 01/07/2016
+  - title: 99 Homes
+    location: plane
+    poster: https://image.tmdb.org/t/p/w300_and_h450_bestv2/mw4b2KLWInQ3Po5uOOTU6Q0Y5VP.jpg
+    date: 01/07/2016
+  - title: The Big Short
+    location: cinema
+    poster: https://image.tmdb.org/t/p/w185_and_h278_bestv2/p11Ftd4VposrAzthkhF53ifYZRl.jpg
+    date: 01/12/2016
+  - title: The Hateful Eight
+    location: cinema
+    poster: https://image.tmdb.org/t/p/w300_and_h450_bestv2/fqe8JxDNO8B8QfOGTdjh6sPCdSC.jpg
+    date: 01/15/2016
+  - title: The Revenant
+    location: cinema
+    poster: https://image.tmdb.org/t/p/w300_and_h450_bestv2/oXUWEc5i3wYyFnL1Ycu8ppxxPvs.jpg
+    date: 01/17/2016
+  - title: Fifty Shades of Grey
+    location: home
+    date: 01/26/2016
+  - title: The Cider House Rules
+    location: home
+    date: 01/31/2016
+  - title: Blazing Saddles
+    location: cinema
+    date: 02/03/2016
+  - title: Star Wars
+    location: cinema
+    repeat: true
+    date: 02/04/2016
+  - title: Hail, Caesar!
+    location: cinema
+    date: 02/06/2016
+  - title: Beasts of No Nation
+    location: home
+    date: 02/13/2016
+  - title: Circle
+    location: home
+    date: 02/13/2016
+  - title: Hackers
+    location: home
+    date: 02/13/2016
+  - title: Deadpool
+    location: cinema
+    date: 02/14/2016
+  - title: Million Dollar Baby
+    location: plane
+    repeat: true
+    date: 02/28/2016
+  - title: 10 Cloverfield Lane
+    location: cinema
+    date: 03/10/2016
+  - title: Zack and Miri Make a Porno
+    location: home
+    date: 03/12/2016
+  - title: Zootopia
+    location: cinema
+    date: 03/13/2016
+  - title: Moonrise Kingdom
+    location: home
+    date: 03/15/2016
+  - title: Anomalisa
+    location: cinema
+    date: 03/19/2016
+  - title: Race
+    location: cinema
+    date: 03/22/2016
+  - title: Night Watch
+    location: home
+    repeat: true
+    date: 03/26/2016
+  - title: Eye in the Sky
+    location: cinema
+    date: 03/27/2016
+  - title: Midnight Special
+    location: cinema
+    date: 04/05/2016
+  - title: Hardcore Henry
+    location: cinema
+    date: 04/08/2016
+  - title: The Jungle Book
+    location: cinema
+    date: 04/27/2016
+  - title: Keanu
+    location: cinema
+    date: 05/03/2016
+  - title: Sing Street
+    location: cinema
+    date: 05/08/2016
+  - title: "Captain America Civil War"
+    location: cinema
+    date: 05/19/2016
+  - title: "Captain America: Civil War"
+    location: cinema
+    repeat: true
+    date: 05/28/2016
+  - title: The Nice Guys
+    location: cinema
+    date: 05/30/2016
+  - title: "Popstar: Never Stop Never Stopping"
+    location: cinema
+    date: 06/02/2016
+  - title: X-Men Apocalypse
+    location: cinema
+    date: 06/05/2016
+  - title: Me Before You
+    location: cinema
+    date: 06/09/2016
+  - title: The Lobster
+    location: cinema
+    repeat: true
+    date: 06/11/2016
+  - title: In The Loop
+    location: home
+    date: 06/11/2016
+  - title: Monsters
+    location: home
+    repeat: true
+    date: 06/11/2016
+  - title: Victoria
+    location: home
+    date: 06/17/2016
+  - title: "Elite Squad: The Enemy Within"
+    location: home
+    date: 06/17/2016
+  - title: Warcraft
+    location: cinema
+    date: 06/17/2016
+  - title: Now You See Me
+    location: home
+    repeat: true
+    date: 06/19/2016
+  - title: Now You See Me 2
+    location: cinema
+    date: 06/21/2016
+  - title: Pontypool
+    location: home
+    date: 06/23/2016
+  - title: The Neon Demon
+    location: cinema
+    date: 06/23/2016
+  - title: Finding Dory
+    location: cinema
+    date: 06/24/2016
+  - title: Central Intelligence
+    location: cinema
+    date: 06/26/2016
+  - title: Back to the Future 3
+    location: home
+    date: 06/29/2016
+  - title: Swiss Army Man
+    location: cinema
+    date: 06/30/2016
+  - title: London Has Fallen
+    location: home
+    date: 07/04/2016
+  - title: "Independence Day: Resurgence"
+    location: cinema
+    date: 07/04/2016
+  - title: The Shallows
+    location: cinema
+    date: 07/10/2016
+  - title: Singin' in the Rain
+    location: cinema
+    date: 07/13/2016
+  - title: The Infiltrator
+    location: cinema
+    date: 07/14/2016
+  - title: Ghostbusters
+    location: cinema
+    date: 07/16/2016
+  - title: Fight Club
+    location: cinema
+    repeat: true
+    date: 07/17/2016
+  - title: Star Trek Beyond
+    location: cinema
+    date: 07/25/2016
+  - title: Miles Ahead
+    location: plane
+    date: 07/28/2016
+  - title: Zoolander 2
+    location: plane
+    date: 07/28/2016
+  - title: Point Break
+    location: plane
+    date: 07/28/2016
+  - title: Whiskey Tango Foxtrot
+    location: plane
+    date: 07/28/2016
+  - title: The BFG
+    location: cinema
+    date: 08/01/2016
+  - title: Keanu
+    location: plane
+    repeat: true
+    date: 08/11/2016
+  - title: Demolition
+    location: plane
+    date: 08/11/2016
+  - title: Money Monster
+    location: plane
+    date: 08/11/2016
+  - title: "Batman v Superman: Dawn of Justice"
+    location: plane
+    date: 08/11/2016
+  - title: Sausage Party
+    location: cinema
+    date: 08/11/2016
+  - title: The Life Aquatic with Steve Zissou
+    location: cinema
+    date: 08/13/2016
+  - title: Moonrise Kingdom
+    location: cinema
+    repeat: true
+    date: 08/14/2016
+  - title: The Grand Budapest Hotel
+    location: cinema
+    repeat: true
+    date: 08/14/2016
+  - title: Florence Foster Jenkins
+    location: cinema
+    date: 08/16/2016
+  - title: "Star Trek IV: The Voyage Home"
+    location: home
+    date: 08/17/2016
+  - title: Suicide Squad
+    location: cinema
+    date: 08/20/2016
+  - title: War Dogs
+    location: cinema
+    date: 08/23/2016
+  - title: Electra Woman and Dyna Girl
+    location: home
+    date: 08/26/2016
+  - title: Mean Girls
+    location: home
+    date: 08/26/2016
+  - title: Monty Python and the Holy Grail
+    location: home
+    date: 08/27/2016
+  - title: Pride and Prejudice and Zombies
+    location: home
+    date: 08/27/2016
+  - title: Role Models
+    location: home
+    date: 08/28/2016
+  - title: Treasure Planet
+    location: home
+    date: 08/29/2016
+  - title: Hell or High Water
+    location: cinema
+    date: 08/29/2016
+  - title: Eddie the Eagle
+    location: plane
+    date: 09/01/2016
+  - title: Take Me To The River
+    location: plane
+    date: 09/06/2016
