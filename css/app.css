@@ -1,3 +1,5 @@
+---
+---
 body {
     background-color: transparent;
     overflow-x: hidden;
@@ -8,7 +10,7 @@ body {
     left: 0;
     margin: 0;
     padding: 0;
-    background: url(/images/hero-mendocino.jpg) no-repeat center center;
+    background: url({{ site.baseurl }}/images/hero-mendocino.jpg) no-repeat center center;
     background-size: cover;
     height: 100%;
     width: 100vw;
