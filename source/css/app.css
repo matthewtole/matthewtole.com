@@ -8,7 +8,7 @@ body {
     left: 0;
     margin: 0;
     padding: 0;
-    background: url(/source/images/hero-mendocino.jpg) no-repeat center center;
+    background: url(/images/hero-mendocino.jpg) no-repeat center center;
     background-size: cover;
     height: 100%;
     width: 100vw;
@@ -78,5 +78,7 @@ strong {
 }
 
 .movie__poster--repeat {
-    opacity: 0.7;
+    opacity: 0.5;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
