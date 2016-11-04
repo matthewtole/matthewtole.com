@@ -4,7 +4,7 @@
 .jekyll-metadata
 
 ### Custom Things
-__public__
+_site
 
 ### Node.js Things
 node_modules/
