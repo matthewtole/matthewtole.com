@@ -9,5 +9,5 @@ twitter_username: matthewtole
 github_username:  matthewtole
 
 source: source/
-destination: __public__/
-plugins_dir: plugins/
+#destination: __public__/
+#plugins_dir: plugins/
