@@ -95,3 +95,5 @@ movies_2016:
     - {title: Denial, location: cinema, date: 10/24/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/wyWZZEvual4sIsk6caQ8osMurXc.jpg', id: 402298, imdb: tt4645330}
     - {title: Storks, location: cinema, date: 10/30/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/5qVD5TD1CiALR5vUsMzh2BschVU.jpg', id: 332210, imdb: tt4624424}
     - {title: 'Doctor Strange', location: cinema, date: 11/03/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', id: 284052, imdb: tt1211837}
+    - {title: 'Hacksaw Ridge', location: cinema, date: 11/05/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/bndiUFfJxNd2fYx8XO610L9a07m.jpg', id: 324786, imdb: tt2119532}
+    - {title: 'The Hangover', location: home, date: 11/09/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/eshEkiG7NmU4ekA8CtpIdYiYufZ.jpg', id: 18785, imdb: tt1119646}

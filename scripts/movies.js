@@ -6,7 +6,7 @@ const YAML = require('yamljs');
 const async = require('async');
 const fs = require('fs');
 
-const movies = YAML.parse(fs.readFileSync('./source/_data/movies.yaml').toString());
+const movies = YAML.parse(fs.readFileSync('./_data/movies.yaml').toString());
 async.eachSeries(movies.movies_2016, (movie, next) => {
   if (movie.poster && movie.imdb) {
     console.log(`Skipping ${movie.title}`);
@@ -36,7 +36,7 @@ async.eachSeries(movies.movies_2016, (movie, next) => {
   if (err) {
     throw err;
   }
-  fs.writeFileSync('./source/_data/movies.yaml', YAML.stringify(movies));
+  fs.writeFileSync('./_data/movies.yaml', YAML.stringify(movies));
 });
 
 function getMovieFromName(name, callback) {
