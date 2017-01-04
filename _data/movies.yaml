@@ -34,7 +34,6 @@ movies_2016:
     - {title: 'Popstar: Never Stop Never Stopping', location: cinema, date: 06/02/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/m9k2MCvZJWkV5DfJY9fueeeqNxb.jpg', id: 341012, imdb: tt3960412}
     - {title: 'X-Men Apocalypse', location: cinema, date: 06/05/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/zSouWWrySXshPCT4t3UKCQGayyo.jpg', id: 246655, imdb: tt3385516}
     - {title: 'Me Before You', location: cinema, date: 06/09/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/oN5lELHH5Xheiy0YdhnY3JB4hx2.jpg', id: 296096, imdb: tt2674426}
-    - {title: 'The Lobster', location: cinema, repeat: 'true', date: 06/11/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/yR60EqMGS9hHq9I5Pkq2hG984TP.jpg', id: 254320, imdb: tt3464902}
     - {title: 'In The Loop', location: home, date: 06/11/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/tnaWpQxfa92ONCGOvkIINYWwMTp.jpg', id: 19833, imdb: tt1226774}
     - {title: Monsters, location: home, repeat: 'true', date: 06/11/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/fMpauUPt2ldsiEoZxG1olPFksfZ.jpg', id: 43933, imdb: tt1470827}
     - {title: Victoria, location: home, date: 06/17/2016, id: 320007, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/t66eAg7xBLGoSSoA8JtJtX3NKs1.jpg', imdb: tt4226388}
@@ -97,3 +96,14 @@ movies_2016:
     - {title: 'Doctor Strange', location: cinema, date: 11/03/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfWac8MTYDxujaxgPVcRD9yZaul.jpg', id: 284052, imdb: tt1211837}
     - {title: 'Hacksaw Ridge', location: cinema, date: 11/05/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/bndiUFfJxNd2fYx8XO610L9a07m.jpg', id: 324786, imdb: tt2119532}
     - {title: 'The Hangover', location: home, date: 11/09/2016, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/eshEkiG7NmU4ekA8CtpIdYiYufZ.jpg', id: 18785, imdb: tt1119646}
+    - {title: Arrival, date: 11/11/2016, location: cinema, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/4Iu5f2nv7huqvuYkmZvSPOtbFjs.jpg', id: 329865, imdb: tt2543164}
+    - {title: 'Jiro Dreams Of Sushi', date: 11/12/2016, location: home, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/b4kKfthVn6V7U2GwJKiEDlDRgyp.jpg', id: 80767, imdb: tt1772925}
+    - {title: Moonlight, date: 11/13/2016, location: cinema, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/qAwFbszz0kRyTuXmMeKQZCX3Q2O.jpg', id: 376867, imdb: tt4975722}
+    - {title: 'Manchester by the Sea', date: 12/10/2016, location: cinema, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/i0t7F6b4R1wURRESAiw9VJNuVoV.jpg', id: 334541, imdb: tt4034228}
+    - {title: Allied, date: 12/14/2016, location: cinema, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/p1ZYGNlO5tycxwqZVJHdyOAwYEd.jpg', id: 369885, imdb: tt3640424}
+    - {title: 'Rogue One: A Star Wars Story', date: 12/15/2016, location: cinema, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg', id: 330459, imdb: tt3748528}
+    - {title: 'Mike and Dave Need Wedding Dates', date: 12/17/2016, location: home, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/u8ynhM5I8D7jG2dUE6KlsOgwYYp.jpg', id: 316023, imdb: tt2823054}
+    - {title: 'Love, Actually', date: 12/24/2016, location: home, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/kfX8Ctin3fSZbdnjh6CXSNZUOVP.jpg', id: 508, imdb: tt0314331, repeat: 'true'}
+    - {title: 'A Charlie Brown Christmas', date: 12/25/2016, location: home, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/3Bn0tc1BsheZwUQtvl10wTgQ16J.jpg', id: 13187, imdb: tt0059026}
+    - {title: 'In a World...', date: 12/26/2016, location: home, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/dNtDUD9OzMSDj5Z7ZyDoouLnioU.jpg', id: 157360, imdb: tt2294677}
+    - {title: Trolls, date: 12/27/2016, location: cinema, poster: 'https://image.tmdb.org/t/p/w300_and_h450_bestv2/yAdwXn2SsbJvkP42ZVEGoayJ0nW.jpg', id: 136799, imdb: tt1679335}
