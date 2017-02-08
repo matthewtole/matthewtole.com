@@ -1,10 +1,1 @@
-# Created by .ignore support plugin (hsz.mobi)
-### Jekyll template
-.sass-cache/
-.jekyll-metadata
-
-### Custom Things
-_site
-
-### Node.js Things
-node_modules/
+build/

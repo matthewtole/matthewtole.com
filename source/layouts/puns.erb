@@ -1,0 +1,7 @@
+<% wrap_layout :layout do %>
+    <%= partial "menu" %>
+    <div class="blog__article">
+        <h1><%= current_page.data.title %></h1>
+        <%= yield %>
+    </div>
+<% end %>
