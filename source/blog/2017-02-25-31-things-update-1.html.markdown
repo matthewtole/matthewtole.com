@@ -1,0 +1,128 @@
+---
+title: "31 Things: Update #1"
+date: 2017-02-25
+published: false
+---
+
+As I have talked about in a [previous blog post](/blog/2016/12/13/31-things/), I set
+myself 31 goals to achieve before I turn 31. As of the date of writing, I am 25% of the
+way through the year, so I thought I would post an update as to how I am progressing with my goals.
+
+Here is a super ugly graph from the Google Sheet I use to track my progress. As you can see,
+I am currently just barely ahead of where I need to be at this point in the year. Go me!
+
+![](/assets/images/blog/2017-03-01-graph.png)
+
+## Completed Things
+
+I managed to check off a total of 6 items since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
+
+### Take a cooking class
+
+I took a Knife Skills class at [San Francisco Cooking School](https://www.sfcooking.com/) on February 19th.
+
+### Have completed personal website
+
+### Visit dentist
+
+I am ashamed to admit, it had been over a decade since I last visited a dentist, but Kat
+finally convinced me to go see hers. I had to get a fair amount of work done, but
+I am absolutely glad I finally crossed this item off my todo list.
+
+### Private Goals
+
+I also complete four private goals, which if you are really curious you can always ask me about!
+
+
+## Incomplete Things
+
+I still have 23 goals left to complete in the next 9 months! Lets take a look at them
+and what, if any, progress I have made so far.
+
+### Complete a marathon
+
+I have signed up for the San Francisco Marathon on July 23rd 2017. I have not started
+any kind of training plan, so I need to work on that.
+
+### Complete a 5.10d indoor climb
+
+Kat and I usually go climbing at least once a week, and I have been climbing 5.10a
+and 5.10b routes. We want to take an advanced techniques class soon so that we can
+both level up our skills.
+
+### Keep weight below 75kg for 1 month
+
+Definitely been struggling with my eating habits over the past few months.
+Current weight hovers around 91kg.
+
+### Buy a house
+
+This will almost certainly not happen until early 2018, but we still want to move to
+either Seattle or Portland in the summer.
+
+### Release a personal side project
+
+### Find regular volunteering activity
+
+### Learn a new programming language
+
+### Get driving licence
+
+### Have $50k in savings account
+
+### Write at least one blog post a month
+
+I have kept up with this goal so far, having written a blog post in
+[December](/blog/2016/12/13/31-things/), [January](/blog/2017/01/02/2016-in-movies/)
+and now February.
+
+### Make a new close friend
+
+![](https://media.giphy.com/media/s8qP6TKkTWaju/giphy.gif)
+
+### Go to 5 new meetups
+
+Completely failed to attend any new meetups so far, will work harder on this goal.
+
+### Visit a new country
+
+For our honeymoon, Kat and I will be travelling around Europe, which will include a
+couple of new countries for me.
+
+### Attend convention
+
+Nothing to report yet.
+
+### Go scuba diving
+
+I was planning on doing this on the JoCo Cruise this year, but due to a delay with my
+green card application, I won't be able to go. Haven't come up with a backup plan yet!
+
+### Learn new skill / craft / hobby
+
+I am still trying to find something that piques my interest enough to invest a lot of
+time, energy and/or money in. If you have any suggestions, let me know!
+
+### Read / listen to 31 books
+
+So far I have read 6 books:
+
+* [Gravity](https://www.goodreads.com/book/show/32260.Gravity) by [Tess Gerrtisen](https://en.wikipedia.org/wiki/Tess_Gerritsen)
+* [Tier One](https://www.goodreads.com/book/show/32260.Gravity) by Brian Andrews & Jeffrey Wilson
+* [The Girl With All The Gifts](https://www.goodreads.com/book/show/17235026-the-girl-with-all-the-gifts) by [M. R. Carey](https://en.wikipedia.org/wiki/Mike_Carey_(writer))
+* [Heir of Novron](https://www.goodreads.com/book/show/11100431-heir-of-novron) by [Michael J Sullivan](https://en.wikipedia.org/wiki/Michael_J._Sullivan_(author))
+* [Down and Out in Paris and London](https://www.goodreads.com/book/show/393199.Down_and_Out_in_Paris_and_London) by [George Orwell](https://en.wikipedia.org/wiki/George_Orwell)
+* [The Handmaid's Tale](https://www.goodreads.com/book/show/38447.The_Handmaid_s_Tale) by [Margaret Atwood](https://en.wikipedia.org/wiki/Margaret_Atwood)
+
+### Visit 5 new museums / art galleries
+
+Kat and I took the [SF Armory tour](http://www.armorystudios.com/tours/) in January,
+which was super interesting! I still have to find four more places to visit.
+
+### Private Goals
+
+There are still four private ecret goals I have yet to complete, but hoping to get one or two
+of them done in the next few months!
+
+## Summary
+
