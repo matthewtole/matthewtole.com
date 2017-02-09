@@ -97,9 +97,48 @@ body.index {
   }
 }
 
+@media only screen and (max-width: 500px) {
+
+  .intro {
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0 10px;
+  }
+
+  .blog__article {
+    width: 90%;
+
+    img {
+      width: 111%;
+    }
+  }
+}
+
 #tooltip {
   position: absolute;
   background: $secondary;
   color: #fff;
   padding: 8px;
 }
+
+/**
+  Responsive embedding CSS from http://embedresponsively.com/
+ */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+

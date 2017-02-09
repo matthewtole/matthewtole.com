@@ -70,6 +70,7 @@ either Seattle or Portland in the summer.
 
 ### Have $50k in savings account
 
+
 ### Write at least one blog post a month
 
 I have kept up with this goal so far, having written a blog post in
@@ -121,7 +122,7 @@ which was super interesting! I still have to find four more places to visit.
 
 ### Private Goals
 
-There are still four private ecret goals I have yet to complete, but hoping to get one or two
+There are still four private goals I have yet to complete, but hoping to get one or two
 of them done in the next few months!
 
 ## Summary
