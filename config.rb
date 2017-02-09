@@ -23,6 +23,9 @@ configure :development do
   activate :livereload
 end
 
+set :css_dir, 'assets/css'
+set :js_dir, 'assets/js'
+
 activate :directory_indexes
 
 ###

@@ -13,6 +13,10 @@ a {
   }
 }
 
+.header-pair {
+  margin: 0;
+}
+
 .pun__block {
   max-width: 700px;
   margin: 0 auto;
@@ -27,6 +31,8 @@ a {
 .pun__explanation {
   color: $secondary;
   font-weight: bold;
+  cursor: help;
+  border-bottom: 1px dashed $secondary;
 }
 
 .intro {
@@ -89,4 +95,11 @@ body.index {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
   }
+}
+
+#tooltip {
+  position: absolute;
+  background: $secondary;
+  color: #fff;
+  padding: 8px;
 }
