@@ -50,5 +50,5 @@ end
 
 activate :blog do |blog|
   blog.prefix = "blog"
-  blog.layout = "blog"
+  blog.layout = "blog_post"
 end

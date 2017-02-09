@@ -15,7 +15,7 @@ I am currently just barely ahead of where I need to be at this point in the year
 
 ## Completed Things
 
-I managed to check off a total of 6 items since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
+I managed to check off a total of eight new goals since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
 
 ### Take a cooking class
 
@@ -23,11 +23,21 @@ I took a Knife Skills class at [San Francisco Cooking School](https://www.sfcook
 
 ### Have completed personal website
 
+I don't know if a website is every truly *completed*, I have finally gotten this site to a point where I
+am happy with it.
+
 ### Visit dentist
 
 I am ashamed to admit, it had been over a decade since I last visited a dentist, but Kat
 finally convinced me to go see hers. I had to get a fair amount of work done, but
 I am absolutely glad I finally crossed this item off my todo list.
+
+### Release a personal side project
+
+I built a web version of the party board game Codenames to use at a party. The code
+is available on Github and you can play online at [INSERT ADDRESS]. I really enjoyed
+working on this app, and it was my first real project using Vue.js which I have
+really fallen in love with!
 
 ### Private Goals
 
@@ -36,7 +46,7 @@ I also complete four private goals, which if you are really curious you can alwa
 
 ## Incomplete Things
 
-I still have 23 goals left to complete in the next 9 months! Lets take a look at them
+I still have 21 goals left to complete in the next 9 months! Lets take a look at them
 and what, if any, progress I have made so far.
 
 ### Complete a marathon
@@ -60,16 +70,21 @@ Current weight hovers around 91kg.
 This will almost certainly not happen until early 2018, but we still want to move to
 either Seattle or Portland in the summer.
 
-### Release a personal side project
-
 ### Find regular volunteering activity
 
 ### Learn a new programming language
+
+I have been experimenting with both Rust and Go, but don't feel proficient enough
+in either of them to claim that I have "learned" them.
 
 ### Get driving licence
 
 ### Have $50k in savings account
 
+This goal is going to be a little harder to acheive than original anticipated. Due to
+a delay in my green card application, I am currently on unpaid leave from work, which
+means I am dipping into my savings account. As soon as I start earning again I will
+be redoubling my efforts to save money.
 
 ### Write at least one blog post a month
 
@@ -127,3 +142,7 @@ of them done in the next few months!
 
 ## Summary
 
+A few of my incomplete goals are either at risk or definitely won't be happening before
+I turn 31, but overall I am very happy with my progress so far.
+
+I will be posting again in 3 months with another update, so check back then!
