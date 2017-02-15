@@ -1,7 +1,10 @@
 <% wrap_layout :layout do %>
     <%= partial "menu" %>
     <div class="blog__article">
-        <h1><%= current_page.data.title %></h1>
+        <h1 class="header-pair"><%= current_page.data.title %></h1>
+        <% if current_page.data.subtitle %>
+        <h3 class="header-pair"><em><%= current_page.data.subtitle %></em></h3>
+        <% end %>
         <%= yield %>
     </div>
 <% end %>
