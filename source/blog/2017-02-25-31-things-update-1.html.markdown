@@ -15,11 +15,13 @@ I am currently just barely ahead of where I need to be at this point in the year
 
 ## Completed Things
 
-I managed to check off a total of eight new goals since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
+I managed to check off a total of seven new goals since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
 
 ### Take a cooking class
 
 I took a Knife Skills class at [San Francisco Cooking School](https://www.sfcooking.com/) on February 19th.
+I found the class to be quite basic, but I definitely learned some new skills and techniques and will be looking
+at taking more classes in the future.
 
 ### Have completed personal website
 
@@ -32,27 +34,20 @@ I am ashamed to admit, it had been over a decade since I last visited a dentist,
 finally convinced me to go see hers. I had to get a fair amount of work done, but
 I am absolutely glad I finally crossed this item off my todo list.
 
-### Release a personal side project
-
-I built a web version of the party board game Codenames to use at a party. The code
-is available on Github and you can play online at [INSERT ADDRESS]. I really enjoyed
-working on this app, and it was my first real project using Vue.js which I have
-really fallen in love with!
-
 ### Private Goals
 
 I also complete four private goals, which if you are really curious you can always ask me about!
 
-
 ## Incomplete Things
 
-I still have 21 goals left to complete in the next 9 months! Lets take a look at them
+I still have 22 goals left to complete in the next 9 months! Lets take a look at them
 and what, if any, progress I have made so far.
 
 ### Complete a marathon
 
-I have signed up for the San Francisco Marathon on July 23rd 2017. I have not started
-any kind of training plan, so I need to work on that.
+I have signed up for the San Francisco Marathon on July 23rd 2017. I began a self-guided
+training plan on February 20th, and so far it's going really well. I run four times a week,
+including a long run on the weekend, and do climbing and strength training on my rest days.
 
 ### Complete a 5.10d indoor climb
 
@@ -72,12 +67,22 @@ either Seattle or Portland in the summer.
 
 ### Find regular volunteering activity
 
+Honestly, it's been hard to find a volunteering role that suits both me and my schedule,
+but I'm still looking.
+
+### Release a personal side project
+
+I have been building a web version of the party board game Codenames to use at a party.
+It's not quite ready to be released yet but I'm very close!
+
 ### Learn a new programming language
 
 I have been experimenting with both Rust and Go, but don't feel proficient enough
 in either of them to claim that I have "learned" them.
 
 ### Get driving licence
+
+No progress to report here!
 
 ### Have $50k in savings account
 
