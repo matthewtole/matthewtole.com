@@ -1,21 +1,21 @@
 ---
 title: "31 Things: Update #1"
-date: 2017-02-25
-published: false
+date: 2017-02-27
+published: true
 ---
 
 As I have talked about in a [previous blog post](/blog/2016/12/13/31-things/), I set
-myself 31 goals to achieve before I turn 31. As of the date of writing, I am 25% of the
+myself 31 goals to achieve before I turn 31. As of the date of writing, I am a little bit over a quarter of the
 way through the year, so I thought I would post an update as to how I am progressing with my goals.
 
 Here is a super ugly graph from the Google Sheet I use to track my progress. As you can see,
-I am currently just barely ahead of where I need to be at this point in the year. Go me!
+I am currently a little bit ahead of where I need to be at this point in the year. Go me!
 
-![](/assets/images/blog/2017-03-01-graph.png)
+![](/assets/images/blog/2017-02-graph.png)
 
 ## Completed Things
 
-I managed to check off a total of seven new goals since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
+I managed to check off a total of eight new goals since I wrote my [original blog post](/blog/2016/12/13/31-things/) back in early December!
 
 ### Take a cooking class
 
@@ -27,6 +27,14 @@ at taking more classes in the future.
 
 I don't know if a website is every truly *completed*, I have finally gotten this site to a point where I
 am happy with it.
+
+### Release a personal side project
+
+Earlier this month I published a tiny Node.js project called [`interactive-env`](https://github.com/matthewtole/interactive-env).
+
+I have also been working on a web version of Codenames that can be played on a TV &amp; tablet, with some
+ additional rules for more grown up parties. The code is not yet finished for 1.0 release,
+ but I used it at a party last weekend to much success.
 
 ### Visit dentist
 
@@ -40,7 +48,7 @@ I also complete four private goals, which if you are really curious you can alwa
 
 ## Incomplete Things
 
-I still have 22 goals left to complete in the next 9 months! Lets take a look at them
+I still have 21 goals left to complete in the next 9 months! Lets take a look at them
 and what, if any, progress I have made so far.
 
 ### Complete a marathon
@@ -70,11 +78,6 @@ either Seattle or Portland in the summer.
 Honestly, it's been hard to find a volunteering role that suits both me and my schedule,
 but I'm still looking.
 
-### Release a personal side project
-
-I have been building a web version of the party board game Codenames to use at a party.
-It's not quite ready to be released yet but I'm very close!
-
 ### Learn a new programming language
 
 I have been experimenting with both Rust and Go, but don't feel proficient enough
@@ -86,7 +89,7 @@ No progress to report here!
 
 ### Have $50k in savings account
 
-This goal is going to be a little harder to acheive than original anticipated. Due to
+This goal is going to be a little harder to achieve than original anticipated. Due to
 a delay in my green card application, I am currently on unpaid leave from work, which
 means I am dipping into my savings account. As soon as I start earning again I will
 be redoubling my efforts to save money.
