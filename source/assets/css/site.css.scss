@@ -62,11 +62,18 @@ body.x404 {
   flex-direction: column;
 }
 
+.blog__comments {
+  position: relative;
+  width: 80%;
+  max-width: 710px;
+  margin: 0 auto;
+}
+
 .blog__article {
   position: relative;
   width: 80%;
   max-width: 710px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem;
   padding-bottom: 2rem;
   border-bottom: #EBF2F6 1px solid;
   word-wrap: break-word;
