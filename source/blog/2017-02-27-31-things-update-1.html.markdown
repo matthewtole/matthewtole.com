@@ -11,7 +11,7 @@ way through the year, so I thought I would post an update as to how I am progres
 Here is a super ugly graph from the Google Sheet I use to track my progress. As you can see,
 I am currently a little bit ahead of where I need to be at this point in the year. Go me!
 
-![](/assets/images/blog/2017-02-graph.png)
+<img src="/assets/images/blog/2017-02-graph.png" style="width: 100%">
 
 ## Completed Things
 
@@ -44,7 +44,7 @@ I am absolutely glad I finally crossed this item off my todo list.
 
 ### Private Goals
 
-I also complete four private goals, which if you are really curious you can always ask me about!
+I also completed four private goals, which if you are really curious you can always ask me about!
 
 ## Incomplete Things
 
