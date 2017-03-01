@@ -48,7 +48,7 @@ I also completed four private goals, which if you are really curious you can alw
 
 ## Incomplete Things
 
-I still have 21 goals left to complete in the next 9 months! Lets take a look at them
+I still have 21 goals left to complete in the next 9 months! Let's take a look at them
 and what, if any, progress I have made so far.
 
 ### Complete a marathon
