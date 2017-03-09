@@ -2,7 +2,7 @@
 title: "31 Things: Update #1"
 date: 2017-02-27
 published: true
-description: As I have talked about in a previous blog post, I set myself 31 goals to achieve before I turn 31. As of the date of writing, I am a little bit over a quarter of the way through the year, so I thought I would post an update as to how I am progressing with my goals.
+section: blog
 ---
 
 As I have talked about in a [previous blog post](/blog/2016/12/13/31-things/), I set
