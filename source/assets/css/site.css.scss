@@ -1,122 +1,6 @@
-/*
-@charset "utf-8";
-@import "normalize";
-
-$primary: #ac2a2a;
-$secondary: #0072bc;
-
-a {
-  color: $primary;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-body.index,
-body.x404 {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.blog__comments {
-  position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 0 auto;
-}
-
-.blog__article {
-  position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 0 auto 2rem;
-  padding-bottom: 2rem;
-  border-bottom: #EBF2F6 1px solid;
-  word-wrap: break-word;
-  text-align: justify;
-
-  p {
-    line-height: 24px;
-    margin: 24px 0;
-  }
-
-  ul {
-    margin: 0;
-  }
-
-  li {
-    line-height: 24px;
-  }
-
-  img {
-    display: block;
-    width: 126%;
-    height: auto;
-    padding: 0.6em 0;
-    position: relative;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
-}
-
-@media only screen and (max-width: 500px) {
-
-  .intro {
-    font-size: 24px;
-    line-height: 36px;
-    margin: 0 10px;
-  }
-
-  .blog__article {
-    width: 90%;
-
-    img {
-      width: 111%;
-    }
-  }
-}
-
-#tooltip {
-  position: absolute;
-  background: $secondary;
-  color: #fff;
-  padding: 8px;
-}
-
-!**
-  Responsive embedding CSS from http://embedresponsively.com/
- *!
-.embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-
-  iframe,
-  object,
-  embed {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-*/
-
 $blue-main: #0072bc;
 $red-main: #ac2a2a;
 $white: #fff;
-
 
 /** GLOBAL STYLES **/
 
@@ -148,11 +32,6 @@ hr.light {
   border-color: white;
 }
 
-hr.skinny {
-  border-width: 1px;
-  max-width: 100px;
-}
-
 section {
   padding: 100px 0;
 
@@ -160,14 +39,6 @@ section {
     padding: 50px 0;
   }
 }
-
-/*
-a {
-  -webkit-transition: all 0.35s;
-  -moz-transition: all 0.35s;
-  transition: all 0.35s;
-}
-*/
 
 p {
   a {
@@ -178,26 +49,16 @@ p {
 
 .bg-primary {
   background-color: $blue-main;
+
+  a:hover,
+  a:active {
+    color: #ccc;
+  }
 }
 
 .bg-secondary{
   background-color: $red-main;
   color: $white;
-}
-
-.mini-gallery {
-  margin-bottom: 15px;
-
-  .row {
-    //margin-bottom: 5px;
-    > * {
-      padding: 5px;
-    }
-
-    img {
-      width: 100%;
-    }
-  }
 }
 
 /** NAVIGATION BAR **/
@@ -284,11 +145,15 @@ p {
 
         > a:hover,
         > a:focus:hover {
-          color: #fff;
+          color: $white;
         }
 
         &.active {
           a {
+            color: $white;
+          }
+
+          a:focus {
             color: $white;
           }
         }
@@ -296,17 +161,16 @@ p {
     }
 
     &.affix {
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
       border-color: rgba(34, 34, 34, 0.05);
 
       .navbar-header {
         .navbar-brand {
-          color: $blue-main;
-          font-size: 14px;
+          color: #222;
 
           &:hover,
           &:focus {
-            color: $blue-main;
+            color: #222;
           }
         }
       }
@@ -347,36 +211,42 @@ header {
   background-image: url('/assets/images/landing-page.png');
   text-align: center;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
-  h3 {
-    position: absolute;
-    bottom: 5%;
-    text-align: center;
-    width: 100%;
-    font-size: 15px;
-  }
-
-  .header-content {
-    position: relative;
-    text-align: center;
-    padding: 100px 15px 100px;
-    width: 100%;
-
-    .header-content-inner {
-      h1 {
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 30px;
-        line-height: 0.8;
-        letter-spacing: 5px;
-      }
-    }
+  h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px;
+    font-size: 50px;
+    text-align: right;
+    text-shadow: #222222 0 0 10px;
+    align-self: flex-end;
   }
 }
 
 @media (min-width: 768px) {
+  header {
+    min-height: 100%;
+    h1 {
+      align-self: center;
+      font-size: 60px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    h1 {
+      align-self: center;
+      font-size: 90px;
+      margin: 20px;
+    }
+  }
+}
+
+/*@media (min-width: 768px) {
   header {
     min-height: 100%;
 
@@ -394,7 +264,7 @@ header {
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
       padding: 0 50px;
-      text-shadow: #222222 0 0 10px;
+
 
       .header-content-inner {
         max-width: 1000px;
@@ -412,7 +282,7 @@ header {
       }
     }
   }
-}
+}*/
 
 .embed-container {
   position: relative;
@@ -508,4 +378,13 @@ header {
 .leader {
   font-size: 32px;
   line-height: 64px;
+}
+
+.screen-size {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #222;
+  color: $white;
+  padding: 5px;
 }

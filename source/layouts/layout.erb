@@ -28,14 +28,22 @@
                     <li <% if current_page.data.section == "puns" %>class="active"<% end %>>
                         <a href="/puns/">Puns</a>
                     </li>
-                    <li <% if current_page.data.section == "projects" %>class="active"<% end %>>
-                    <a href="/projects/">Projects</a>
-                    </li>
+                    <!--<li <% if current_page.data.section == "projects" %>class="active"<% end %>>-->
+                    <!--<a href="/projects/">Projects</a>-->
+                    <!--</li>-->
                 </ul>
             </div>
         </div>
     </nav>
 <%= yield %>
+    <% if development? %>
+    <div class="screen-size">
+        <div class="visible-xs">XS</div>
+        <div class="visible-sm">SM</div>
+        <div class="visible-md">MD</div>
+        <div class="visible-lg">LG</div>
+    </div>
+    <% end %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= javascript_include_tag :all %>
