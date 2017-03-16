@@ -163,4 +163,28 @@ $('#mainNav').affix({
   offset: {
     top: 100
   }
-})
+});
+
+function loadPageContents(url, callback) {
+  $.get(url).done(function (html) {
+    $('#experimental-loader-section').html($(html).filter('#experimental-loader-section').html());
+    callback(null, html);
+  })
+}
+
+window.onpopstate = function(event) {
+  loadPageContents(document.location.pathname, function (err, html) {
+    document.title = $(html).filter('title').text();
+  });
+};
+
+$('a').on('click', function(event) {
+  const url = $(this).attr('href');
+  if (url[0] !== '/') {
+    return true;
+  }
+  loadPageContents(url, function (err, html) {
+    history.pushState({ experimental: true }, $(html).filter('title').text(), url);
+  });
+  event.preventDefault();
+});
