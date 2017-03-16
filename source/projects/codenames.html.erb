@@ -1,0 +1,48 @@
+---
+title: Codenames
+layout: projects
+section: projects
+---
+
+<div class="blog__article">
+    <h2>Concept</h2>
+    <p>
+        I wanted to play Codenames at a party, but with some additional (i.e drinking) rules on the game.
+        So I started hacking together a little implementation of the game.
+    </p>
+    <p>
+        In addition, I wanted to make it easier for the spymasters to be able to see which word is which
+        colour, which is often an issue in the physical version of the game.
+    </p>
+    <h2>Implementation</h2>
+    <p>
+        The backend is powered by <a href="http://expressjs.com/">Express</a>,
+        using <a href="http://socket.io/">Socket.IO</a> for communication with the clients.
+    </p>
+    <p>
+        The frontend is written using <a href="https://vuejs.org/">Vue.js</a>,
+        with styling provided by <a href="https://purecss.io/">Pure</a> and some icons from
+        <a href="http://fontawesome.io/">FontAwesome</a>.
+    </p>
+    <p>
+        The code for the app is on Github: <a href="https://github.com/matthewtole/codenames" rel="nofollow" target="_blank">https://github.com/matthewtole/codenames</a>
+    </p>
+    <h2>Screenshots</h2>
+    <p>Here you can see some screenshots of the game as its being played.</p>
+    <h3>Viewer</h3>
+    <p>
+        This is the screen that you would display on a TV for the players to look at. It shows the current state of the game
+        at the top of the screen. The cards are shown in gray until they have been picked. When a card is picked, depending
+        on whether it's correct or not, a message will appear with instructions for the players.
+    </p>
+    <img src="/assets/images/projects/codenames-viewer.png">
+
+    <h3>Controller</h3>
+    <p>
+        As you can see, the controller screen is very similar to the viewer screen, except that the
+        colours of the cards are always displayed. In addition, there are some controls at the bottom
+        of the screen to control the flow of the game.
+    </p>
+    <img src="/assets/images/projects/codenames-controller.png">
+
+</div>

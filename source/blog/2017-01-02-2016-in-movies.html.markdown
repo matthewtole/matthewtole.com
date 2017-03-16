@@ -1,7 +1,7 @@
 ---
 title: 2016 in Movies
 date: 2017-01-02
-tags:
+section: blog
 ---
 
 I absolutely love watching movies. Whether its relaxing at a luxury cinema being served food and drinks or crammed onto a plane for 11 hours across the Atlantic ocean, there are few things I enjoy more than a good film.

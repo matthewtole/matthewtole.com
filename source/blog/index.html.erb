@@ -1,12 +1,16 @@
 ---
 layout: blog
+section: blog
 title: Blog
 ---
 
 <% page_articles.each_with_index do |article, i| %>
-    <p>
-        <h2 class="header-pair"><%= link_to article.title, article %></h2>
-        <h3 class="header-pair"><%= article.date.strftime('%B %Y') %></h3>
-    </p>
-    <!--<%= article.summary(250) %>-->
+    <div>
+        <h2>
+            <%= link_to article.title, article %>
+            <small>&mdash; <%= article.date.strftime('%B %Y') %></small>
+        </h2>
+        <%= article.summary(250) %>
+    </div>
+    <!---->
 <% end %>
