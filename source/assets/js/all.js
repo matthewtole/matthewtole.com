@@ -165,26 +165,38 @@ $('#mainNav').affix({
   }
 });
 
+var LOADER_ID = '#experimental-loader-section';
+
 function loadPageContents(url, callback) {
+  var $loader = $(LOADER_ID);
+  console.log('Loading: ', url);
   $.get(url).done(function (html) {
-    $('#experimental-loader-section').html($(html).filter('#experimental-loader-section').html());
+    $loader.html($(html).filter(LOADER_ID).html());
+    $loader.on('click', 'a', handleClick);
     callback(null, html);
   })
 }
 
+function getTitle(html) {
+  return $(html).filter('title').text();
+}
+
 window.onpopstate = function(event) {
   loadPageContents(document.location.pathname, function (err, html) {
-    document.title = $(html).filter('title').text();
+    document.title = getTitle(html);
   });
 };
 
-$('a').on('click', function(event) {
+function handleClick(event) {
   const url = $(this).attr('href');
   if (url[0] !== '/') {
     return true;
   }
   loadPageContents(url, function (err, html) {
-    history.pushState({ experimental: true }, $(html).filter('title').text(), url);
+    history.pushState({ experimental: true }, getTitle(html), url);
+    document.title = getTitle(html);
   });
   event.preventDefault();
-});
+}
+
+$('a').on('click', handleClick);
