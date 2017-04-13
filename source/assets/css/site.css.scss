@@ -59,6 +59,14 @@ p {
 .bg-secondary{
   background-color: $red-main;
   color: $white;
+
+  a {
+    color: lighten($red-main, 30);
+  }
+
+  a:hover,
+  a:active {
+  }
 }
 
 /** NAVIGATION BAR **/
@@ -387,4 +395,90 @@ header {
   background-color: #222;
   color: $white;
   padding: 5px;
+}
+
+$resume-color: $blue-main;
+
+.resume.container {
+  max-width: 800px;
+
+  font-family: 'Open Sans';
+  font-size: 11pt;
+  color: #666;
+
+  strong {
+    text-decoration: underline;
+    color: #000;
+    font-weight: normal;
+  }
+
+  .resume__headline {
+    p {
+      font-size: 13pt;
+      text-align: center;
+    }
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  ul {
+    margin: 10pt 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  h1, h2 {
+    font-family: 'Arvo', serif;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 36pt;
+    color: #000;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    color: $resume-color;
+    margin: 20pt 0 0 0;
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-weight: bold;
+    font-size: 12pt;
+    float: left;
+    margin: 0;
+    line-height: 2;
+    color: #000;
+  }
+
+  h4 {
+    float: right;
+    font-size: 12pt;
+    margin: 0;
+    font-style: italic;
+    line-height: 2;
+  }
+
+  h4 + p, h3 + p {
+    clear: both;
+  }
+  
+  a, a:hover, a:visited, a:active {
+    color: $resume-color;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    padding: 0;
+    margin: 0 auto;
+  }
 }
