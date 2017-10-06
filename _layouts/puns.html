@@ -1,13 +1,15 @@
-<% wrap_layout :layout do %>
+---
+layout: master
+---
 <section class="bg-secondary height-small">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading"><%= current_page.data.title %></h2>
-                <% if current_page.data.subtitle %>
+                <h2 class="section-heading">{{ page.title }}</h2>
+                {% if page.subtitle %}
                 <hr class="light">
-                <h3><em><%= current_page.data.subtitle %></em></h3>
-                <% end %>
+                <h3><em>{{ page.subtitle }}</em></h3>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -16,9 +18,8 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <div class="blog__article">
-                <%= yield %>
+                {{ content }}
             </div>
         </div>
     </div>
 </div>
-<% end %>

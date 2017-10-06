@@ -2,6 +2,7 @@
 title: 31 Things
 date: 2016-12-13
 section: blog
+layout: post
 ---
 
 A few weeks ago I turned 30. It turns out that I (mostly accidentally) achieved a lot of personal goals in the last year of my twenties, so it seems like a good time to take a look at where I am and where I want to be, and instead of waiting until January 1st to set myself a list of New Year's Resolutions, to give myself some goals to achieve before my next birthday.

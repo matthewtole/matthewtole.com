@@ -3,6 +3,7 @@ title: "31 Things: Update #1"
 date: 2017-02-27
 published: true
 section: blog
+layout: post
 ---
 
 As I have talked about in a [previous blog post](/blog/2016/12/13/31-things/), I set

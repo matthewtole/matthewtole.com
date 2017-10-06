@@ -1,9 +1,11 @@
-<% wrap_layout :layout do %>
+---
+layout: master
+---
 <section class="bg-secondary height-small">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading"><%= current_page.data.title %></h2>
+                <h2 class="section-heading">{{ page.title }}</h2>
             </div>
         </div>
     </div>
@@ -12,7 +14,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-justify">
             <div class="blog__article">
-            <%= yield %>
+            {{ content }}
             </div>
 
             <div class="blog__comments">
@@ -40,4 +42,3 @@
         </div>
     </div>
 </div>
-<% end %>

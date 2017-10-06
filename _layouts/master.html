@@ -6,10 +6,9 @@
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Arvo">
-    <title><%= current_page.data.title || "Matthew Tole" %></title>
-    <% if current_page.data.description %><meta name="description" content="<%= current_page.data.description %>"><% end %>
-    <%= stylesheet_link_tag :site %>
-    <%= stylesheet_link_tag :print, media: 'print' %>
+    <title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" type="text/css" href="/assets/css/site.css">
 </head>
 <body class="<%= page_classes %>">
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -23,33 +22,35 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li <% if current_page.data.section == "blog" %>class="active"<% end %>>
+                    <li{% if page.section == "blog" %} class="active"{% endif %}>
                         <a href="/blog/">Blog</a>
                     </li>
-                    <li <% if current_page.data.section == "puns" %>class="active"<% end %>>
+                    <li{% if page.section == "puns" %} class="active"{% endif %}>
                         <a href="/puns/">Puns</a>
                     </li>
-                    <li <% if current_page.data.section == "resume" %>class="active"<% end %>>
-                    <a href="/resume/">Resume</a>
+                    <li{% if page.section == "resume" %} class="active"{% endif %}>
+                        <a href="/resume/">Resume</a>
                     </li>
-                    <!--<li <% if current_page.data.section == "projects" %>class="active"<% end %>>-->
-                    <!--<a href="/projects/">Projects</a>-->
-                    <!--</li>-->
+                    {% if page.section == "projects" %}
+                    <li{% if page.section == "projects" %} class="active"{% endif %}>
+                        <a href="/projects/">Projects</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
-<%= yield %>
-    <% if development? %>
+    {{ content }}
+    {% if jekyll.environment == "development" %}
     <div class="screen-size">
         <div class="visible-xs">XS</div>
         <div class="visible-sm">SM</div>
         <div class="visible-md">MD</div>
         <div class="visible-lg">LG</div>
     </div>
-    <% end %>
+    {% endif %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <%= javascript_include_tag :all %>
+    <script src="/assets/js/site.js"></script>
 </body>
 </html>
