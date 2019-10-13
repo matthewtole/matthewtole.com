@@ -1,0 +1,32 @@
+{
+  "name": "matthewtole.com",
+  "version": "2.0.0",
+  "description": "The website of Matthew Tole",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewtole/matthewtole.git"
+  },
+  "keywords": [
+    "eleventy",
+    "tailwind"
+  ],
+  "author": "Matthew Tole <matthewtole@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewtole/matthewtole/issues"
+  },
+  "homepage": "https://github.com/matthewtole/matthewtole#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.9.0",
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "cssnano": "^4.1.10",
+    "postcss-import": "^12.0.1",
+    "prettier": "^1.18.2",
+    "tailwindcss": "^1.1.2"
+  }
+}
