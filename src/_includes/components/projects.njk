@@ -1,12 +1,14 @@
 {% macro info_start(title, picture) %}
 <div class="flex my-4 flex-col md:flex-row">
+  {% if picture != "" %}
   <img
     src="/static/images/projects/{{ picture }}"
     alt=""
     class="flex-shrink-0 w-full md:w-48 mr-4 shadow-md rounded-sm"
   />
+  {% endif %}
   <div>
-    <h3 class="text-xl font-serif">{{ title }}</h3>
+    <h3 class="text-xl font-serif mt-2">{{ title }}</h3>
 {% endmacro %}
 
 {% macro info_end() %}
