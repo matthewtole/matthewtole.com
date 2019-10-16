@@ -2,25 +2,15 @@
 layout: layouts/base.njk
 ---
 
-<header class="bg-green-600 text-white p-2">
+{% import "components/buttons.njk" as buttons %}
+
+<header class="bg-brand text-white p-2">
    <div class="flex items-center">
-   <h1 class="text-4xl font-serif">matthew tole</h1>
+   <h1 class="text-4xl font-serif ml-4">matthew tole</h1>
    <div class="flex-grow"></div>
-    <a
-      href="/"
-      class="font-bold bg-red-800 py-2 px-8 rounded border-red-900 border-b-4 mx-2 hover:border-b-2 hover:mt-2px hover:-mb-2px"
-      >HOME</a
-    >
-    <a
-      href="/resume/"
-      class="font-bold bg-red-800 py-2 px-8 rounded border-red-900 border-b-4 mx-2 hover:border-b-2 hover:mt-2px hover:-mb-2px"
-      >RESUME</a
-    >
-    <a
-      href="/projects/"
-      class="font-bold bg-red-800 py-2 px-8 rounded border-red-900 border-b-4 mx-2 hover:border-b-2 hover:mt-2px hover:-mb-2px"
-      >PROJECTS</a
-    >
+   {{ buttons.cta("HOME", "/", "mx-2") }}
+   {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
+   {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
   </div>
 </header>
 

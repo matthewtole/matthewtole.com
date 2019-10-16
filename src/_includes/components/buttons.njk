@@ -1,0 +1,6 @@
+{% macro cta(text, url, classes) %}
+<a
+  href="{{url}}"
+  class="font-bold bg-cta py-2 px-8 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px {{classes}}"
+  >{{text}}</a>
+{% endmacro %}
