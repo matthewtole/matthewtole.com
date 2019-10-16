@@ -30,6 +30,9 @@ module.exports = {
   },
   variants: {
     borderWidth: ['hover'],
+    opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-transitions')(),
+  ],
 };

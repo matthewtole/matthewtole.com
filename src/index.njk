@@ -6,12 +6,14 @@ layout: layouts/base.njk
 
 <header class="bg-brand text-white py-8 md:py-16 px-4 text-center">
   <h1 class="text-5xl md:text-6xl font-serif">matthew tole</h1>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, molestiae?
-    Sit, beatae qui.
-  </p>
+  <div class="text-xl max-w-xl mx-auto leading-tight">
+    <p>English web developer based in Seattle.</p>
+  </div>
   <div class="flex justify-center p-8">
-    {{ buttons.cta("RESUME", "/resume/", "mx-4") }}
-    {{ buttons.cta("PROJECTS", "/projects/", "mx-4") }}
+    {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
+    {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
+    {{ buttons.cta("GITHUB", "https://github.com/matthewtole", "mx-2") }}
   </div>
 </header>
+
+{% include "instagram.njk" %}
