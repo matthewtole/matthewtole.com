@@ -1,0 +1,19 @@
+{% macro info_start(title, picture) %}
+<div class="flex my-4 flex-col md:flex-row">
+  <img
+    src="/static/images/projects/{{ picture }}"
+    alt=""
+    class="flex-shrink-0 w-full md:w-48 mr-4 shadow-md rounded-sm"
+  />
+  <div>
+    <h3 class="text-xl font-serif">{{ title }}</h3>
+{% endmacro %}
+
+{% macro info_end() %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro separator() %}
+  <div class="my-3 w-full border-brand-light border"></div>
+{% endmacro %}

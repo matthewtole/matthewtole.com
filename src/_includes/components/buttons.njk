@@ -4,3 +4,14 @@
   class="font-bold bg-cta py-2 px-8 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px {{classes}}"
   >{{text}}</a>
 {% endmacro %}
+
+{% macro cta_icon(icon, url, classes, id) %}
+{% set icon_url %}/src/icons/icon-{{icon}}.svg{% endset %}
+<a
+  href="{{url}}"
+  id="{{id}}"
+  class="font-bold bg-cta py-2 px-4 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px fill-current {{classes}}"
+  >
+    {{ icon_url | svgContents | safe }}
+  </a>
+{% endmacro %}

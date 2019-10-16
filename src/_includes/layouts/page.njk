@@ -4,14 +4,24 @@ layout: layouts/base.njk
 
 {% import "components/buttons.njk" as buttons %}
 
-<header class="bg-brand text-white p-2">
-   <div class="flex items-center">
-   <h1 class="text-4xl font-serif ml-4">matthew tole</h1>
-   <div class="flex-grow"></div>
-   {{ buttons.cta("HOME", "/", "mx-2") }}
-   {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
-   {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
+<header class="bg-brand text-white">
+   <div class="flex items-center p-2">
+    <h1 class="text-4xl font-serif ml-4">matthew tole</h1>
+    <div class="flex-grow"></div>
+    <div class="flex lg:hidden">
+      {{ buttons.cta_icon("menu", "#", "", "btn-mobile-menu") }}
+    </div>
+    <div class="hidden lg:flex">
+      {{ buttons.cta_icon("home", "/", "mx-2") }}
+      {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
+      {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
+    </div>
   </div>
+  <ul class="shadow-lg absolute hidden right-0 left-0 bg-brand z-50" id="mobile-menu">
+    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/">Home</a></li>
+    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/resume/">Resume</a></li>
+    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/projects/">Projects</a></li>
+  </ul>
 </header>
 
 {{content | safe}}
