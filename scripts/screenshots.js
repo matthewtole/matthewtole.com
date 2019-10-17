@@ -1,8 +1,9 @@
 const puppeteer = require('puppeteer');
 const chalk = require('chalk');
 const tinify = require('tinify');
+require('dotenv').config();
 
-tinify.key = 'PLM0GKPN9YPqKH4OuZlf13IJXCc3gmU_';
+tinify.key = process.env.TINIFY_API_KEY;
 
 const screenshots = [
   { url: 'https://katherinetole.com', timeout: 2000, slug: 'katherinetole' },
