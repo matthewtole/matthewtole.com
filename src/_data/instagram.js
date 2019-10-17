@@ -1,17 +1,36 @@
-const instagram = require("user-instagram");
+const instagram = require('user-instagram');
 const download = require('download');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 
+const thumbnailSizes = [150, 240, 320, 480, 640];
+const outputFolder = '_site/static/images/instagram/';
+const username = 'matthewtole';
+
 module.exports = async () => {
-  mkdirp.sync('_site/static/images/instagram/');
-  const data = await instagram("https://www.instagram.com/matthewtole");
+  mkdirp.sync(outputFolder);
+  const data = await instagram(`https://www.instagram.com/${username}`);
+
   for (let post of data.posts) {
-    const filename = `_site/static/images/instagram/${post.shortcode}.png`;
-    if (fs.existsSync(filename)) {
-      continue;
+    await downloadPost(post);
+    for (size of thumbnailSizes) {
+      await downloadPost(post, size);
     }
-    await download(post.picture.url).pipe(fs.createWriteStream(filename));
   }
   return data.posts;
-}
+};
+
+const downloadPost = async (post, size) => {
+  const src = size ? post.picture[`thumbnail_${size}`] : post.picture.url;
+  if (fs.existsSync(makeFilename(post, size))) {
+    return;
+  }
+  await download(src).pipe(fs.createWriteStream(makeFilename(post, size)));
+};
+
+const makeFilename = (post, size) => {
+  if (size) {
+    return `${outputFolder}${post.shortcode}_${size}.png`;
+  }
+  return `${outputFolder}${post.shortcode}.png`;
+};
