@@ -36,5 +36,8 @@ module.exports = {
     borderWidth: ['hover'],
     opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [require('tailwindcss-transitions')()],
+  plugins: [
+    require('tailwindcss-transitions')(),
+    require('@tkh/tailwind-plugin-aspect-ratio')(),
+  ],
 };

@@ -6,6 +6,11 @@ require('dotenv').config();
 tinify.key = process.env.TINIFY_API_KEY;
 
 const screenshots = [
+  {
+    url: 'https://matthewtole-com.netlify.com',
+    timeout: 1000,
+    slug: 'matthewtole',
+  },
   { url: 'https://katherinetole.com', timeout: 2000, slug: 'katherinetole' },
   { url: 'https://wedding.tole.family', timeout: 1000, slug: 'kathew' },
   { url: 'https://catandjoe.wedding', timeout: 1000, slug: 'catandjoe' },
