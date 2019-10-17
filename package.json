@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "favicon": "node scripts/favicon.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "cssnano": "^4.1.10",
     "download": "^7.1.0",
     "eleventy-plugin-svg-contents": "^0.5.1",
+    "favicons": "^5.4.1",
     "mkdirp": "^0.5.1",
     "postcss-import": "^12.0.1",
     "prettier": "^1.18.2",
