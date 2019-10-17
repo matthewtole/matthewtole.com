@@ -1,6 +1,10 @@
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['Merriweather', 'serif'],
+        sans: ['Montserrat', 'sans-serif'],
+      },
       colors: {
         'brand-light': '#d3eaf2',
         brand: '#1eaccb',
