@@ -25,7 +25,6 @@ const screenshots = [
     },
   });
   const page = await browser.newPage();
-  console.log();
   for (let screenshot of screenshots) {
     try {
       await page.goto(screenshot.url);
@@ -35,14 +34,14 @@ const screenshots = [
         .fromBuffer(data)
         .toFile(`src/static/images/projects/${screenshot.slug}.png`);
       console.log(
-        chalk.green('SUCCESS:'),
-        `Created ${screenshot.slug}.png from ${screenshot.url}`
+        chalk.green('✓'),
+        'Created',
+        chalk.blue(`${screenshot.slug}.png`),
+        'from',
+        chalk.underline(screenshot.url)
       );
     } catch (ex) {
-      console.log(
-        chalk.red('ERROR:'),
-        `[${screenshot.url}] - ${ex.toString()}`
-      );
+      console.log(chalk.red('✗'), `[${screenshot.url}] - ${ex.toString()}`);
     }
   }
   console.log();
