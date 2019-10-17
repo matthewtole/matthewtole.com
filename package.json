@@ -34,6 +34,10 @@
     "prettier": "^1.18.2",
     "tailwindcss": "^1.1.2",
     "tailwindcss-transitions": "^2.1.0",
+    "tinify": "^1.6.0-beta.2",
     "user-instagram": "^1.0.4"
+  },
+  "dependencies": {
+    "puppeteer": "^1.20.0"
   }
 }
