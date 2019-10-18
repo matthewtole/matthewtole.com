@@ -13,7 +13,11 @@
 </head>
 <body class="font-sans">
   {{content | safe}}
-  <script src="/static/js/disable-scroll.js"></script>
-  <script src="/static/js/index.js"></script>
+  {% set js %}
+    {% include "js/disable-scroll.js" %}
+    {% include "js/menu.js" %}
+    {% include "js/modal.js" %}
+  {% endset %}
+  <script>{{ js | jsmin | safe }}</script>
 </body>
 </html>
