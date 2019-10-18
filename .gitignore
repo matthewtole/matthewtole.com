@@ -62,3 +62,6 @@ typings/
 
 # Eleventy build output
 _site/
+
+# Data cache folder
+_cache/

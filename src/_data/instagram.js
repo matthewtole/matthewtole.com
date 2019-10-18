@@ -2,14 +2,19 @@ const instagram = require('user-instagram');
 const download = require('download');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
+const path = require('path');
 
 const thumbnailSizes = [150, 240, 320, 480, 640];
 const outputFolder = '_site/static/images/instagram/';
 const username = 'matthewtole';
+const cacheFolder = '_cache';
+const cacheFile = path.join(cacheFolder, 'instagram.json');
+
+const isDev = () => process.env.ELEVENTY_ENV !== 'prod';
 
 module.exports = async () => {
-  if (process.env.ELEVENTY_ENV !== 'prod') {
-    return [1, 2, 3, 4, 5];
+  if (isDev() && fs.existsSync(cacheFile)) {
+    return JSON.parse(fs.readFileSync(cacheFile).toString());
   }
 
   mkdirp.sync(outputFolder);
@@ -21,6 +26,14 @@ module.exports = async () => {
       await downloadPost(post, size);
     }
   }
+
+  if (isDev()) {
+    if (!fs.existsSync(cacheFolder)) {
+      fs.mkdirSync(cacheFolder);
+    }
+    fs.writeFileSync(cacheFile, JSON.stringify(data.posts));
+  }
+
   return data.posts;
 };
 
