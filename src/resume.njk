@@ -4,10 +4,18 @@ title: Resume
 ---
 
 {% import 'components/resume.njk' as resume %}
+{% import 'components/buttons.njk' as buttons %}
 
 <div class="max-w-3xl mx-auto">
   <div class="md:border-l-2 border-brand-light">
-    <div class="py-4"></div>
+    <div class="p-4">
+      <div class=" text-right py-4">
+        {{ buttons.cta("Download Resume", "/static/downloads/Matthew Tole.pdf", "text-white") }}
+      </div>
+      <p class="mt-4">
+        Full stack engineer with over 7 years professional experience. I value writing readable, well tested code, with a constant focus on the end user. I am highly motivated and a proven team player, as well as a leader, looking for a new challenge to constantly push me to be better.
+      </p>
+    </div>
 
     <div class="px-4 my-4">
       {{ resume.header("Software Engineer, Dropbox", "Seattle - June 2017 - Present") }}

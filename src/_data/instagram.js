@@ -9,7 +9,7 @@ const username = 'matthewtole';
 
 module.exports = async () => {
   if (process.env.ELEVENTY_ENV !== 'prod') {
-    return [];
+    return [1, 2, 3, 4, 5];
   }
 
   mkdirp.sync(outputFolder);

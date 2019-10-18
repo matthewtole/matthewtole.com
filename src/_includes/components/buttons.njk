@@ -1,7 +1,7 @@
 {% macro cta(text, url, classes) %}
 <a
   href="{{url}}"
-  class="font-bold bg-cta py-2 px-8 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px {{classes}}"
+  class="font-bold bg-cta py-2 px-8 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px text-white hover:text-cta-light {{classes}}"
   >{{text}}</a>
 {% endmacro %}
 
@@ -10,7 +10,7 @@
 <a
   href="{{url}}"
   id="{{id}}"
-  class="font-bold bg-cta py-2 px-4 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px fill-current {{classes}}"
+  class="font-bold bg-cta py-2 px-4 rounded border-cta-dark border-b-4 hover:border-b-2 hover:mt-2px hover:-mb-2px text-white hover:text-cta-light fill-current {{classes}}"
   >
     {{ icon_url | svgContents | safe }}
   </a>
