@@ -8,6 +8,10 @@ const outputFolder = '_site/static/images/instagram/';
 const username = 'matthewtole';
 
 module.exports = async () => {
+  if (process.env.ELEVENTY_ENV !== 'prod') {
+    return [];
+  }
+
   mkdirp.sync(outputFolder);
   const data = await instagram(`https://www.instagram.com/${username}`);
 

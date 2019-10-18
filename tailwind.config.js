@@ -33,7 +33,7 @@ module.exports = {
     },
   },
   variants: {
-    borderWidth: ['hover'],
+    borderWidth: ['responsive', 'hover'],
     opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [
