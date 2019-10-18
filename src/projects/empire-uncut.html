@@ -4,29 +4,8 @@ title: Empire Uncut
 section: projects
 ---
 
-<div
-  class="fixed inset-0 bg-black opacity-75 z-50 hidden"
-  id="modal-overlay"
-></div>
-<div
-  class="fixed inset-0 flex justify-center items-center z-50 hidden"
-  id="modal-container"
->
-  <button
-    class="fixed top-0 right-0 m-4 text-white fill-current text-3xl"
-    id="modal-btn-close"
-  >
-    {{ '/src/icons/icon-x.svg' | svgContents | safe }}
-  </button>
-  <img
-    src="/static/images/projects/empire-uncut/01.jpg"
-    class="max-w-2xl"
-    id="modal-image"
-  />
-</div>
-
-<div class="p-4 max-w-3xl mx-auto">
-  <h2 class="text-2xl mb-2 font-serif">
+<div class="px-4 max-w-3xl mx-auto">
+  <h2 class="text-2xl my-4   font-serif">
     <a href="/projects/" class="text-gray-600 hover:underline">Projects</a>
     <span class="text-gray-300">&raquo;</span> Empire Uncut
   </h2>
@@ -89,4 +68,25 @@ section: projects
     </div>
     {% endfor %}
   </div>
+</div>
+
+<div
+  class="fixed inset-0 bg-black opacity-75 z-50 hidden"
+  id="modal-overlay"
+></div>
+<div
+  class="fixed inset-0 flex justify-center items-center z-50 hidden"
+  id="modal-container"
+>
+  <button
+    class="fixed top-0 right-0 m-4 text-white fill-current text-3xl"
+    id="modal-btn-close"
+  >
+    {{ '/src/icons/icon-x.svg' | svgContents | safe }}
+  </button>
+  <img
+    src="/static/images/projects/empire-uncut/01.jpg"
+    class="max-w-2xl"
+    id="modal-image"
+  />
 </div>
