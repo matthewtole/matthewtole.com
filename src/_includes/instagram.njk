@@ -1,17 +1,17 @@
 <div class="flex flex-wrap max-w-3xl mx-auto justify-center p-2">
 {% for post in instagram %}
-  <a href="{{post.link}}" class="w-1/4 md:1/4 p-2 block" target="_blank">
-  <div class="relative group">
+  <a href="{{post.link}}" class="w-1/2 md:w-1/4 p-2 block" target="_blank">
+  <div class="relative group aspect-square shadow" style="background-color: {{post.color}};">
     <img
-      class="shadow"
+      class="absolute top-0 left-0 w-full h-full object-cover"
       srcset="
-        /static/images/instagram/{{post.shortcode}}_150.png 150w,
-        /static/images/instagram/{{post.shortcode}}_250.png 240w,
-        /static/images/instagram/{{post.shortcode}}_320.png 320w,
-        /static/images/instagram/{{post.shortcode}}_480.png 480w,
-        /static/images/instagram/{{post.shortcode}}_640.png 640w
+        /static/images/instagram/{{post.shortcode}}_150.jpg 150w,
+        /static/images/instagram/{{post.shortcode}}_250.jpg 240w,
+        /static/images/instagram/{{post.shortcode}}_320.jpg 320w,
+        /static/images/instagram/{{post.shortcode}}_480.jpg 480w,
+        /static/images/instagram/{{post.shortcode}}_640.jpg 640w
       "
-      src="/static/images/instagram/{{post.shortcode}}.png"
+      src="/static/images/instagram/{{post.shortcode}}.jpg"
       >
     <div class="absolute inset-0 bg-black text-white flex justify-center items-center fill-current flex flex-col opacity-0 transition-opacity transition-250 group-hover:opacity-100">{{post.likes}} {{ "/src/icons/icon-heart.svg" | svgContents | safe }}</div>
   </div>

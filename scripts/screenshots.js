@@ -25,7 +25,7 @@ const screenshots = [
   const browser = await puppeteer.launch({
     defaultViewport: {
       width: 1280,
-      height: 768,
+      height: 720,
       deviceScaleFactor: 1,
     },
   });

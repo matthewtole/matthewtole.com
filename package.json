@@ -26,13 +26,13 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "favicons": "^5.4.1",
-    "fs-jetpack": "^2.2.2",
     "prettier": "^1.18.2",
     "puppeteer": "^1.20.0",
     "sharp": "^0.23.1",
     "tinify": "^1.6.0-beta.2"
   },
   "dependencies": {
+    "fs-jetpack": "^2.2.2",
     "@11ty/eleventy": "^0.9.0",
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -43,6 +43,7 @@
     "cssnano": "^4.1.10",
     "download": "^7.1.0",
     "eleventy-plugin-svg-contents": "^0.5.1",
+    "get-image-colors": "^2.0.0",
     "mkdirp": "^0.5.1",
     "postcss-import": "^12.0.1",
     "tailwindcss": "^1.1.2",

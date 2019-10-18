@@ -1,8 +1,10 @@
 const instagram = require('user-instagram');
 const download = require('download');
+const jetpack = require('fs-jetpack');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const path = require('path');
+const getColors = require('get-image-colors');
 
 const thumbnailSizes = [150, 240, 320, 480, 640];
 const outputFolder = '_site/static/images/instagram/';
@@ -20,10 +22,22 @@ module.exports = async () => {
   mkdirp.sync(outputFolder);
   const data = await instagram(`https://www.instagram.com/${username}`);
 
+  const posts = [];
+
   for (let post of data.posts) {
     await downloadPost(post);
     for (size of thumbnailSizes) {
       await downloadPost(post, size);
+    }
+    try {
+      const colors = await getColors(makeFilename(post));
+      posts.push({
+        ...post,
+        color: colors[0].hex(),
+      });
+    } catch (ex) {
+      console.log(ex);
+      posts.push(post);
     }
   }
 
@@ -31,10 +45,10 @@ module.exports = async () => {
     if (!fs.existsSync(cacheFolder)) {
       fs.mkdirSync(cacheFolder);
     }
-    fs.writeFileSync(cacheFile, JSON.stringify(data.posts));
+    fs.writeFileSync(cacheFile, JSON.stringify(posts));
   }
 
-  return data.posts;
+  return posts;
 };
 
 const downloadPost = async (post, size) => {
@@ -42,12 +56,14 @@ const downloadPost = async (post, size) => {
   if (fs.existsSync(makeFilename(post, size))) {
     return;
   }
-  await download(src).pipe(fs.createWriteStream(makeFilename(post, size)));
+  return download(src).then(buffer =>
+    jetpack.writeAsync(makeFilename(post, size), buffer)
+  );
 };
 
 const makeFilename = (post, size) => {
   if (size) {
-    return `${outputFolder}${post.shortcode}_${size}.png`;
+    return `${outputFolder}${post.shortcode}_${size}.jpg`;
   }
-  return `${outputFolder}${post.shortcode}.png`;
+  return `${outputFolder}${post.shortcode}.jpg`;
 };
