@@ -1,3 +1,5 @@
+const emoji = require('node-emoji');
+
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/static');
   eleventyConfig.addPlugin(require('eleventy-plugin-svg-contents'));
@@ -18,6 +20,8 @@ module.exports = eleventyConfig => {
       return code;
     }
   });
+
+  eleventyConfig.addFilter('emojify', emoji.emojify);
 
   return {
     dir: {
