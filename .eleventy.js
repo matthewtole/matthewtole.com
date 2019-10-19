@@ -2,7 +2,7 @@ const emoji = require('node-emoji');
 
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/static');
-  eleventyConfig.addPassthroughCopy('**/*_redirects');
+  eleventyConfig.addPassthroughCopy('src/**/_redirects');
   eleventyConfig.addPlugin(require('eleventy-plugin-svg-contents'));
 
   eleventyConfig.addFilter('jsmin', code => {
