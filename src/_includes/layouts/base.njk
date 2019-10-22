@@ -15,6 +15,7 @@
   <div class="flex-1">
   {{content | safe}}
   </div>
+  <div class="fixed inset-0 bg-black opacity-75 z-40 hidden js-modal-overlay"></div>
   {% include "footer.html" %}
   {% set js %}
     {% include "js/disable-scroll.js" %}

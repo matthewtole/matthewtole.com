@@ -1,21 +1,39 @@
-{% macro info_start(title, picture) %}
-<div class="flex my-4 flex-col md:flex-row items-start">
-  {% if picture != "" %}
-  <img
-    src="/static/images/projects/{{ picture }}"
-    alt="Screenshot of {{title}}"
-    class="flex-shrink-0 w-full md:w-48 mr-4 shadow-md rounded-sm"
-  />
-  {% endif %}
-  <div>
-    <h3 class="text-xl font-serif mt-2 md:mt-0">{{ title }}</h3>
-{% endmacro %}
-
-{% macro info_end() %}
-  </div>
+{% macro tile_modal(key, url) %}
+<div class="w-full md:w-1/3 p-1 border-2 hover:border-cta border-white">
+  <a
+    class="aspect-wide relative block shadow"
+    href="{{ url }}"
+    data-modal="projects"
+    data-modal-content="projects/{{ key }}"
+  >
+    <img
+      src="/static/images/projects/{{ key }}.png"
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    />
+  </a>
 </div>
 {% endmacro %}
 
-{% macro separator() %}
-  <div class="my-3 w-full border-brand-light border"></div>
+{% macro tile_link(key) %}
+<div class="w-full md:w-1/3 p-1 border-2 hover:border-cta border-white">
+  <a
+    class="aspect-wide relative block shadow"
+    href="/projects/{{ key }}/"
+  >
+    <img
+      src="/static/images/projects/{{ key }}.png"
+      class="absolute top-0 left-0 w-full h-full object-cover"
+    />
+  </a>
+</div>
+{% endmacro %}
+
+{% macro modal_header(key, title, url) %}
+<div class="aspect-wide relative block mb-2">
+  <img
+  src="/static/images/projects/{{ key }}.png"
+  class="absolute top-0 left-0 w-full h-full object-cover rounded"
+  />
+</div>
+<h3 class="font-serif text-xl my-2"><a href="{{ url }}" class="text-cta hover:underline">{{ title }}</a></h3>
 {% endmacro %}

@@ -2,28 +2,53 @@ const disableScroll = new DisableScroll();
 
 const modalOverlay = document.querySelector('.js-modal-overlay');
 
-[].forEach.call(
-  document.getElementsByClassName('js-modal-trigger'),
-  trigger => {
-    const modalName = trigger.getAttribute('data-modal');
-    const modalContent = trigger.getAttribute('data-modal-content');
-    console.log(modalName, modalContent);
-    trigger.addEventListener('click', event => {
-      event.preventDefault();
-      try {
-        document
-          .querySelector('.js-modal-content:not(.hidden)')
-          .classList.add('hidden');
-      } catch (ex) {}
-      document
-        .querySelector(
-          `.js-modal-content[data-modal-content="${modalContent}"]`
-        )
-        .classList.remove('hidden');
-      showModal(modalName);
-    });
+function hide(element) {
+  if (element && element.classList) {
+    element.classList.add('hidden');
   }
-);
+}
+
+function show(element) {
+  if (element && element.classList) {
+    element.classList.remove('hidden');
+  }
+}
+
+function getModal(name) {
+  return document.querySelector(`.js-modal-container[data-modal="${name}"]`);
+}
+
+function showModalGallery(photo) {
+  const modalImage = getModal('gallery').querySelector('.js-modal-image');
+  const modalLoader = getModal('gallery').querySelector('svg');
+  modalImage.src = photo;
+  show(modalImage);
+  hide(modalLoader);
+}
+
+function showModalContent(content) {
+  hide(document.querySelector('.js-modal-content:not(.hidden)'));
+  show(
+    document.querySelector(`.js-modal-content[data-modal-content="${content}"]`)
+  );
+}
+
+[].forEach.call(document.querySelectorAll('a[data-modal]'), trigger => {
+  const modalName = trigger.getAttribute('data-modal');
+
+  trigger.addEventListener('click', event => {
+    event.preventDefault();
+
+    if (modalName === 'gallery') {
+      showModalGallery(trigger.href);
+    } else {
+      const modalContent = trigger.getAttribute('data-modal-content');
+      showModalContent(modalContent);
+    }
+
+    showModal(modalName);
+  });
+});
 
 [].forEach.call(document.getElementsByClassName('js-modal-close'), button => {
   button.addEventListener('click', () => {
@@ -42,42 +67,16 @@ const modalOverlay = document.querySelector('.js-modal-overlay');
   }
 );
 
-// if (modalContainer) {
-//   modalContainer.addEventListener('click', () => {
-//     hideModal();
-//   });
-// }
-
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     hideModal();
   }
 });
 
-// const modalContainer = document.getElementById('modal-container');
-// const modalButton = document.getElementById('modal-btn-close');
-// const modalImage = document.getElementById('modal-image');
-// const modalLoader =
-//   modalContainer && modalContainer.getElementsByTagName('svg')[0];
-
-// if (modalImage) {
-//   modalImage.addEventListener('click', event => {
-//     event.stopPropagation();
-//   });
-
-//   modalImage.addEventListener('load', () => {
-//     modalImage.classList.remove('hidden');
-//     modalLoader.classList.add('hidden');
-//   });
-// }
-
 function hideModal() {
   const modal = document.querySelector(`.js-modal-container:not(.hidden)`);
-  if (!(modalOverlay && modal)) {
-    return;
-  }
-  modalOverlay.classList.add('hidden');
-  modal.classList.add('hidden');
+  hide(modalOverlay);
+  hide(modal);
   disableScroll.off();
 }
 
@@ -85,27 +84,7 @@ function showModal(name) {
   const modal = document.querySelector(
     `.js-modal-container[data-modal="${name}"]`
   );
-  if (!(modalOverlay && modal)) {
-    return;
-  }
-  modalOverlay.classList.remove('hidden');
-  modal.classList.remove('hidden');
+  show(modal);
+  show(modalOverlay);
   disableScroll.on();
 }
-
-// function setModalImage(src) {
-//   if (!modalImage) {
-//     return;
-//   }
-//   modalImage.classList.add('hidden');
-//   modalLoader.classList.remove('hidden');
-//   modalImage.src = src;
-// }
-
-// [].forEach.call(document.getElementsByClassName('js-gallery-thumb'), thumb => {
-//   thumb.addEventListener('click', event => {
-//     event.preventDefault();
-//     setModalImage(thumb.href);
-//     showModal();
-//   });
-// });
