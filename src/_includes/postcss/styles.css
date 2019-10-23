@@ -13,9 +13,6 @@
 }
 
 header {
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%231eaccb' stroke-width='30' stroke-linecap='round' stroke-opacity='0.23'%3E%3Cline stroke='%23d3eaf2' x1='639' y1='727' x2='590' y2='776'/%3E%3Cpolyline stroke='%2336b0cd' points='586 717 888 415 981 512 279 1215 120 1056 607 569'/%3E%3Cline stroke='%2347b4d0' x1='935' y1='494' x2='776' y2='653'/%3E%3Cline stroke='%2355b8d2' x1='425' y1='624' x2='488' y2='560'/%3E%3Cpolyline stroke='%2362bbd5' points='745 685 198 1232 -24 1010 226 759'/%3E%3Cline stroke='%236dbfd7' x1='383' y1='666' x2='393' y2='655'/%3E%3Cline stroke='%2378c3da' x1='416' y1='569' x2='438' y2='547'/%3E%3Cline stroke='%2382c7dc' x1='194' y1='664' x2='237' y2='622'/%3E%3Cpolyline stroke='%238ccbdf' points='374 547 35 886 194 1045 618 622'/%3E%3Cline stroke='%2395cfe1' x1='681' y1='685' x2='671' y2='696'/%3E%3Cline stroke='%239fd3e3' x1='724' y1='516' x2='649' y2='590'/%3E%3Cline stroke='%23a8d6e6' x1='334' y1='776' x2='501' y2='611'/%3E%3Cpolyline stroke='%23b1dae8' points='556 746 226 1077 353 1204 1052 505 956 410 713 653'/%3E%3Cline stroke='%23b9deeb' x1='258' y1='727' x2='385' y2='600'/%3E%3Cline stroke='%23c2e2ed' x1='671' y1='505' x2='639' y2='537'/%3E%3Cpolyline stroke='%23cbe6f0' points='162 696-24 883 71 978 353 696'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: bottom right;
+  background-color: #168198;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23ccdee4' fill-opacity='0.06'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
