@@ -1,6 +1,6 @@
-<div class="flex flex-wrap justify-center p-2">
+<div class="flex flex-wrap justify-center p-2 max-w-6xl mx-auto">
 {% for post in instagram %}
-  <a href="{{post.link}}" class="w-1/2 sm:w-1/3 md:w-2/12 xl:w-1/12 p-2 block" target="_blank">
+  <a href="{{post.link}}" class="w-1/2 sm:w-1/3 md:w-2/12 p-2 block" target="_blank">
   <div class="relative group aspect-square shadow" style="background-color: {{post.color}};">
     <img
       class="absolute top-0 left-0 w-full h-full object-cover"
