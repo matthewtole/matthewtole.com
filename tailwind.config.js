@@ -26,5 +26,10 @@ module.exports = {
   plugins: [
     require('tailwindcss-transitions')(),
     require('@tkh/tailwind-plugin-aspect-ratio')(),
+    require('tailwind-heropatterns')({
+      opacity: {
+        default: '0.2',
+      },
+    }),
   ],
 };
