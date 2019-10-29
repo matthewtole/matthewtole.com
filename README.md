@@ -1,6 +1,6 @@
 # matthewtole.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d30645c4-42b2-49bc-b334-33030bcbbcb1/deploy-status)](https://app.netlify.com/sites/matthewtole-com/deploys)
+[![Netlify Status](https://img.shields.io/netlify/d30645c4-42b2-49bc-b334-33030bcbbcb1?logo=netlify&style=for-the-badge)](https://app.netlify.com/sites/matthewtole-com/deploys)
 
 The source code for matthewtole.com, the website of Matthew Tole.
 
