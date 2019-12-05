@@ -44,6 +44,7 @@
     "eleventy-plugin-svg-contents": "^0.5.1",
     "fs-jetpack": "^2.2.2",
     "get-image-colors": "^2.0.0",
+    "highlight.js": "^9.16.2",
     "mkdirp": "^0.5.1",
     "postcss-import": "^12.0.1",
     "tailwind-heropatterns": "0.0.7",

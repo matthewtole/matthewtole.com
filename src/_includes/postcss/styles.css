@@ -11,3 +11,31 @@
 .hover\:-mb-2px:hover {
   margin-bottom: -2px;
 }
+
+.article-content h2 {
+  @apply font-serif text-xl;
+}
+
+.article-content h3 {
+  @apply font-serif text-lg;
+}
+
+.article-content ol {
+  @apply list-decimal list-inside mb-4;
+}
+
+.article-content p {
+  @apply mb-4;
+}
+
+.article-content blockquote {
+  @apply border-l-2 border-brand pl-4 text-xl;
+}
+
+.article-content pre {
+  @apply bg-gray-800 p-4 text-white rounded mb-4;
+}
+
+.article-content pre code {
+  @apply text-sm leading-none;
+}

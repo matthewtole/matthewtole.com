@@ -1,9 +1,28 @@
 const emoji = require('node-emoji');
+const markdownIt = require('markdown-it');
+const hljs = require('highlight.js');
 
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/static');
   eleventyConfig.addPassthroughCopy('src/**/_redirects');
   eleventyConfig.addPlugin(require('eleventy-plugin-svg-contents'));
+
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true,
+    highlight: function(str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(lang, str).value;
+        } catch (__) {}
+      }
+
+      return ''; // use external default escaping
+    },
+  };
+
+  eleventyConfig.setLibrary('md', markdownIt(options));
 
   eleventyConfig.addFilter('jsmin', code => {
     const babel = require('@babel/core');

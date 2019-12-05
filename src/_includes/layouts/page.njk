@@ -14,12 +14,14 @@ layout: layouts/base.njk
     <div class="hidden md:flex">
       {{ buttons.cta_icon("home", "/", "mx-2") }}
       {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
+      {{ buttons.cta("ARTICLES", "/articles/", "mx-2") }}
       {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
     </div>
   </div>
   <ul class="shadow-lg absolute hidden right-0 left-0 bg-brand z-50" id="mobile-menu">
     <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/">Home</a></li>
     <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/resume/">Resume</a></li>
+    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/articles/">Articles</a></li>
     <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/projects/">Projects</a></li>
   </ul>
 </header>

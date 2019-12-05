@@ -1,0 +1,13 @@
+---
+layout: layouts/page.njk
+---
+<div class="px-4 max-w-3xl mx-auto">
+  <h2 class="text-2xl my-4 font-serif">
+    <a href="/articles/" class="text-gray-600 hover:underline">Articles</a>
+    <span class="text-gray-300">&raquo;</span> {{title}}
+  </h2>
+  <div class="article-content">
+    {{content | safe}}
+  </div>
+</div>
+
