@@ -11,11 +11,11 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,600&display=swap" rel="stylesheet">
   {% include 'favicon.njk' %}
 </head>
-<body class="font-sans flex flex-col h-full">
+<body class="flex flex-col h-full font-sans">
   <div class="flex-1">
   {{content | safe}}
   </div>
-  <div class="fixed inset-0 bg-black opacity-75 z-40 hidden js-modal-overlay"></div>
+  <div class="fixed inset-0 z-40 hidden bg-black opacity-75 js-modal-overlay"></div>
   {% include "footer.html" %}
   {% set js %}
     {% include "js/disable-scroll.js" %}

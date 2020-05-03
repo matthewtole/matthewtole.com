@@ -4,9 +4,9 @@ layout: layouts/base.njk
 
 {% import "components/buttons.njk" as buttons %}
 
-<header class="bg-brand text-white sticky top-0 z-20 bg-hero-death-star">
+<header class="sticky top-0 z-20 text-white bg-brand bg-hero-death-star">
    <div class="flex items-center p-2">
-    <h1 class="text-4xl font-serif ml-4"><a href="/" class="hover:text-brand-light">matthew tole</a></h1>
+    <h1 class="ml-4 font-serif text-4xl"><a href="/" class="hover:text-brand-light">matthew tole</a></h1>
     <div class="flex-grow"></div>
     <div class="flex md:hidden">
       {{ buttons.cta_icon("menu", "#", "", "btn-mobile-menu") }}
@@ -17,10 +17,10 @@ layout: layouts/base.njk
       {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
     </div>
   </div>
-  <ul class="shadow-lg absolute hidden right-0 left-0 bg-brand z-50" id="mobile-menu">
-    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/">Home</a></li>
-    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/resume/">Resume</a></li>
-    <li><a class="px-4 py-2 border-t border-white block hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/projects/">Projects</a></li>
+  <ul class="absolute left-0 right-0 z-50 hidden shadow-lg bg-brand" id="mobile-menu">
+    <li><a class="block px-4 py-2 border-t border-white hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/">Home</a></li>
+    <li><a class="block px-4 py-2 border-t border-white hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/resume/">Resume</a></li>
+    <li><a class="block px-4 py-2 border-t border-white hover:bg-brand-dark active:bg-brand-dark focus:bg-brand-dark" href="/projects/">Projects</a></li>
   </ul>
 </header>
 

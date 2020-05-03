@@ -4,8 +4,8 @@ title: Empire Uncut
 section: projects
 ---
 
-<div class="px-4 max-w-3xl mx-auto">
-  <h2 class="text-2xl my-4 font-serif">
+<div class="max-w-3xl px-4 mx-auto">
+  <h2 class="my-4 font-serif text-2xl">
     <a href="/projects/" class="text-gray-600 hover:underline">Projects</a>
     <span class="text-gray-300">&raquo;</span> Empire Uncut
   </h2>
@@ -23,7 +23,7 @@ section: projects
       >starwarsuncut.com/empire</a
     >.
   </p>
-  <h3 class="text-xl mb-2 font-serif">Our Scenes</h3>
+  <h3 class="mb-2 font-serif text-xl">Our Scenes</h3>
   <p class="mb-4">
     Tim and I chose two back-to-back scenes, so that we could double our chances
     of getting picked, but only have to work on one set of characters and
@@ -31,18 +31,18 @@ section: projects
   </p>
   <p class="mb-2">This is a screenshot of the scene from the original film:</p>
   <img
-    class="mb-2 w-full"
+    class="w-full mb-2"
     src="/static/images/projects/empire-uncut/scene.jpg"
   />
   <p class="mb-2">Here is the combined video of the scenes that we filmed:</p>
   <div class="w-full mb-2">
-    <div class="aspect-wide relative">
+    <div class="relative aspect-wide">
       <iframe
         src="https://www.youtube.com/embed/Sfc5woaKnlo"
         ref="video"
         width="560"
         height="315"
-        class="absolute top-0 left-0 w-full h-full object-cover"
+        class="absolute top-0 left-0 object-cover w-full h-full"
         frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
@@ -50,12 +50,12 @@ section: projects
       </iframe>
     </div>
   </div>
-  <h3 class="text-xl mb-2 font-serif">Behind the Scenes Photos</h3>
-  <div class="flex flex-wrap -m-1 mb-4">
+  <h3 class="mb-2 font-serif text-xl">Behind the Scenes Photos</h3>
+  <div class="flex flex-wrap mb-4 -m-1">
     {% for photo in empire_uncut %}
-    <div class="w-1/2 md:w-1/3 p-1 border-2 hover:border-cta border-white">
+    <div class="w-1/2 p-1 border-2 border-white md:w-1/3 hover:border-cta">
       <a
-        class="aspect-wide relative block"
+        class="relative block aspect-wide"
         data-id="{{ photo.id }}"
         data-caption="{{ photo.caption }}"
         data-modal="gallery"
@@ -63,7 +63,7 @@ section: projects
       >
         <img
           src="/static/images/projects/empire-uncut/thumbs/{{ photo.id }}.jpg"
-          class="absolute top-0 left-0 w-full h-full object-cover"
+          class="absolute top-0 left-0 object-cover w-full h-full"
         />
       </a>
     </div>
@@ -72,15 +72,15 @@ section: projects
 </div>
 
 <div
-  class="fixed inset-0 flex justify-center items-center z-50 hidden js-modal-container"
+  class="fixed inset-0 z-50 flex items-center justify-center hidden js-modal-container"
   data-modal="gallery"
 >
   {{ '/src/loader.svg' | svgContents | safe }}
   <button
-    class="fixed top-0 right-0 m-4 text-white fill-current text-3xl"
+    class="fixed top-0 right-0 m-4 text-3xl text-white fill-current"
     id="modal-btn-close"
   >
     {{ '/src/icons/icon-x.svg' | svgContents | safe }}
   </button>
-  <img src="" class="max-w-2xl hidden js-modal-image" />
+  <img src="" class="hidden max-w-2xl js-modal-image" />
 </div>

@@ -4,12 +4,12 @@ layout: layouts/base.njk
 
 {% import "components/buttons.njk" as buttons %}
 
-<header class="bg-brand text-white py-8 md:py-16 px-4 text-center bg-hero-death-star">
-  <h1 class="text-5xl md:text-6xl font-serif">matthew tole</h1>
-  <div class="text-xl max-w-xl mx-auto leading-tight">
+<header class="px-4 py-8 text-center text-white bg-brand md:py-16 bg-hero-death-star">
+  <h1 class="font-serif text-5xl md:text-6xl">matthew tole</h1>
+  <div class="max-w-xl mx-auto text-xl leading-tight">
     <p>English web developer based in Seattle.</p>
   </div>
-  <div class="flex flex-col md:flex-row justify-center p-8">
+  <div class="flex flex-col justify-center p-8 md:flex-row">
     {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
     <div class="py-2 md:hidden"></div>
     {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
