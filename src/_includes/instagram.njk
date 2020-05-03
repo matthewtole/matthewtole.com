@@ -3,6 +3,7 @@
   <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-2/12" target="_blank">
   <div class="relative shadow group aspect-square" style="background-color: {{post.color}};">
     <img
+      loading="lazy"
       class="absolute top-0 left-0 object-cover w-full h-full"
       srcset="
         /static/images/instagram/{{post.shortcode}}_150.jpg 150w,
@@ -13,7 +14,7 @@
       "
       src="/static/images/instagram/{{post.shortcode}}.jpg"
       >
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black opacity-0 fill-current transition-opacity transition-250 group-hover:opacity-100">{{post.likes}} {{ "/src/icons/icon-heart.svg" | svgContents | safe }}</div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-white transition-opacity bg-black opacity-0 fill-current transition-250 group-hover:opacity-100">{{post.likes}} {{ "/src/icons/icon-heart.svg" | svgContents | safe }}</div>
   </div>
   </a>
 {% endfor %}
