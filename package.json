@@ -25,14 +25,14 @@
   "homepage": "https://github.com/matthewtole/matthewtole#readme",
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "favicons": "^5.4.1",
+    "favicons": "^6.0.0",
     "prettier": "^1.18.2",
     "puppeteer": "^1.20.0",
     "sharp": "^0.23.1",
     "tinify": "^1.6.0-beta.2"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.9.0",
+    "@11ty/eleventy": "^0.10.0",
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
