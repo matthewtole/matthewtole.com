@@ -9,8 +9,8 @@ title: Resume
 <div class="max-w-3xl mx-auto">
   <div class="md:border-l-2 border-brand-light">
     <div class="p-4">
-      <div class="py-4 text-right ">
-        {{ buttons.cta("Download Resume", "/static/downloads/Matthew Tole.pdf", "text-white") }}
+      <div class="py-4 text-right">
+        <a href="/static/downloads/Matthew Tole.pdf" download class="px-8 py-2 font-semibold text-white rounded bg-cta hover:bg-cta-200">Download PDF Resume</a>
       </div>
       <p class="mt-4">
         Front-end engineer with almost ten years of professional software development experience. I am passionate about creating polished web experiences, with a focus on responsive, accessible, and performant UX, and writing testable, readable, and maintainable code.
@@ -22,8 +22,8 @@ title: Resume
       {{ resume.header("Software Engineer, Dropbox", "Seattle - June 2017 - Present") }}
 
       <p class="mb-2">I work on a team responsible for the search and browse experiences on the web and desktop. As the senior front-end engineer on the team, I have worked on many projects, from a complete rewrite of the search UI, to improvements in accessibility and performance. </p>
-<p class="mb-2">I have mentored an intern and many of the new hires on the team, empowering them to do their best work and become incredible productive members of the team. </p>
-<p>I was one of the organizers of an internal JS conference, given presentations to the wider company on my work, and conducted over 50 interviews.
+      <p class="mb-2">I have mentored an intern and many of the new hires on the team, empowering them to do their best work and become incredible productive members of the team. </p>
+      <p>I was one of the organizers of an internal JS conference, given presentations to the wider company on my work, and conducted over 50 interviews.
 </p>
     </div>
 
@@ -43,39 +43,39 @@ title: Resume
       <p>
         During my 2.5 years at Pebble, I worked on a variety of projects, including rebuilding the developer website from the ground up, designing and writing new features for the app store and developer portal, and architecting a brand new new analytics pipeline to build the foundation for new health data based products.
 </p>
-      </p>
-    </div>
+    </p>
+  </div>
 
-    {{ resume.year("2014") }}
+  {{ resume.year("2014") }}
 
-    <div class="px-4 my-4">
-      {{ resume.header("Consultant, Proven Legal Technologies", "London — 2010 - 2014") }}
-      <p>
+  <div class="px-4 my-4">
+    {{ resume.header("Consultant, Proven Legal Technologies", "London — 2010 - 2014") }}
+    <p>
         I designed, built, maintained, and supported an internal web application, which was responsible for all project management, evidence tracking and billing of clients. I participated in the collection, extraction and investigation of multiple forensic cases, and built custom applications for extracting email fragments from hard drives.
       </p>
-    </div>
+  </div>
 
-    {{ resume.year("2010") }}
+  {{ resume.year("2010") }}
 
-    <div class="px-4 my-4">
-      {{ resume.header("MSc Computer Forensics", "De Montfort University — 2009 - 2012") }}
-      <p>I learned the fundamentals of digital forensics and network security, including taking a forensic images of a
+  <div class="px-4 my-4">
+    {{ resume.header("MSc Computer Forensics", "De Montfort University — 2009 - 2012") }}
+    <p>I learned the fundamentals of digital forensics and network security, including taking a forensic images of a
         variety
         of data sources, and the processes and methodologies of forensic analysis.</p>
-    </div>
+  </div>
 
-    {{ resume.year("2009") }}
+  {{ resume.year("2009") }}
 
-    <div class="px-4 my-4">
-      {{ resume.header("BEng Computer Science", "The University of York — 2005 - 2009") }}
-      <p>This course provided me with an extensive understanding of a wide range of topics in computer science, from
+  <div class="px-4 my-4">
+    {{ resume.header("BEng Computer Science", "The University of York — 2005 - 2009") }}
+    <p>This course provided me with an extensive understanding of a wide range of topics in computer science, from
         digital
         electronics through to operating system design.
       </p>
-    </div>
-
-    {{ resume.year("2005") }}
-
-    <div class="py-8"></div>
   </div>
+
+  {{ resume.year("2005") }}
+
+  <div class="py-8"></div>
+</div>
 </div>
