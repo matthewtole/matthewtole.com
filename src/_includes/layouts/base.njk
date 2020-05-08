@@ -1,27 +1,29 @@
 <!doctype html>
 
 <html lang="en" class="h-full">
-<head>
-  <meta charset="utf-8">
-  <title>Matthew Tole{{ " » " if title else "" }}{{ title }}</title>
-  <meta name="description" content="English software developer based in Seattle.">
-  <meta name="author" content="Matthew Tole">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,600&display=swap" rel="stylesheet">
-  {% include 'favicon.njk' %}
-</head>
-<body class="flex flex-col h-full font-sans">
-  <div class="flex-1">
-  {{content | safe}}
-  </div>
-  <div class="fixed inset-0 z-40 hidden bg-black opacity-75 js-modal-overlay"></div>
-  {% include "footer.html" %}
-  {% set js %}
+  <head>
+    <meta charset="utf-8">
+    <title>Matthew Tole{{ " » " if title else "" }}{{ title }}</title>
+    <meta name="description" content="English software developer based in Seattle.">
+    <meta name="author" content="Matthew Tole">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,600&display=swap" rel="stylesheet">
+    {% include 'favicon.njk' %}
+  </head>
+  <body class="flex flex-col h-full font-sans">
+    <div class="flex-1">
+      {{content | safe}}
+    </div>
+    <div class="fixed inset-0 z-40 hidden bg-black-alpha-75 js-modal-overlay"></div>
+    {% include "footer.html" %}
+    {% set js %}
     {% include "js/disable-scroll.js" %}
     {% include "js/menu.js" %}
     {% include "js/modal.js" %}
-  {% endset %}
-  <script>{{ js | jsmin | safe }}</script>
-</body>
+    {% endset %}
+    <script>
+      {{ js | jsmin | safe }}
+    </script>
+  </body>
 </html>

@@ -26,6 +26,15 @@ function showModalGallery(photo) {
   hide(modalLoader);
 }
 
+function showModalInstagram(url, caption, date) {
+  const modalImage = getModal('instagram').querySelector('.js-modal-image');
+  const modalCaption = getModal('instagram').querySelector('.js-modal-caption');
+  const modalDate = getModal('instagram').querySelector('.js-modal-date');
+  modalImage.src = url;
+  modalCaption.innerHTML = caption;
+  modalDate.innerHTML = date;
+}
+
 function showModalContent(content) {
   hide(document.querySelector('.js-modal-content:not(.hidden)'));
   show(
@@ -41,6 +50,12 @@ function showModalContent(content) {
 
     if (modalName === 'gallery') {
       showModalGallery(trigger.href);
+    } else if (modalName === 'instagram') {
+      showModalInstagram(
+        trigger.getAttribute('data-instagram-url'),
+        trigger.getAttribute('data-instagram-caption'),
+        trigger.getAttribute('data-instagram-date')
+      );
     } else {
       const modalContent = trigger.getAttribute('data-modal-content');
       showModalContent(modalContent);

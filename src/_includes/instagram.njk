@@ -1,11 +1,11 @@
 {% import "components/modal.njk" as modal %}
 
 <div class="flex flex-wrap justify-start max-w-6xl p-2 mx-auto">
-{% for post in instagram %}
-  <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" target="_blank">
-  <div class="p-1 border border-gray-400 rounded shadow hover:shadow-2xl">
-  <div class="relative border group aspect-square" style="background-color: {{post.color}}; border-color: {{post.color}};">
-    <img
+  {% for post in instagram %}
+    <a href="#" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" data-modal="instagram" data-instagram-url="/static/images/instagram/{{post.shortcode}}_640.jpg" data-instagram-caption="{{post.captionText}}" data-instagram-date="{{post.date}}">
+      <div class="">
+        <div class="relative group aspect-square" style="background-color: {{post.color}}; border-color: {{post.color}};">
+          <img
       loading="lazy"
       alt="{{post.captionText}}"
       class="absolute top-0 left-0 object-cover w-full h-full"
@@ -19,27 +19,35 @@
       "
       src="/static/images/instagram/{{post.shortcode}}.jpg"
       >
-  </div>
-  <div class="flex justify-center pt-1 text-sm text-gray-600">{{post.date}}</div>
-  </div>
-  </a>
-{% endfor %}
+        </div>
+        {# <div class="flex justify-center pt-1 text-sm text-gray-600">{{post.date}}</div> #}
+      </div>
+    </a>
+  {% endfor %}
 </div>
 
 <div class="fixed inset-0 z-50 flex items-center justify-center hidden js-modal-container" data-modal="instagram">
+  <button
+    class="fixed top-0 right-0 m-4 text-3xl text-white fill-current js-modal-close hover:text-cta"
+  >
+    {{ '/src/icons/icon-x.svg' | svgContents | safe }}
+  </button>
   <div class="relative w-full bg-white rounded shadow sm:w-1/2 lg:w-1/3">
-    {{ modal.close_button() }}
 
-    <div class="relative m-2 border rounded group aspect-square">
+    <div class="relative rounded group aspect-square">
       <img
         loading="lazy"
         alt="{{post.captionText}}"
-        class="absolute top-0 left-0 object-cover w-full h-full"
+        class="absolute top-0 left-0 object-cover w-full h-full js-modal-image"
         style="color: transparent"
         src="/static/images/instagram/{{instagram[0].shortcode}}.jpg"
         >
+
+      <div class="absolute bottom-0 left-0 right-0 p-2 leading-tight text-left text-white bg-black-alpha-50 ">
+        <h3 class="mb-2 font-bold js-modal-date"></h3>
+        <p class="text-sm js-modal-caption"></p>
+      </div>
     </div>
 
-    <div class="pt-2 pb-4 text-lg text-center">{{instagram[0].captionText}}</div>
   </div>
 </div>

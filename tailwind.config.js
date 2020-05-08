@@ -24,8 +24,8 @@ module.exports = {
     opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [
-    require('tailwindcss-transitions')(),
     require('@tkh/tailwind-plugin-aspect-ratio')(),
+    require('tailwind-color-alpha')(),
     require('tailwind-heropatterns')({
       opacity: {
         default: '0.2',
