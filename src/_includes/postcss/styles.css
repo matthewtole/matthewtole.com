@@ -7,3 +7,11 @@
 .hover\:mt-2px:hover {
   margin-top: 2px;
 }
+
+.bg-black-alpha-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-black-alpha-75 {
+  background-color: rgba(0, 0, 0, 0.75);
+}

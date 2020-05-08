@@ -47,9 +47,8 @@
     "get-image-colors": "^2.0.0",
     "mkdirp": "^0.5.1",
     "postcss-import": "^12.0.1",
-    "tailwind-color-alpha": "^1.0.4",
     "tailwind-heropatterns": "0.0.7",
-    "tailwindcss": "^1.1.2",
+    "tailwindcss": "^1.4.5",
     "user-instagram": "^1.0.4"
   }
 }
