@@ -5,6 +5,7 @@ const fs = require('fs');
 const mkdirp = require('mkdirp');
 const path = require('path');
 const getColors = require('get-image-colors');
+const { format } = require('date-fns');
 
 const thumbnailSizes = [150, 240, 320, 480, 640];
 const outputFolder = '_site/static/images/instagram/';
@@ -34,6 +35,7 @@ module.exports = async () => {
       posts.push({
         ...post,
         color: colors[0].hex(),
+        date: format(new Date(post.timestamp * 1000), 'MMMM do'),
       });
     } catch (ex) {
       console.log(ex);

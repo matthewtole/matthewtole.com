@@ -1,10 +1,15 @@
-<div class="flex flex-wrap justify-center max-w-6xl p-2 mx-auto">
+{% import "components/modal.njk" as modal %}
+
+<div class="flex flex-wrap justify-start max-w-6xl p-2 mx-auto">
 {% for post in instagram %}
-  <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-2/12" target="_blank">
-  <div class="relative shadow group aspect-square" style="background-color: {{post.color}};">
+  <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" target="_blank">
+  <div class="p-1 border border-gray-400 rounded shadow hover:shadow-2xl">
+  <div class="relative border group aspect-square" style="background-color: {{post.color}}; border-color: {{post.color}};">
     <img
       loading="lazy"
+      alt="{{post.captionText}}"
       class="absolute top-0 left-0 object-cover w-full h-full"
+      style="color: transparent"
       srcset="
         /static/images/instagram/{{post.shortcode}}_150.jpg 150w,
         /static/images/instagram/{{post.shortcode}}_250.jpg 240w,
@@ -14,8 +19,27 @@
       "
       src="/static/images/instagram/{{post.shortcode}}.jpg"
       >
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-white transition-opacity bg-black opacity-0 fill-current transition-250 group-hover:opacity-100">{{post.likes}} {{ "/src/icons/icon-heart.svg" | svgContents | safe }}</div>
+  </div>
+  <div class="flex justify-center pt-1 text-sm text-gray-600">{{post.date}}</div>
   </div>
   </a>
 {% endfor %}
+</div>
+
+<div class="fixed inset-0 z-50 flex items-center justify-center hidden js-modal-container" data-modal="instagram">
+  <div class="relative w-full bg-white rounded shadow sm:w-1/2 lg:w-1/3">
+    {{ modal.close_button() }}
+
+    <div class="relative m-2 border rounded group aspect-square">
+      <img
+        loading="lazy"
+        alt="{{post.captionText}}"
+        class="absolute top-0 left-0 object-cover w-full h-full"
+        style="color: transparent"
+        src="/static/images/instagram/{{instagram[0].shortcode}}.jpg"
+        >
+    </div>
+
+    <div class="pt-2 pb-4 text-lg text-center">{{instagram[0].captionText}}</div>
+  </div>
 </div>
