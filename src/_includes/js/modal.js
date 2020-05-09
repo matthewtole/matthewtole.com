@@ -26,13 +26,15 @@ function showModalGallery(photo) {
   hide(modalLoader);
 }
 
-function showModalInstagram(url, caption, date) {
+function showModalInstagram(image, caption, date, link) {
   const modalImage = getModal('instagram').querySelector('.js-modal-image');
   const modalCaption = getModal('instagram').querySelector('.js-modal-caption');
   const modalDate = getModal('instagram').querySelector('.js-modal-date');
-  modalImage.src = url;
+  const modalLink = getModal('instagram').querySelector('.js-modal-link');
+  modalImage.src = image;
   modalCaption.innerHTML = caption;
   modalDate.innerHTML = date;
+  modalLink.setAttribute('href', link);
 }
 
 function showModalContent(content) {
@@ -54,7 +56,8 @@ function showModalContent(content) {
       showModalInstagram(
         trigger.getAttribute('data-instagram-url'),
         trigger.getAttribute('data-instagram-caption'),
-        trigger.getAttribute('data-instagram-date')
+        trigger.getAttribute('data-instagram-date'),
+        trigger.getAttribute('href')
       );
     } else {
       const modalContent = trigger.getAttribute('data-modal-content');

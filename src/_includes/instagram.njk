@@ -1,14 +1,18 @@
 {% import "components/modal.njk" as modal %}
 
-<div class="flex flex-wrap justify-start max-w-6xl p-2 mx-auto">
-  {% for post in instagram %}
-    <a href="#" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" data-modal="instagram" data-instagram-url="/static/images/instagram/{{post.shortcode}}_640.jpg" data-instagram-caption="{{post.captionText}}" data-instagram-date="{{post.date}}">
-      <div class="">
-        <div class="relative group aspect-square" style="background-color: {{post.color}}; border-color: {{post.color}};">
-          <img
+<div class="max-w-6xl p-2 mx-auto ">
+  <h2 class="m-2 font-serif text-2xl">
+    <a href="https://instagram.com/matthewtole" class="hover:underline">Latest Instagram Posts</a>
+  </h2>
+  <div class="flex flex-wrap justify-start">
+    {% for post in instagram %}
+      <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" data-modal="instagram" data-instagram-url="/static/images/instagram/{{post.shortcode}}_640.jpg" data-instagram-caption="{{post.captionText}}" data-instagram-date="{{post.date}}">
+        <div class="">
+          <div class="relative group aspect-square" style="background-color: {{post.color}}; border-color: {{post.color}};">
+            <img
       loading="lazy"
       alt="{{post.captionText}}"
-      class="absolute top-0 left-0 object-cover w-full h-full"
+      class="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform hover:scale-105"
       style="color: transparent"
       srcset="
         /static/images/instagram/{{post.shortcode}}_150.jpg 150w,
@@ -19,11 +23,11 @@
       "
       src="/static/images/instagram/{{post.shortcode}}.jpg"
       >
+          </div>
         </div>
-        {# <div class="flex justify-center pt-1 text-sm text-gray-600">{{post.date}}</div> #}
-      </div>
-    </a>
-  {% endfor %}
+      </a>
+    {% endfor %}
+  </div>
 </div>
 
 <div class="fixed inset-0 z-50 flex items-center justify-center hidden js-modal-container" data-modal="instagram">
@@ -36,16 +40,14 @@
 
     <div class="relative rounded group aspect-square">
       <img
-        loading="lazy"
-        alt="{{post.captionText}}"
         class="absolute top-0 left-0 object-cover w-full h-full js-modal-image"
         style="color: transparent"
-        src="/static/images/instagram/{{instagram[0].shortcode}}.jpg"
         >
 
       <div class="absolute bottom-0 left-0 right-0 p-2 leading-tight text-left text-white bg-black-alpha-50 ">
-        <h3 class="mb-2 font-bold js-modal-date"></h3>
-        <p class="text-sm js-modal-caption"></p>
+        <h3 class="font-bold js-modal-date"></h3>
+        <p class="my-2 text-sm js-modal-caption"></p>
+        <a class="text-sm font-bold js-modal-link hover:underline" href="#" target="blank">View on Instagram &rarr;</a>
       </div>
     </div>
 
