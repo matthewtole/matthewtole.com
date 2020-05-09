@@ -56,7 +56,7 @@ module.exports = eleventyConfig => {
     let lowestSrc = stats.jpeg[0];
     let sizes = '256w';
 
-    return `<picture class="absolute top-0 left-0 object-cover w-full h-full">
+    return `<picture class="absolute top-0 left-0 object-cover w-full h-full" loading="lazy">
             ${Object.values(stats)
               .map(imageFormat => {
                 return `  <source type="image/${
@@ -68,7 +68,7 @@ module.exports = eleventyConfig => {
               .join('\n')}
       <img
       class="absolute top-0 left-0 object-cover w-full h-full
-        alt="${alt}"
+        alt="${alt}" loading="lazy"
         src="${lowestSrc.url}">
     </picture>`;
   });
