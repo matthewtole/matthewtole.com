@@ -1,6 +1,15 @@
 const emoji = require('node-emoji');
 const Image = require('@11ty/eleventy-img');
-require('dotenv').config();
+const assert = require('assert');
+
+if (!process.env.NETLIFY) {
+  require('dotenv').config();
+}
+
+assert(
+  process.env.SCREENSHOT_TOKEN,
+  'You forgot to set the SCREENSHOT_TOKEN environment variable!'
+);
 
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy('src/static');
