@@ -1,19 +1,3 @@
-{% macro tile_modal(key, url) %}
-  <div class="w-full p-1 border-2 border-white md:w-1/3 hover:border-cta">
-    <a
-    class="relative block shadow aspect-wide"
-    href="{{ url }}"
-    data-modal="projects"
-    data-modal-content="projects/{{ key }}"
-  >
-      <img
-      src="/static/images/projects/{{ key }}.png"
-      class="absolute top-0 left-0 object-cover w-full h-full"
-/>
-    </a>
-  </div>
-{% endmacro %}
-
 {% macro tile_link(key) %}
   <div class="w-full p-1 border-2 border-white md:w-1/3 hover:border-cta">
     <a
@@ -29,11 +13,8 @@
 {% endmacro %}
 
 {% macro modal_header(key, title, url) %}
-  <div class="relative block mb-2 aspect-wide">
-    <img
-  src="/static/images/projects/{{ key }}.png"
-  class="absolute top-0 left-0 object-cover w-full h-full shadow"
-/>
+  <div class="relative block mb-2 shadow aspect-wide">
+    <img class="absolute top-0 left-0 object-cover w-full h-full"></img>
   </div>
   <h3 class="my-2 font-serif text-xl">
     <a href="{{ url }}" class="text-cta hover:underline">{{ title }}</a>

@@ -37,6 +37,17 @@ function showModalInstagram(image, caption, date, link) {
   modalLink.setAttribute('href', link);
 }
 
+function showModalWebsite(trigger) {
+  const modalContent = trigger.getAttribute('data-modal-content');
+  const websiteImage = trigger.querySelector('img').getAttribute('src');
+
+  document
+    .querySelector(`.js-modal-content[data-modal-content="${modalContent}"]`)
+    .querySelector('img')
+    .setAttribute('src', websiteImage.replace('-256', '-1024'));
+  showModalContent(modalContent);
+}
+
 function showModalContent(content) {
   hide(document.querySelector('.js-modal-content:not(.hidden)'));
   show(
@@ -50,18 +61,24 @@ function showModalContent(content) {
   trigger.addEventListener('click', event => {
     event.preventDefault();
 
-    if (modalName === 'gallery') {
-      showModalGallery(trigger.href);
-    } else if (modalName === 'instagram') {
-      showModalInstagram(
-        trigger.getAttribute('data-instagram-url'),
-        trigger.getAttribute('data-instagram-caption'),
-        trigger.getAttribute('data-instagram-date'),
-        trigger.getAttribute('href')
-      );
-    } else {
-      const modalContent = trigger.getAttribute('data-modal-content');
-      showModalContent(modalContent);
+    switch (modalName) {
+      case 'gallery':
+        showModalGallery(trigger.href);
+        break;
+      case 'instagram':
+        showModalInstagram(
+          trigger.getAttribute('data-instagram-url'),
+          trigger.getAttribute('data-instagram-caption'),
+          trigger.getAttribute('data-instagram-date'),
+          trigger.getAttribute('href')
+        );
+        break;
+      case 'website':
+        showModalWebsite(trigger);
+        break;
+      default:
+        const modalContent = trigger.getAttribute('data-modal-content');
+        showModalContent(modalContent);
     }
 
     showModal(modalName);
