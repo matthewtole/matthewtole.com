@@ -4,6 +4,8 @@
 
 The source code for matthewtole.com, the website of Matthew Tole.
 
+[![](https://matthewtole.com/img/7e838978-1024.jpeg)](https://matthewtole.com)
+
 ## Tools Used
 
 - [Color Scheme Generator](https://adevade.github.io/color-scheme-generator/)
