@@ -88,7 +88,7 @@ module.exports = eleventyConfig => {
       '\n'
     )}<img class="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform hover:scale-105" style="background-color: ${colors[0].hex()};" src="${
       image.jpeg[0].url
-    }" /></picture>`;
+    }" loading="lazy" /></picture>`;
   });
 
   eleventyConfig.addNunjucksAsyncShortcode('websiteScreenshot', async function(
