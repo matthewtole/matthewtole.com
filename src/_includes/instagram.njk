@@ -8,7 +8,7 @@
     <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-1/4 lg:w-2/12" data-modal="instagram" data-instagram-date="{{post.date}}">
       <div class="relative group aspect-square">
         {% instagramImage post,
-        "{{post.captionText}}" %}
+        post.captionText %}
         <span class="hidden js-instagram-caption" aria-hidden>{{post.captionText}}</span>
       </div>
     </a>

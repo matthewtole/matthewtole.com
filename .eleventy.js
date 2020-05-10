@@ -80,7 +80,7 @@ module.exports = eleventyConfig => {
 
     return `<picture>${sources.join('\n')}
       <img
-      class="absolute top-0 left-0 object-cover w-full h-full
+      class="absolute top-0 left-0 object-cover w-full h-full"
         alt="${alt}" loading="lazy"
         src="${lowestSrc.url}">
     </picture>`;
@@ -143,7 +143,7 @@ module.exports = eleventyConfig => {
 
     return `<picture>${sources.join('\n')}
       <img
-      class="absolute top-0 left-0 object-cover w-full h-full
+      class="absolute top-0 left-0 object-cover w-full h-full"
         alt="Screenshot of ${url}" loading="lazy"
         src="${lowestSrc.url}">
     </picture>`;
