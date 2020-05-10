@@ -19,3 +19,7 @@
 img {
   color: transparent;
 }
+
+span[data-pun] {
+  @apply font-bold text-nord9 border-nord8 border-b-2;
+}

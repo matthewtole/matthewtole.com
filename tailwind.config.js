@@ -29,12 +29,5 @@ module.exports = {
     borderWidth: ['responsive', 'hover'],
     opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [
-    require('@tkh/tailwind-plugin-aspect-ratio')(),
-    require('tailwind-heropatterns')({
-      opacity: {
-        default: '0.2',
-      },
-    }),
-  ],
+  plugins: [require('@tkh/tailwind-plugin-aspect-ratio')()],
 };
