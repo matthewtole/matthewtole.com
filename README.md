@@ -4,7 +4,7 @@
 
 The source code for matthewtole.com, the website of Matthew Tole.
 
-[![](https://matthewtole.com/img/7e838978-1024.jpeg)](https://matthewtole.com)
+[![](https://matthewtole.com/img/7e838978-2048.webp)](https://matthewtole.com)
 
 ## Tools Used
 
