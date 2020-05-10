@@ -68,10 +68,10 @@ function showModalContent(content) {
   );
 }
 
-[].forEach.call(document.querySelectorAll('a[data-modal]'), trigger => {
+[].forEach.call(document.querySelectorAll('a[data-modal]'), (trigger) => {
   const modalName = trigger.getAttribute('data-modal');
 
-  trigger.addEventListener('click', event => {
+  trigger.addEventListener('click', (event) => {
     event.preventDefault();
 
     switch (modalName) {
@@ -93,7 +93,7 @@ function showModalContent(content) {
   });
 });
 
-[].forEach.call(document.getElementsByClassName('js-modal-close'), button => {
+[].forEach.call(document.getElementsByClassName('js-modal-close'), (button) => {
   button.addEventListener('click', () => {
     hideModal();
   });
@@ -101,8 +101,8 @@ function showModalContent(content) {
 
 [].forEach.call(
   document.getElementsByClassName('js-modal-container'),
-  container => {
-    container.addEventListener('click', event => {
+  (container) => {
+    container.addEventListener('click', (event) => {
       if (event.target.classList.contains('js-modal-container')) {
         hideModal();
       }
@@ -110,7 +110,7 @@ function showModalContent(content) {
   }
 );
 
-document.addEventListener('keydown', event => {
+document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') {
     hideModal();
   }

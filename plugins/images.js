@@ -11,7 +11,7 @@ async function responsiveImage(src, alt) {
   let lowestSrc = stats.jpeg[0];
 
   let sources = [];
-  Object.values(stats).forEach(imageFormat => {
+  Object.values(stats).forEach((imageFormat) => {
     sources.push(
       `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x" media="(min-width: 768px)">`
     );
@@ -28,8 +28,8 @@ async function responsiveImage(src, alt) {
   </picture>`;
 }
 
-async function instagramImage(post, alt) {
-  const image = await Image(post.picture.url, {
+async function instagramImage(url, alt) {
+  const image = await Image(url, {
     outputDir: '_site/img/',
     cacheDuration: '1w',
     widths: [256, 512, null],
@@ -38,7 +38,7 @@ async function instagramImage(post, alt) {
   const colors = await getColors('_site/' + image.jpeg[0].url);
 
   let sources = [];
-  Object.values(image).forEach(imageFormat => {
+  Object.values(image).forEach((imageFormat) => {
     sources.push(
       `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x, ${imageFormat[2].url} 4x">`
     );
@@ -68,7 +68,7 @@ async function websiteScreenshot(url) {
   let lowestSrc = stats.jpeg[0];
 
   let sources = [];
-  Object.values(stats).forEach(imageFormat => {
+  Object.values(stats).forEach((imageFormat) => {
     sources.push(
       `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x, ${imageFormat[2].url} 4x" media="(min-width: 768px)">`
     );

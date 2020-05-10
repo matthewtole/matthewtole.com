@@ -16,11 +16,7 @@ const folder = '/mnt/c/Users/matth/Downloads/Photos';
     }
 
     await tinify
-      .fromBuffer(
-        await sharp(path.join(folder, image))
-          .resize(300)
-          .toBuffer()
-      )
+      .fromBuffer(await sharp(path.join(folder, image)).resize(300).toBuffer())
       .toFile(
         `src/static/images/projects/empire-uncut/thumbs/${id
           .toString()
@@ -28,11 +24,7 @@ const folder = '/mnt/c/Users/matth/Downloads/Photos';
       );
 
     await tinify
-      .fromBuffer(
-        await sharp(path.join(folder, image))
-          .resize(1000)
-          .toBuffer()
-      )
+      .fromBuffer(await sharp(path.join(folder, image)).resize(1000).toBuffer())
       .toFile(
         `src/static/images/projects/empire-uncut/${id
           .toString()

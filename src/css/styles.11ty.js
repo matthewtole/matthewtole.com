@@ -6,7 +6,7 @@ const fileName = 'styles.css';
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: ['./src/**/*.html', './src/**/*.njk'],
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+  defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 
 module.exports = class {
@@ -32,6 +32,6 @@ module.exports = class {
         : []),
     ])
       .process(rawCss, { from: rawFilepath })
-      .then(result => result.css);
+      .then((result) => result.css);
   }
 };

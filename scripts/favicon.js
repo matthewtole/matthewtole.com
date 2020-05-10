@@ -26,7 +26,7 @@ favicons(source, configuration, (err, res) => {
     process.exit(1);
   }
   fs.writeFileSync('src/_includes/favicon.njk', res.html.join('\n'));
-  res.images.forEach(image => {
+  res.images.forEach((image) => {
     fs.writeFileSync(`src/static/${image.name}`, image.contents);
     console.log(chalk.green('✓'), image.name);
   });

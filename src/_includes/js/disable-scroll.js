@@ -82,7 +82,7 @@ class DisableScroll {
     document.removeEventListener('keydown', this.handleKeydown);
   }
 
-  handleWheel = e => {
+  handleWheel = (e) => {
     e.preventDefault();
   };
 
@@ -90,7 +90,7 @@ class DisableScroll {
     window.scrollTo(...this.lockToScrollPos);
   };
 
-  handleKeydown = e => {
+  handleKeydown = (e) => {
     let keys = this.options.keyboardKeys;
 
     /* istanbul ignore else */
