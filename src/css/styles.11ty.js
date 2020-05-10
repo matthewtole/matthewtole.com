@@ -5,7 +5,12 @@ const postcss = require('postcss');
 const fileName = 'styles.css';
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
-  content: ['./src/**/*.html', './src/**/*.njk', './plugins/*.js'],
+  content: [
+    './src/**/*.html',
+    './src/**/*.njk',
+    './plugins/*.js',
+    './src/_includes/postcss/style.css',
+  ],
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 
