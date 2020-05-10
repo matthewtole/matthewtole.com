@@ -63,7 +63,7 @@ module.exports = eleventyConfig => {
     const options = {
       outputDir: '_site/img/',
       cacheDuration: '1w',
-      widths: [256, 512, 1024],
+      // widths: [256, 512, 1024],
     };
     let stats = await Image(src, options);
     let lowestSrc = stats.jpeg[0];
@@ -93,7 +93,7 @@ module.exports = eleventyConfig => {
     const image = await Image(post.picture.url, {
       outputDir: '_site/img/',
       cacheDuration: '1w',
-      widths: [256, 512, null],
+      // widths: [256, 512, null],
     });
 
     const colors = await getColors('_site/' + image.jpeg[0].url);
@@ -118,7 +118,7 @@ module.exports = eleventyConfig => {
     const options = {
       outputDir: '_site/img/',
       cacheDuration: '1w',
-      widths: [256, 512, 1024, 2048],
+      // widths: [256, 512, 1024, 2048],
     };
     const screenshotWidth = 2048;
     let stats = await Image(

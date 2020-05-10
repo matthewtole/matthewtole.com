@@ -1,5 +1,5 @@
 {% macro year(text) %}
-  <h3 class="items-center justify-center hidden w-16 h-16 -mx-8 text-gray-500 bg-white border-2 rounded-full border-brand-light md:flex">
+  <h3 class="items-center justify-center hidden w-16 h-16 -mx-8 border-2 rounded-full text-nord3 bg-nord6 border-nord4 md:flex">
     {{text}}
   </h3>
 {% endmacro %}
@@ -7,6 +7,6 @@
 {% macro header(title, subtitle) %}
   <div class="flex flex-col lg:flex-row lg:items-end">
     <h3 class="font-serif text-lg">{{ title }}</h3>
-    <h4 class="font-serif text-gray-700 lg:ml-2">{{ subtitle }}</h4>
+    <h4 class="font-serif text-nord3 lg:ml-2">{{ subtitle }}</h4>
   </div>
 {% endmacro %}
