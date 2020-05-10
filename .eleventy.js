@@ -42,7 +42,7 @@ module.exports = eleventyConfig => {
     const options = {
       outputDir: '_site/img/',
       cacheDuration: '1w',
-      widths: [256, 512, 1024],
+      widths: [256, 512, 1024, 2048],
     };
     const screenshotWidth = 2048;
     let stats = await Image(
@@ -54,18 +54,18 @@ module.exports = eleventyConfig => {
       options
     );
     let lowestSrc = stats.jpeg[0];
-    let sizes = '256w';
 
-    return `<picture class="absolute top-0 left-0 object-cover w-full h-full" loading="lazy">
-            ${Object.values(stats)
-              .map(imageFormat => {
-                return `  <source type="image/${
-                  imageFormat[0].format
-                }" srcset="${imageFormat
-                  .map(entry => `${entry.url} ${entry.width}w`)
-                  .join(', ')}" sizes="${sizes}">`;
-              })
-              .join('\n')}
+    let sources = [];
+    Object.values(stats).forEach(imageFormat => {
+      sources.push(
+        `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x, ${imageFormat[2].url} 4x" media="(min-width: 768px)">`
+      );
+      sources.push(
+        `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[1].url}, ${imageFormat[2].url} 2x, ${imageFormat[3].url} 4x">`
+      );
+    });
+
+    return `<picture>${sources.join('\n')}
       <img
       class="absolute top-0 left-0 object-cover w-full h-full
         alt="${alt}" loading="lazy"
