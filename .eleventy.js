@@ -1,6 +1,7 @@
 const emoji = require('node-emoji');
 const Image = require('@11ty/eleventy-img');
 const assert = require('assert');
+const getColors = require('get-image-colors');
 
 if (!process.env.NETLIFY) {
   require('dotenv').config();
@@ -63,6 +64,31 @@ module.exports = eleventyConfig => {
         alt="${alt}" loading="lazy"
         src="${lowestSrc.url}">
     </picture>`;
+  });
+
+  eleventyConfig.addNunjucksAsyncShortcode('instagramImage', async function(
+    post
+  ) {
+    const image = await Image(post.picture.url, {
+      outputDir: '_site/img/',
+      cacheDuration: '1w',
+      widths: [256, 512, null],
+    });
+
+    const colors = await getColors('_site/' + image.jpeg[0].url);
+
+    let sources = [];
+    Object.values(image).forEach(imageFormat => {
+      sources.push(
+        `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x, ${imageFormat[2].url} 4x">`
+      );
+    });
+
+    return `<picture>${sources.join(
+      '\n'
+    )}<img class="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform hover:scale-105" style="background-color: ${colors[0].hex()};" src="${
+      image.jpeg[0].url
+    }" /></picture>`;
   });
 
   eleventyConfig.addNunjucksAsyncShortcode('websiteScreenshot', async function(

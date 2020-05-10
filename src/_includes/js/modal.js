@@ -26,15 +26,28 @@ function showModalGallery(photo) {
   hide(modalLoader);
 }
 
-function showModalInstagram(image, caption, date, link) {
-  const modalImage = getModal('instagram').querySelector('.js-modal-image');
-  const modalCaption = getModal('instagram').querySelector('.js-modal-caption');
-  const modalDate = getModal('instagram').querySelector('.js-modal-date');
-  const modalLink = getModal('instagram').querySelector('.js-modal-link');
-  modalImage.src = image;
-  modalCaption.innerHTML = caption;
-  modalDate.innerHTML = date;
-  modalLink.setAttribute('href', link);
+function showModalInstagram(trigger) {
+  const modal = getModal('instagram');
+  const modalImage = modal.querySelector('.js-modal-image');
+  const modalCaption = modal.querySelector('.js-modal-caption');
+  const modalDate = modal.querySelector('.js-modal-date');
+  const modalLink = modal.querySelector('.js-modal-link');
+
+  const websiteImage = trigger.querySelector('img').getAttribute('src');
+  modalImage.onload = () => {
+    modalImage.classList.remove('hidden');
+  };
+  modalImage.parentElement.style.backgroundColor = trigger.querySelector(
+    'img'
+  ).style.backgroundColor;
+  modalImage.parentElement.style.backgroundImage = `url('${websiteImage}')`;
+  modalImage.src = websiteImage.replace('-256', '');
+  modalImage.classList.add('hidden');
+  modalCaption.innerHTML = trigger.querySelector(
+    '.js-instagram-caption'
+  ).innerHTML;
+  modalDate.innerHTML = trigger.getAttribute('data-instagram-date');
+  modalLink.setAttribute('href', trigger.getAttribute('href'));
 }
 
 function showModalWebsite(trigger) {
@@ -66,12 +79,7 @@ function showModalContent(content) {
         showModalGallery(trigger.href);
         break;
       case 'instagram':
-        showModalInstagram(
-          trigger.getAttribute('data-instagram-url'),
-          trigger.getAttribute('data-instagram-caption'),
-          trigger.getAttribute('data-instagram-date'),
-          trigger.getAttribute('href')
-        );
+        showModalInstagram(trigger);
         break;
       case 'website':
         showModalWebsite(trigger);

@@ -6,24 +6,10 @@
   </h2>
   <div class="flex flex-wrap justify-start">
     {% for post in instagram %}
-      <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" data-modal="instagram" data-instagram-url="/static/images/instagram/{{post.shortcode}}_640.jpg" data-instagram-caption="{{post.captionText}}" data-instagram-date="{{post.date}}">
-        <div class="">
-          <div class="relative group aspect-square" style="background-color: {{post.color}}; border-color: {{post.color}};">
-            <img
-      loading="lazy"
-      alt="{{post.captionText}}"
-      class="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform hover:scale-105"
-      style="color: transparent"
-      srcset="
-        /static/images/instagram/{{post.shortcode}}_150.jpg 150w,
-        /static/images/instagram/{{post.shortcode}}_250.jpg 240w,
-        /static/images/instagram/{{post.shortcode}}_320.jpg 320w,
-        /static/images/instagram/{{post.shortcode}}_480.jpg 480w,
-        /static/images/instagram/{{post.shortcode}}_640.jpg 640w
-      "
-      src="/static/images/instagram/{{post.shortcode}}.jpg"
-      >
-          </div>
+      <a href="{{post.link}}" class="block w-1/2 p-2 sm:w-1/3 md:w-1/5" data-modal="instagram" data-instagram-date="{{post.date}}">
+        <div class="relative group aspect-square">
+          {% instagramImage post %}
+          <span class="hidden js-instagram-caption" aria-hidden>{{post.captionText}}</span>
         </div>
       </a>
     {% endfor %}
@@ -38,7 +24,7 @@
   </button>
   <div class="relative w-full bg-white rounded shadow sm:w-1/2 lg:w-1/3">
 
-    <div class="relative rounded group aspect-square">
+    <div class="relative bg-cover rounded group aspect-square">
       <img
         class="absolute top-0 left-0 object-cover w-full h-full js-modal-image"
         style="color: transparent"
