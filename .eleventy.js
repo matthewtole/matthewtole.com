@@ -87,7 +87,8 @@ module.exports = eleventyConfig => {
   });
 
   eleventyConfig.addNunjucksAsyncShortcode('instagramImage', async function(
-    post
+    post,
+    alt
   ) {
     const image = await Image(post.picture.url, {
       outputDir: '_site/img/',
@@ -106,14 +107,13 @@ module.exports = eleventyConfig => {
 
     return `<picture>${sources.join(
       '\n'
-    )}<img class="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform hover:scale-105" style="background-color: ${colors[0].hex()};" src="${
+    )}<img alt="${alt}" class="absolute top-0 left-0 object-cover w-full h-full transition-transform duration-200 transform hover:scale-105" style="background-color: ${colors[0].hex()};" src="${
       image.jpeg[0].url
     }" loading="lazy" /></picture>`;
   });
 
   eleventyConfig.addNunjucksAsyncShortcode('websiteScreenshot', async function(
-    url,
-    alt
+    url
   ) {
     const options = {
       outputDir: '_site/img/',
@@ -144,7 +144,7 @@ module.exports = eleventyConfig => {
     return `<picture>${sources.join('\n')}
       <img
       class="absolute top-0 left-0 object-cover w-full h-full
-        alt="${alt}" loading="lazy"
+        alt="Screenshot of ${url}" loading="lazy"
         src="${lowestSrc.url}">
     </picture>`;
   });

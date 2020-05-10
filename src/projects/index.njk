@@ -22,9 +22,9 @@ title: Projects
     href="{{ website.url }}"
     data-modal="website"
     data-modal-content="website/{{ website.key }}"
+    aria-label="{{website.url}}"
   >
-          {% websiteScreenshot website.url,
-          "Screenshot of {{website.url}}" %}
+          {% websiteScreenshot website.url %}
         </a>
       </div>
     {% endfor %}
