@@ -22,4 +22,9 @@ img {
 
 span[data-pun] {
   @apply font-bold text-nord9 border-nord8 border-b-2;
+  cursor: help;
+}
+
+.tippy-box {
+  @apply bg-nord0 text-nord6 rounded-none;
 }
