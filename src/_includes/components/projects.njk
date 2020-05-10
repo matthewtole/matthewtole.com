@@ -6,3 +6,11 @@
     <a href="{{ url }}" class="text-nord10 hover:underline">{{ title }}</a>
   </h3>
 {% endmacro %}
+
+{% macro page_header(title) %}
+  <h2 class="my-4 font-serif text-2xl">
+    <a href="/projects/" class="text-nord3 hover:underline">Projects</a>
+    <span class="text-nord4">&raquo;</span>
+    {{ title }}
+  </h2>
+{% endmacro %}

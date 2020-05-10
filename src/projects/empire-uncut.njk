@@ -4,11 +4,10 @@ title: Empire Uncut
 section: projects
 ---
 
+{% import "components/projects.njk" as projects %}
+
 <div class="max-w-3xl px-4 mx-auto">
-  <h2 class="my-4 font-serif text-2xl">
-    <a href="/projects/" class="text-gray-600 hover:underline">Projects</a>
-    <span class="text-gray-300">&raquo;</span> Empire Uncut
-  </h2>
+  {{ projects.page_header("Empire Uncut") }}
 
   <p class="mb-4">
     In 2012, my coworker Tim Ayers and I took part in Empire Uncut, a fan
@@ -19,7 +18,7 @@ section: projects
   <p class="mb-4">
     Read more about Empure Uncut and watch the finished film (plus the original
     Star Wars Uncut) at
-    <a href="http://starwarsuncut.com/empire" class="underline text-nord9"
+    <a href="http://starwarsuncut.com/empire" class="hover:bg-nord9 hover:text-nord6 text-nord9"
       >starwarsuncut.com/empire</a
     >.
   </p>
@@ -34,7 +33,7 @@ section: projects
     class="w-full mb-2"
     src="/static/images/projects/empire-uncut/scene.jpg"
     loading="lazy"
-  />
+/>
   <p class="mb-2">Here is the combined video of the scenes that we filmed:</p>
   <div class="w-full mb-2">
     <div class="relative aspect-wide">
@@ -48,28 +47,27 @@ section: projects
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         loading="lazy"
-      >
-      </iframe>
+      ></iframe>
     </div>
   </div>
   <h3 class="mb-2 font-serif text-xl">Behind the Scenes Photos</h3>
   <div class="flex flex-wrap mb-4 -m-1">
     {% for photo in empire_uncut %}
-    <div class="w-1/2 p-1 border-2 border-white md:w-1/3 hover:border-nord9">
-      <a
+      <div class="w-1/2 p-1 border-2 border-nord6 md:w-1/3 hover:border-nord9">
+        <a
         class="relative block aspect-wide"
         data-id="{{ photo.id }}"
         data-caption="{{ photo.caption }}"
         data-modal="gallery"
         href="/static/images/projects/empire-uncut/{{ photo.id }}.jpg"
       >
-        <img
+          <img
           src="/static/images/projects/empire-uncut/thumbs/{{ photo.id }}.jpg"
           class="absolute top-0 left-0 object-cover w-full h-full"
           loading="lazy"
-        />
-      </a>
-    </div>
+/>
+        </a>
+      </div>
     {% endfor %}
   </div>
 </div>
@@ -85,5 +83,5 @@ section: projects
   >
     {{ '/src/icons/icon-x.svg' | svgContents | safe }}
   </button>
-  <img src="" class="hidden max-w-2xl js-modal-image" />
+  <img src="" class="hidden max-w-2xl js-modal-image"/>
 </div>
