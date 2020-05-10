@@ -2,6 +2,8 @@ const emoji = require('node-emoji');
 const Image = require('@11ty/eleventy-img');
 const assert = require('assert');
 const getColors = require('get-image-colors');
+const parseJSON = require('date-fns/parseJSON');
+const format = require('date-fns/format');
 
 if (!process.env.NETLIFY) {
   require('dotenv').config();
@@ -34,7 +36,25 @@ module.exports = eleventyConfig => {
     }
   });
 
+  eleventyConfig.addFilter('parseDate', parseJSON);
+
+  eleventyConfig.addFilter('formatDate', format);
+
+  eleventyConfig.addFilter('firstLine', str => str.split('\n')[0]);
+
   eleventyConfig.addFilter('emojify', emoji.emojify);
+
+  eleventyConfig.addFilter('limit', function(list, n) {
+    return list.slice(0, n);
+  });
+
+  eleventyConfig.addFilter('removeEmoji', function(commit) {
+    return commit.substr(commit.indexOf(':', 2) + 1);
+  });
+
+  eleventyConfig.addFilter('getEmoji', function(commit) {
+    return commit.substr(0, commit.indexOf(':', 2) + 1);
+  });
 
   eleventyConfig.addNunjucksAsyncShortcode('responsiveImage', async function(
     src,

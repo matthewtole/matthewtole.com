@@ -19,4 +19,26 @@ layout: layouts/base.njk
   </div>
 </header>
 
-{% include "instagram.njk" %}
+<div class="max-w-6xl p-2 mx-auto">
+
+  {% include "instagram.njk" %}
+
+  <h2 class="m-2 font-serif text-2xl">
+    <a href="https://github.com/matthewtole/matthewtole.com" class="hover:underline">Recent Website Commits</a>
+  </h2>
+
+  <ul class="p-2">
+    {%- for commit in commits | limit(5) -%}
+      <li class="flex items-center mb-2">
+        <div class="flex items-center justify-center w-12 h-12 mr-2 text-2xl">
+          <span>{{commit.commit.message | getEmoji | emojify}}</span>
+        </div>
+        <div class="flex flex-col leading-tight">
+          <a href="{{commit.html_url}}" class="hover:underline">{{commit.commit.message | removeEmoji | emojify | firstLine}}</a>
+          <p class="text-sm text-gray-600">{{commit.commit.committer.date | parseDate | formatDate('yyy/MM/dd HH:mm')}}</p>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+
+</div>
