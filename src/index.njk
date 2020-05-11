@@ -4,7 +4,7 @@ layout: layouts/base.njk
 
 {% import "components/buttons.njk" as buttons %}
 
-<header class="px-4 py-8 text-center text-nord0 bg-nord4 md:py-16">
+<header class="relative px-4 py-8 text-center text-nord0 bg-nord4 md:py-16">
   <h1 class="font-serif text-5xl md:text-6xl">matthew tole</h1>
   <div class="max-w-xl mx-auto text-xl leading-tight">
     <p>English web developer based in Seattle.</p>
@@ -16,6 +16,12 @@ layout: layouts/base.njk
 
     <div class="py-2 md:hidden"></div>
     {{ buttons.cta("GITHUB", "https://github.com/matthewtole", "mx-2") }}
+  </div>
+
+  <div class="absolute bottom-0 left-0 right-0 flex items-end overflow-hidden cotent-center">
+    {% for i in range(0, 200) -%}
+      <div class="flex-none w-4 border-t-2 bg-nord6 border-nord5" style="height: {{ functions.randomBetween(0, 25) }}px"></div>
+    {%- endfor %}
   </div>
 </header>
 
