@@ -1,0 +1,15 @@
+---
+layout: layouts/page.njk
+title: Articles
+---
+
+<div class="max-w-3xl px-4 mx-auto mb-4">
+
+  <h2 class="my-4 font-serif text-2xl">Articles</h2>
+
+{%- for post in collections.article -%}
+  <h3 class="font-serif text-lg"><a class="hover:underline" href="{{ post.url }}">{{ post.data.title }}</a></h3>
+  <p class="mb-4">{{post.data.snippet }}</p>
+{%- endfor -%}
+
+</div>
