@@ -12,10 +12,12 @@ if (!process.env.NETLIFY) {
   require('dotenv').config();
 }
 
-assert(
-  process.env.SCREENSHOT_TOKEN,
-  'You forgot to set the SCREENSHOT_TOKEN environment variable!'
-);
+if (!process.env.SKIP_IMAGES) {
+  assert(
+    process.env.SCREENSHOT_TOKEN,
+    'You forgot to set the SCREENSHOT_TOKEN environment variable!'
+  );
+}
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/static');
