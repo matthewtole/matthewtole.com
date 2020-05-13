@@ -11,6 +11,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     './src/**/*.njk',
     './plugins/*.js',
     './src/**/*.css',
+    './src/**/*.md',
   ],
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
   whitelistPatternsChildren: [/hljs/, /article/],
