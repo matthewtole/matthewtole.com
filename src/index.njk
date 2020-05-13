@@ -24,7 +24,7 @@ layout: layouts/base.njk
 
   <div class="absolute bottom-0 left-0 right-0 flex items-end overflow-hidden cotent-center">
     {% for i in range(0, 200) -%}
-      <div class="flex-none w-4 bg-white border-t-2 border-nord6" style="height: {{ functions.randomBetween(0, 25) }}px"></div>
+      <div class="flex-none w-4 bg-white" style="height: {{ functions.randomBetween(0, 5) * 5 }}px"></div>
     {%- endfor %}
   </div>
 </header>
