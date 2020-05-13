@@ -4,6 +4,8 @@
 
 @import 'tailwindcss/utilities';
 
+@import 'nord-highlightjs/dist/nord.css';
+
 .hover\:mt-2px:hover {
   margin-top: 2px;
 }
@@ -21,10 +23,53 @@ img {
 }
 
 span[data-pun] {
-  @apply font-bold text-nord9 border-nord8 border-b-2;
+  @apply font-bold border-b-2 text-nord9 border-nord8;
   cursor: help;
 }
 
 .tippy-box {
-  @apply bg-nord0 text-nord6 rounded-none;
+  @apply rounded-none bg-nord0 text-nord6;
+}
+
+.hljs {
+  @apply text-xs p-4 mb-4 mt-4;
+}
+
+article p > code,
+article li > code {
+  @apply text-nord2 bg-nord5;
+}
+
+article h2 {
+  @apply text-xl font-serif mt-4;
+}
+
+article h3 {
+  @apply text-lg font-serif mt-4;
+}
+
+article p {
+  @apply mb-2;
+}
+
+article a {
+  @apply text-nord9 border-b border-nord9;
+  box-shadow: inset 0 -1px 0 #81a1c1;
+}
+
+article a:hover {
+  @apply bg-nord9 text-white;
+  box-shadow: 0 -1px 0 #81a1c1;
+}
+
+article ul {
+  @apply mb-2 list-disc;
+}
+
+article ol {
+  @apply mb-2 list-decimal;
+}
+
+article blockquote {
+  @apply border-nord9 border-l-4 pl-4 text-sm;
 }
