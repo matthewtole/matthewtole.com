@@ -1,0 +1,19 @@
+---
+layout: layouts/page.njk
+---
+<div class="max-w-4xl px-4 mx-auto">
+  <div class="px-4 py-8 my-4 text-center bg-nord2">
+    <h2 class="font-serif text-3xl text-nord6">{{title}}</h2>
+    <span class="text-nord4">{{ page.date | formatDate('LLLL do, yyy') }}</span>
+  </div>
+  {# <section class="mb-4">
+    {% for tag in tags %}
+      {% if tag != "article" %}
+        <a href="/articles/tags/{{tag}}" class="border-b text-nord9 border-nord9 hover:bg-nord9 hover:text-white">#{{tag}}</a>
+      {% endif %}
+    {% endfor %}
+  </section> #}
+  <article class="mb-4">
+    {{content | safe}}
+  </article>
+</div>

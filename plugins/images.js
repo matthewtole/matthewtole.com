@@ -7,6 +7,13 @@ async function responsiveImage(src, alt) {
     cacheDuration: '1w',
     widths: [256, 512, 1024],
   };
+  if (process.env.SKIP_IMAGES) {
+    return `<img
+    class="absolute top-0 left-0 object-cover w-full h-full"
+      alt="${alt}" loading="lazy"
+      src="https://placekitten.com/256/256/">`;
+  }
+
   let stats = await Image(src, options);
   let lowestSrc = stats.jpeg[0];
 
@@ -29,6 +36,13 @@ async function responsiveImage(src, alt) {
 }
 
 async function instagramImage(url, alt) {
+  if (process.env.SKIP_IMAGES) {
+    return `<img
+    class="absolute top-0 left-0 object-cover w-full h-full"
+      alt="${alt}" loading="lazy"
+      src="https://placekitten.com/256/256/">`;
+  }
+
   const image = await Image(url, {
     outputDir: '_site/img/',
     cacheDuration: '1w',
@@ -52,6 +66,13 @@ async function instagramImage(url, alt) {
 }
 
 async function websiteScreenshot(url) {
+  if (process.env.SKIP_IMAGES) {
+    return `<img
+    class="absolute top-0 left-0 object-cover w-full h-full"
+      alt="${url}" loading="lazy"
+      src="https://placekitten.com/256/256/">`;
+  }
+
   const screenshotWidth = 2048;
   const screenshotUrl = `https://screenshotapi.net/api/v1/screenshot?url=${encodeURIComponent(
     url

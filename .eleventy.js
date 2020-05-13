@@ -7,15 +7,19 @@ const {
   instagramImage,
   websiteScreenshot,
 } = require('./plugins/images');
+const markdownIt = require('markdown-it');
+const hljs = require('highlight.js');
 
 if (!process.env.NETLIFY) {
   require('dotenv').config();
 }
 
-assert(
-  process.env.SCREENSHOT_TOKEN,
-  'You forgot to set the SCREENSHOT_TOKEN environment variable!'
-);
+if (!process.env.SKIP_IMAGES) {
+  assert(
+    process.env.SCREENSHOT_TOKEN,
+    'You forgot to set the SCREENSHOT_TOKEN environment variable!'
+  );
+}
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/static');
@@ -65,6 +69,19 @@ module.exports = (eleventyConfig) => {
     websiteScreenshot
   );
   eleventyConfig.addNunjucksAsyncShortcode('instagramImage', instagramImage);
+
+  const md = markdownIt({
+    linkify: true,
+    html: true,
+    highlight: function (str, lang) {
+      return `<pre class="hljs"><code>${
+        lang && hljs.getLanguage(lang)
+          ? hljs.highlight(lang, str, true).value
+          : md.utils.escapeHtml(str)
+      }</code></pre>`;
+    },
+  });
+  eleventyConfig.setLibrary('md', md);
 
   return {
     dir: {

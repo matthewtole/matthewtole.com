@@ -10,12 +10,13 @@ layout: layouts/base.njk
       <a href="/" class="transition-all duration-200 hover:text-nord10">matthew tole</a>
     </h1>
     <div class="flex-grow"></div>
-    <div class="flex md:hidden">
+    <div class="flex lg:hidden">
       {{ buttons.cta_icon("menu", "#", "", "btn-mobile-menu") }}
     </div>
-    <div class="hidden md:flex">
+    <div class="hidden lg:flex">
       {{ buttons.cta_icon("home", "/", "mx-2") }}
       {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
+      {{ buttons.cta("ARTICLES", "/articles/", "mx-2") }}
       {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
     </div>
   </div>
@@ -25,6 +26,9 @@ layout: layouts/base.njk
     </li>
     <li>
       <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/resume/">Resume</a>
+    </li>
+    <li>
+      <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/articles/">Articles</a>
     </li>
     <li>
       <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/projects/">Projects</a>
