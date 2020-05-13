@@ -29,12 +29,7 @@ module.exports = class {
 
   async render({ rawCss, rawFilepath }) {
     return await postcss([
-      require('postcss-import')({
-        filter: (f) => {
-          console.log(f);
-          return true;
-        },
-      }),
+      require('postcss-import')(),
       require('tailwindcss')('./tailwind.config.js'),
       require('autoprefixer'),
       ...(process.env.ELEVENTY_ENV === 'prod'
