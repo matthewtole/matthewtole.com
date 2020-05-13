@@ -1,0 +1,53 @@
+article p > code,
+article li > code {
+  @apply text-nord2 bg-nord5;
+}
+
+article h2 {
+  @apply my-4 font-serif text-2xl;
+}
+
+article h3 {
+  @apply my-4 font-serif text-xl;
+}
+
+article p {
+  @apply mb-2;
+}
+
+article a {
+  @apply border-b text-nord9 border-nord9;
+  box-shadow: inset 0 -1px 0 #81a1c1;
+}
+
+article a:hover {
+  @apply text-white bg-nord9;
+  box-shadow: 0 -1px 0 #81a1c1;
+}
+
+article ul {
+  @apply mb-2 list-disc;
+}
+
+article ol {
+  @apply mb-2 list-decimal;
+}
+
+article blockquote {
+  @apply px-4 py-2 mb-2 leading-tight border-l-4 border-nord9 text-nord3;
+}
+
+article blockquote p {
+  @apply m-0;
+}
+
+.hljs {
+  @apply p-4 mt-4 mb-4 text-xs;
+}
+
+.hljs + .hljs {
+  @apply border-t-4 border-nord2;
+  margin-top: -1rem;
+}
+
+@import 'nord-highlightjs/dist/nord.css';

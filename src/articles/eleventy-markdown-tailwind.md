@@ -1,17 +1,20 @@
 ---
 layout: layouts/article.njk
 title: Eleventy, Markdown, and Tailwind CSS
-tags: article
-snippet: Learn how to apply Tailwind CSS classes to Markdown content in your Eleventy website.
+tags:
+  - article
+  - tailwind
+  - eleventy
+snippet: Two different techniques for using Tailwind CSS with your Markdown content in Eleventy.
 ---
 
-This website is built using [Eleventy](https://11ty.dev) and [Tailwind CSS](https://tailwindcss.com), which are two of my currently favorite web technologies.
+If you are building a website using [Eleventy](https://11ty.dev) and [Tailwind CSS](https://tailwindcss.com), you might have come across a problem when you started trying to write Markdown content. As it states in the very top of the Tailwind documentation:
 
-I find them to be the right balance of simple and configurable, allowing me to do my work without getting in the way.
+> Instead of opinionated predesigned components, Tailwind provides low-level utility classes that let you build completely custom designs without ever leaving your HTML.
 
-When I started to write this article in Markdown, I realized that I would need to do some work to make it look right. This is because Tailwind applies almost zero styling by default, and uses class names to handle all styling.
+This is fantastic when you have full control over your HTML output, but becomes a bit of an issue when working with a lightweight markup language like Markdown.
 
-To demonstrate what I mean, this screenshot is of the first section of this article before I applied any styling.
+To demonstrate what I'm talking about here is a rendering of part of this blog post before we fix the problem.
 
 <div class="my-4 border border-nord2">
   <div class="flex items-center p-2 bg-nord2">
@@ -22,65 +25,140 @@ To demonstrate what I mean, this screenshot is of the first section of this arti
   <img src="/static/images/articles/eleventy-markdown-tailwind.png" alt="Screenshot of the unstyled article" />
 </div>
 
-My initial approach to the problem was to
+As you can see, there's no styling being applied to any of the content, which makes it hard to read!
 
-My first thought was to use [Tailwind's `@apply` directive](https://tailwindcss.com/docs/extracting-components#extracting-css-components-with-apply) to add the classes in my CSS file.
+So, how can we fix this? I came up with two different approaches when building this site, and I've described them both below, with their pros and cons. Take a look and see if either of them might work for you.
+
+## Create custom Tailwind components
+
+> **NOTE:** This method only works if you are using Tailwind with PostCSS.
+
+Tailwind CSS encourages the utility first approach to CSS but does provide a mechanism for applying their styles in CSS, instead of HTML. This is intended to be used for small, commonly used components, but we can take advantage of it to style our Markdown content.
+
+The `@apply` directive can be used to create CSS rules that are composed of Tailwind classes. For example, if you find yourself always using the same classes to make giant red text appear on the page, then instead of applying the Tailwind classes everywhere:
+
+```html
+<h1 class="text-4xl font-bold text-red-400">GIANT RED TEXT</h1>
+```
+
+You can create a new class that's built out of those class definitions, and use that everywhere.
 
 ```css
-p {
-  @apply mb-2;
-}
-
-a {
-  @apply text-nord11 border-b border-nord11;
+.big-red-text {
+  @apply text-4xl text-red-400 font-bold;
 }
 ```
 
-This was appealing for its simplicity, but I try to avoid adding new classes whenever possible to keep my CSS size small.
+```html
+<h1 class="big-red-text">GIANT RED TEXT</h1>
+```
 
-Thankfully, Eleventy allows you to [customize the Markdown renderer](https://www.11ty.dev/docs/languages/markdown/#add-your-own-plugins), and I found a plugin for Markdownit that lets you specify the classes to apply to each tag.
+> Check out the [Tailwind documentation](https://tailwindcss.com/docs/extracting-components#extracting-css-components-with-apply) for the full details on how to use the `@apply` directive.
 
-Putting the two together in my `.eleventy.js` configuration file, and I ended up with something like this.
+So how can we use this technique for our Markdown content? Instead of creating CSS classes with the `@apply` directive, you can use them on HTML elements instead.
 
-```javascript
+```css
+.markdown h1 {
+  @apply text-4xl text-red-400 font-bold;
+}
+
+.markdown a {
+  @apply text-blue-300;
+}
+
+.markdown a:hover {
+  @apply underline;
+}
+```
+
+Note that you cannot just use the pseudo-class prefixes as you would in your HTML, you have to specify them manually like you would in CSS.
+
+You should also ensure that you put all of your Markdown CSS definitions under a class so that they don't leak out into the rest of your site. You probably don't want these rules to apply everywhere, just your Markdown content.
+
+### Positives
+
+This technique is very versatile, allowing you the full flexibility of CSS combined with the utility of Tailwind.
+
+The styles for your Markdown content live in your CSS files, which makes them easy to find and understand.
+
+### Negatives
+
+The `@apply` directive is not intended to be used in this way, and should ideally be reserved for reusable components, not overriding the styles of base HTML elements.
+
+Introducing new rules to your CSS will increase the size, although likely only by a very small amount.
+
+## Add classes to the Markdown output
+
+Instead of adding new CSS rules, what if instead we could add the classes to the HTML output of the Markdown? Well, it turns out we can!
+
+Eleventy gives you the ability to modify the library used to render Markdown content. You can even swap it out for an entirely different one if you like.
+
+We don't need to go to that extreme for our needs, we can just use a plugin to add some classes to the output.
+
+Eleventy ships with [markdown-it](https://markdown-it.github.io/) out of the box. It's a very configurable Markdown parser that gives you full control over the rendering but it comes with pretty solid defaults to start with.
+
+One of the many community-written plugins for markdown-it is called [markdown-it-class](https://www.npmjs.com/package/@toycode/markdown-it-class) and it allows you to specify classes that get added to the HTML.
+
+Before we can use the plugin, we first need to install it from npm.
+
+```shell
+$ npm install --save @toycode/markdown-it-class
+```
+
+Then we need to add some code to our Eleventy config file to override the default Markdown parser. If you don't already have an Eleventy configuration file, start by creating it.
+
+```js
+// .eleventy.js
+module.exports = (eleventyConfig) => {};
+```
+
+Import the markdown-it library and the markdown-it-class plugin.
+
+```js
 const markdownIt = require('markdown-it');
 const markdownItClass = require('@toycode/markdown-it-class');
+```
 
-module.exports = (eleventyConfig) => {
-  const mapping = {
-    p: ['mb-2'],
-    a: ['text-nord11', 'border-b', 'border-nord11'],
-  };
-  const md = markdownIt({ linkify: true, html: true }).use(
-    markdownItClass,
-    mapping
-  );
-  eleventyConfig.setLibrary('md', md);
+Define the mapping of HTML elements to classes. You can use strings for single classes, or arrays if you want to specify multiple classnames.
+
+```js
+const mapping = {
+  h1: ['text-4xl', 'text-red-400', 'font-bold'],
+  a: ['text-blue-300', 'hover:underline'],
 };
 ```
 
-This works great, and got me 90% of the way to where I wanted the styles to be.
+In order to use the plugin, we have to create a new markdown-it instance and tell Eleventy to use it for handling Markdown files.
 
-_Unfortunately_ the plugin I chose to handle adding the CSS classes had a couple of limitations that I hadn't forseen.
-
-1. It didn't work for all elements, such as code blocks
-2. There wasn't a mechanism to set different classes based on the nested of elements (e.g. `a > code` vs `p > code`)
-
-It didn't seem that hard to fix **#1** but I couldn't think of a good general solution for **#2** so in the end I decided to go back to the first approach and just apply the classes in the CSS.
-
-```css
-article p > code,
-article li > code {
-  @apply text-nord2 bg-nord5;
-}
-
-article h2 {
-  @apply text-xl font-serif mt-4;
-}
-
-article h3 {
-  @apply text-lg font-serif mt-4;
-}
+```js
+const md = markdownIt({ linkify: true, html: true });
+md.use(markdownItClass, mapping);
+eleventyConfig.setLibrary('md', md);
 ```
 
-You can view the full CSS file on [Github](https://github.com/matthewtole/matthewtole.com/blob/master/src/_includes/postcss/styles.css).
+Now when you build your site, the output of your Markdown files should look now include the Tailwind class names.
+
+```html
+<h1 class="text-4xl font-bold text-red-400">GIANT RED TEXT</h1>
+<a class="text-blue-300 hover:underline">I'm a link!</a>
+```
+
+### Positives
+
+Adding the classes to the HTML that the Markdown library generates align well with the general philosophy of Tailwind.
+
+This technique can be used even if you're not using Tailwind with PostCSS, such as loading it from a CDN. It also can be adapted to other atomic CSS libraries very easily.
+
+### Negatives
+
+Having your Markdown content styles configured in the Eleventy configuration file makes them harder to reason about since they're not with the content _or_ any of the other styles.
+
+There are some limitations to the `markdown-it-class` plugin that I've found. It doesn't work with inline or block code elements.
+
+You cannot have different styles for your elements depending on the context. For example, I wanted to have my inline code be styled differently if it's contained within a link.
+
+## Conclusion
+
+While I would have preferred to go with the Markdown class solution, the limitations were too much for me, so for this site, I have decided to use custom Tailwind components in my CSS.
+
+You can view the finished [CSS file on Github](https://github.com/matthewtole/matthewtole.com/blob/master/src/_includes/postcss/styles.css) to see what I used to create the designs here.

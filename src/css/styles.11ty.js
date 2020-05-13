@@ -29,9 +29,8 @@ module.exports = class {
   }
 
   async render({ rawCss, rawFilepath }) {
-    console.log(rawFilepath);
     return await postcss([
-      require('postcss-import')(),
+      atImport({}),
       require('tailwindcss')('./tailwind.config.js'),
       require('autoprefixer'),
       ...(process.env.ELEVENTY_ENV === 'prod'
