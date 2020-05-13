@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const postcss = require('postcss');
-const atImport = require('postcss-import');
 
 const fileName = 'styles.css';
 
@@ -30,7 +29,12 @@ module.exports = class {
 
   async render({ rawCss, rawFilepath }) {
     return await postcss([
-      atImport({}),
+      require('postcss-import')({
+        filter: (f) => {
+          console.log(f);
+          return true;
+        },
+      }),
       require('tailwindcss')('./tailwind.config.js'),
       require('autoprefixer'),
       ...(process.env.ELEVENTY_ENV === 'prod'
