@@ -13,6 +13,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     './src/**/*.css',
   ],
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+  whitelistPatternsChildren: [/hljs/, /article/],
 });
 
 module.exports = class {
