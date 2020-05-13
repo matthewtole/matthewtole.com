@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const postcss = require('postcss');
 
-const fileName = 'styles.css';
+const inputFileName = 'styles.pcss';
+const outputFilename = 'styles.css';
 
 const purgecss = require('@fullhuman/postcss-purgecss')({
   content: [
@@ -18,10 +19,10 @@ module.exports = class {
   async data() {
     const rawFilepath = path.join(
       __dirname,
-      `../_includes/postcss/${fileName}`
+      `../_includes/postcss/${inputFileName}`
     );
     return {
-      permalink: `css/${fileName}`,
+      permalink: `css/${outputFilename}`,
       rawFilepath,
       rawCss: await fs.readFileSync(rawFilepath),
     };
