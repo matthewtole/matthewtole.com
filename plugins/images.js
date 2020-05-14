@@ -78,7 +78,7 @@ async function websiteScreenshot(url) {
     url
   )}&output=image&width=${screenshotWidth}&height=${Math.round(
     (screenshotWidth / 16) * 9
-  )}&token=${process.env.SCREENSHOT_TOKEN}`;
+  )}&token=${process.env.SCREENSHOT_TOKEN}&fresh=true`;
 
   const options = {
     outputDir: '_site/img/',
