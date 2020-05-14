@@ -12,9 +12,9 @@ module.exports = {
     // }
   },
   async onPostBuild({ constants, utils }) {
-    console.log(fs.readdirSync(constants.BUILD_DIR));
-    console.log(fs.readdirSync(path.normalize(`${constants.CACHE_DIR}/../`)));
-    console.log(fs.readdirSync(constants.CACHE_DIR));
+    // console.log(fs.readdirSync(constants.BUILD_DIR));
+    // console.log(fs.readdirSync(path.normalize(`${constants.CACHE_DIR}/../`)));
+    console.log(fs.readdirSync(path.join(constants.CACHE_DIR, '.cache')));
     // const cacheDirs = getCacheDirs(constants);
 
     // if (await utils.cache.save(cacheDirs)) {
