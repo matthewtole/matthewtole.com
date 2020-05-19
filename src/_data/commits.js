@@ -4,7 +4,7 @@ module.exports = async () =>
   CacheAsset(
     'https://api.github.com/repos/matthewtole/matthewtole.com/commits',
     {
-      duration: '1h',
+      duration: process.env.NETLIFY ? '1m' : '1h',
       type: 'json',
     }
   );
