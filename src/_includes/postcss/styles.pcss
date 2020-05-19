@@ -30,19 +30,20 @@ span[data-pun] {
 
 article p > code,
 article li > code {
-  @apply text-nord2 bg-nord5;
+  @apply text-nord2 bg-nord6;
+  box-shadow: 2px 0 0 #eceff4, -2px 0 0 #eceff4;
 }
 
 article h2 {
-  @apply my-4 font-serif text-2xl;
+  @apply my-4 font-serif text-3xl;
 }
 
 article h3 {
-  @apply my-2 font-serif text-xl;
+  @apply my-2 font-serif text-2xl;
 }
 
 article p {
-  @apply mb-2;
+  @apply mb-4 text-justify text-lg;
 }
 
 article a {
@@ -56,15 +57,15 @@ article a:hover {
 }
 
 article ul {
-  @apply mb-2 list-disc;
+  @apply mb-4 list-disc;
 }
 
 article ol {
-  @apply mb-2 list-decimal;
+  @apply mb-4 list-decimal;
 }
 
 article blockquote {
-  @apply px-4 py-2 mb-4 mx-0 leading-tight border-l-4 border-nord9 text-nord3;
+  @apply px-4 py-2 mb-4 mx-0 border-l-4 border-nord9 text-nord3 text-base;
 }
 
 article blockquote p {
@@ -72,7 +73,7 @@ article blockquote p {
 }
 
 .hljs {
-  @apply p-4 mt-4 mb-4 text-xs;
+  @apply p-4 mt-4 mb-4;
 }
 
 .hljs + .hljs {
