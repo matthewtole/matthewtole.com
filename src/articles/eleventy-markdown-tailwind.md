@@ -161,4 +161,4 @@ You cannot have different styles for your elements depending on the context. For
 
 While I would have preferred to go with the Markdown class solution, the limitations were too much for me, so for this site, I have decided to use custom Tailwind components in my CSS.
 
-You can view the finished [CSS file on Github](https://github.com/matthewtole/matthewtole.com/blob/master/src/_includes/postcss/styles.css) to see what I used to create the designs here.
+You can view the finished [CSS file on Github](https://github.com/matthewtole/matthewtole.com/blob/master/src/_includes/postcss/styles.pcss) to see what I used to create the designs here.
