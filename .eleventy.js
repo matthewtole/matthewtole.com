@@ -25,6 +25,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('src/static');
   eleventyConfig.addPassthroughCopy('src/**/_redirects');
   eleventyConfig.addPlugin(require('eleventy-plugin-svg-contents'));
+  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
 
   eleventyConfig.addFilter('jsmin', (code) => {
     const babel = require('@babel/core');

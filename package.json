@@ -39,6 +39,7 @@
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-cache-assets": "^2.0.2",
     "@11ty/eleventy-img": "^0.2.4",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.9.6",
