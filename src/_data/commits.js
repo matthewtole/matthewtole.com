@@ -4,7 +4,7 @@ module.exports = async () =>
   CacheAsset(
     'https://api.github.com/repos/matthewtole/matthewtole.com/commits',
     {
-      duration: '1d',
+      duration: '1h',
       type: 'json',
     }
   );
