@@ -23,9 +23,11 @@ layout: layouts/base.njk
   </div>
 
   <div class="absolute bottom-0 left-0 right-0 flex items-end overflow-hidden cotent-center">
-    {% for i in range(0, 200) -%}
-      <div class="flex-none w-4 bg-white" style="height: {{ functions.randomBetween(0, 5) * 5 }}px"></div>
-    {%- endfor %}
+    {%- for commit in commits | limit(5) -%}
+      {%- for c in commit.sha.split('') -%}
+        <div class="flex-none w-4 bg-white" style="height: {{ c | parseInt(16) }}px"></div>
+      {%- endfor -%}
+    {%- endfor -%}
   </div>
 </header>
 

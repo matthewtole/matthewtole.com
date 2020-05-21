@@ -44,6 +44,8 @@ module.exports = (eleventyConfig) => {
     }
   });
 
+  eleventyConfig.addFilter('parseInt', parseInt);
+
   eleventyConfig.addFilter('parseDate', parseJSON);
 
   eleventyConfig.addFilter('formatDate', format);
