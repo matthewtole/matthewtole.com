@@ -3,8 +3,16 @@
 @tailwind base;
 @tailwind components;
 
-.hover\:mt-2px:hover {
-  margin-top: 2px;
+.btn {
+  @apply px-8 py-2 font-semibold text-white transition-all duration-200 bg-nord9;
+}
+
+.btn:hover {
+  @apply bg-nord12 text-nord0;
+}
+
+.btn--icon {
+  @apply px-4 fill-current;
 }
 
 .bg-black-alpha-50 {
@@ -20,8 +28,14 @@ img {
 }
 
 span[data-pun] {
-  @apply font-bold border-b-2 text-nord9 border-nord8;
+  @apply border-b text-nord9 border-nord9 transition-all duration-200 whitespace-no-wrap;
+  box-shadow: inset 0 -1px 0 #81a1c1;
   cursor: help;
+}
+
+span[data-pun]:hover {
+  @apply border-nord12 text-nord3 border-b-2;
+  box-shadow: inset 0 -1px 0 #d08770;
 }
 
 .tippy-box {
@@ -46,14 +60,14 @@ article p {
   @apply mb-4 text-justify text-lg;
 }
 
-article a {
-  @apply border-b text-nord9 border-nord9;
+article a:not(.thumb) {
+  @apply border-b text-nord9 border-nord9 transition-all duration-200;
   box-shadow: inset 0 -1px 0 #81a1c1;
 }
 
-article a:hover {
-  @apply text-white bg-nord9;
-  box-shadow: 0 -1px 0 #81a1c1;
+article a:not(.thumb):hover {
+  @apply border-nord12 text-nord3 border-b-2;
+  box-shadow: inset 0 -1px 0 #d08770;
 }
 
 article ul {

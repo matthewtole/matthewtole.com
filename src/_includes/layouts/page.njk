@@ -20,19 +20,11 @@ layout: layouts/base.njk
       {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
     </div>
   </div>
-  <ul class="absolute left-0 right-0 z-50 hidden shadow-lg bg-nord3" id="mobile-menu">
-    <li>
-      <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/">Home</a>
-    </li>
-    <li>
-      <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/resume/">Resume</a>
-    </li>
-    <li>
-      <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/articles/">Articles</a>
-    </li>
-    <li>
-      <a class="block px-4 py-2 border-t border-white hover:bg-nord2 active:bg-nord2 focus:bg-nord2" href="/projects/">Projects</a>
-    </li>
+  <ul class="absolute left-0 right-0 z-50 hidden h-screen p-4 shadow-lg bg-black-alpha-75" id="mobile-menu">
+    {{ buttons.cta("HOME", "/", "mb-4 block text-center") }}
+    {{ buttons.cta("RESUME", "/resume/", "mb-4 block text-center") }}
+    {{ buttons.cta("ARTICLES", "/articles/", "mb-4 block text-center") }}
+    {{ buttons.cta("PROJECTS", "/projects/", "mb-4 block text-center") }}
   </ul>
 </header>
 
