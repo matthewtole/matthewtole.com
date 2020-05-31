@@ -1,3 +1,8 @@
+let plugins = [require('@tkh/tailwind-plugin-aspect-ratio')()];
+if (!process.env.NETLIFY) {
+  plugins.push(require('tailwindcss-debug-screens'));
+}
+
 module.exports = {
   theme: {
     extend: {
@@ -29,5 +34,5 @@ module.exports = {
     borderWidth: ['responsive', 'hover'],
     opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [require('@tkh/tailwind-plugin-aspect-ratio')()],
+  plugins,
 };

@@ -33,6 +33,7 @@
     "favicons": "^6.0.0",
     "prettier": "^2.0.5",
     "sharp": "^0.23.4",
+    "tailwindcss-debug-screens": "^0.1.0",
     "tinify": "^1.6.0-beta.2"
   },
   "dependencies": {
