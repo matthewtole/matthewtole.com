@@ -35,7 +35,20 @@ layout: layouts/base.njk
 
   {% include "instagram.njk" %}
 
-  <h2 class="m-2 font-serif text-2xl">
+  <h2 class="m-2 font-serif text-3xl">
+    <a href="/articles" class="hover:underline">Latest Articles</a>
+  </h2>
+
+  <ul class="p-2">
+    {%- for post in collections.article | limit(5) -%}
+      <div class="mb-4">
+        <a href="{{ post.url }}" class="text-xl hover:underline">{{ post.data.title }}</a>
+        <p class="mt-1 text-sm leading-tight">{{post.data.snippet }}</p>
+      </div>
+    {%- endfor -%}
+  </ul>
+
+  <h2 class="m-2 font-serif text-3xl">
     <a href="https://github.com/matthewtole/matthewtole.com" class="hover:underline">Recent Website Commits</a>
   </h2>
 
