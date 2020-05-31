@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const cacheDirectories = (constants) => [
-  path.normalize(`${constants.BUILD_DIR}/../.cache`),
+  path.normalize(`${constants.PUBLISH_DIR}/../.cache`),
 ];
 
 module.exports = {
