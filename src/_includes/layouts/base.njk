@@ -8,8 +8,8 @@
     <meta name="author" content="Matthew Tole">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,600&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,600&display=swap"/>
     <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat:400,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/feed.xml"/>
     {% include 'favicon.njk' %}
@@ -31,7 +31,14 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script>
-      tippy('[data-tippy-content]');
+      document
+        .querySelectorAll('[data-tippy-content]')
+        .forEach(function (el) {
+          tippy(el, {
+            placement: el.getAttribute('data-tippy-position') || 'top'
+          });
+        });
+      // tippy('[data-tippy-content]');
       tippy('[data-pun]', {
         content: (reference) => reference.getAttribute('data-pun'),
         arrow: false,
