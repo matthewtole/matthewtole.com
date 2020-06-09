@@ -6,7 +6,7 @@ layout: layouts/base.njk
 
 <header class="relative px-4 py-8 text-center text-nord0 bg-nord4 md:py-16">
   <h1 class="font-serif text-5xl md:text-6xl">matthew tole</h1>
-  <div class="max-w-xl mx-auto text-xl leading-tight">
+  <div class="max-w-xl mx-auto leading-tight lg:text-xl">
     <p>British web developer based in Seattle.</p>
   </div>
   <div class="flex flex-col justify-center p-8 md:flex-row">
@@ -33,33 +33,36 @@ layout: layouts/base.njk
 
 <div class="max-w-6xl p-2 mx-auto">
 
+  <h2 class="m-2 font-serif text-2xl lg:text-3xl">
+    <a href="https://instagram.com/matthewtole" class="hover:underline">Instagram Posts</a>
+  </h2>
   {% include "instagram.njk" %}
 
-  <h2 class="m-2 font-serif text-3xl">
+  <h2 class="m-2 font-serif text-2xl lg:text-3xl">
     <a href="/articles" class="hover:underline">Latest Articles</a>
   </h2>
 
   <ul class="p-2">
     {%- for post in collections.article | limit(5) -%}
       <div class="mb-4">
-        <a href="{{ post.url }}" class="text-xl hover:underline">{{ post.data.title }}</a>
-        <p class="mt-1 text-sm leading-tight">{{post.data.snippet }}</p>
+        <a href="{{ post.url }}" class="lg:text-xl hover:underline">{{ post.data.title }}</a>
+        <p class="mt-1 text-xs leading-tight lg:text-sm">{{post.data.snippet }}</p>
       </div>
     {%- endfor -%}
   </ul>
 
-  <h2 class="m-2 font-serif text-3xl">
+  <h2 class="m-2 font-serif text-2xl lg:text-3xl">
     <a href="https://github.com/matthewtole/matthewtole.com" class="hover:underline">Recent Website Commits</a>
   </h2>
 
   <ul class="p-2">
     {%- for commit in commits | limit(5) -%}
       <li class="flex items-center mb-2">
-        <div class="flex items-center justify-center w-12 h-12 mr-2 text-2xl">
+        <div class="flex items-center justify-center w-8 h-8 mr-2 text-lg lg:w-12 lg:h-12 lg:text-2xl">
           <span>{{commit.commit.message | getEmoji | emojify}}</span>
         </div>
         <div class="flex flex-col leading-tight">
-          <a href="{{commit.html_url}}" class="hover:underline">{{commit.commit.message | removeEmoji | emojify | firstLine}}</a>
+          <a href="{{commit.html_url}}" class="text-sm hover:underline lg:text-base">{{commit.commit.message | removeEmoji | emojify | firstLine}}</a>
           <p class="text-xs text-nord3">{{commit.commit.committer.date | parseDate | formatDate('yyy/MM/dd HH:mm')}}</p>
         </div>
       </li>
