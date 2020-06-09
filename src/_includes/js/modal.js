@@ -33,7 +33,7 @@ function showModalInstagram(trigger) {
   const modalDate = modal.querySelector('.js-modal-date');
   const modalLink = modal.querySelector('.js-modal-link');
 
-  const websiteImage = trigger.querySelector('img').getAttribute('src');
+  const websiteImage = trigger.querySelector('img').currentSrc;
   modalImage.onload = () => {
     modalImage.classList.remove('hidden');
   };
@@ -41,7 +41,7 @@ function showModalInstagram(trigger) {
     'img'
   ).style.backgroundColor;
   modalImage.parentElement.style.backgroundImage = `url('${websiteImage}')`;
-  modalImage.src = websiteImage.replace('-256', '');
+  modalImage.src = websiteImage.replace(/\-[0-9]+/, '');
   modalImage.classList.add('hidden');
   modalCaption.innerHTML = trigger.querySelector(
     '.js-instagram-caption'
