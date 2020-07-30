@@ -73,7 +73,7 @@ async function websiteScreenshot(url) {
       src="https://placekitten.com/256/256/">`;
   }
 
-  const screenshotWidth = 2048;
+  const screenshotWidth = 1024;
   const screenshotUrl = `https://screenshotapi.net/api/v1/screenshot?url=${encodeURIComponent(
     url
   )}&output=image&width=${screenshotWidth}&height=${Math.round(
@@ -83,7 +83,7 @@ async function websiteScreenshot(url) {
   const options = {
     outputDir: '_site/img/',
     cacheDuration: '1w',
-    widths: [256, 512, 1024, 2048],
+    widths: [256, 512, 1024],
   };
   let stats = await Image(screenshotUrl, options);
   let lowestSrc = stats.jpeg[0];
@@ -91,10 +91,10 @@ async function websiteScreenshot(url) {
   let sources = [];
   Object.values(stats).forEach((imageFormat) => {
     sources.push(
-      `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x, ${imageFormat[2].url} 4x" media="(min-width: 768px)">`
+      `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[0].url}, ${imageFormat[1].url} 2x" media="(min-width: 768px)">`
     );
     sources.push(
-      `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[1].url}, ${imageFormat[2].url} 2x, ${imageFormat[3].url} 4x">`
+      `<source type="image/${imageFormat[0].format}" srcset="${imageFormat[1].url}, ${imageFormat[2].url} 2x">`
     );
   });
 
