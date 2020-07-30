@@ -43,7 +43,7 @@ layout: layouts/base.njk
   </h2>
 
   <ul class="p-2">
-    {%- for post in collections.article | limit(5) -%}
+    {%- for post in collections.article | reverse | limit(5) -%}
       <div class="mb-4">
         <a href="{{ post.url }}" class="lg:text-xl hover:underline">{{ post.data.title }}</a>
         <p class="mt-1 text-xs leading-tight lg:text-sm">{{post.data.snippet }}</p>
