@@ -6,6 +6,7 @@ tags:
   - typescript
   - TIL
 snippet: Today I learned about how to declare class properties in Typescript using the constructor.
+date: 2020-07-30
 ---
 
 If you are like me and write Typescript code, you're probably very familiar with how to write classes. Here's an example of a class that you might write.

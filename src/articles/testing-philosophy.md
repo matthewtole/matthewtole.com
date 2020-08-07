@@ -5,6 +5,7 @@ tags:
   - article
   - testing
 snippet: How I apply a core principle of computer forensics to thinking about writing tests
+date: 2020-08-03
 ---
 
 **tl;dr** The purpose of writing tests for your code is to protect it against accidental future breakages, not just to validate the current behavior.
