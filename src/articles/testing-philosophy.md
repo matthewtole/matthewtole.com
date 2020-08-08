@@ -40,7 +40,7 @@ export const MyComponent: React.FC = () => {
 describe('MyComponent', () => {
   it('should do something cool when the awesome button is clicked', () => {
     const {getByText} = render(<MyComponent />);
-    fireEvent.click(getByText('Click Me!));
+    fireEvent.click(getByText('Click Me!'));
     expect(somethingCool).toHaveHappened();
   });
 });
