@@ -28,23 +28,25 @@
     <script>
       {{ js | jsmin | safe }}
     </script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/@popperjs/core@2" async></script>
+    <script src="https://unpkg.com/tippy.js@6" async></script>
     <script>
-      document
-        .querySelectorAll('[data-tippy-content]')
-        .forEach(function (el) {
-          tippy(el, {
-            placement: el.getAttribute('data-tippy-position') || 'top'
+      window.addEventListener('load', (event) => {
+        document
+          .querySelectorAll('[data-tippy-content]')
+          .forEach(function (el) {
+            tippy(el, {
+              placement: el.getAttribute('data-tippy-position') || 'top'
+            });
           });
+
+        tippy('[data-pun]', {
+          content: (reference) => reference.getAttribute('data-pun'),
+          arrow: false,
+          placement: 'bottom',
+          duration: 0,
+          offset: [0, 2]
         });
-      // tippy('[data-tippy-content]');
-      tippy('[data-pun]', {
-        content: (reference) => reference.getAttribute('data-pun'),
-        arrow: false,
-        placement: 'bottom',
-        duration: 0,
-        offset: [0, 2]
       });
     </script>
   </body>
