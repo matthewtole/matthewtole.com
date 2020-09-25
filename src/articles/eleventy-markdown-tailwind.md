@@ -6,6 +6,7 @@ tags:
   - tailwind
   - eleventy
 snippet: Two different techniques for using Tailwind CSS with your Markdown content in Eleventy.
+date: 2020-05-18
 ---
 
 If you are building a website using [Eleventy](https://11ty.dev) and [Tailwind CSS](https://tailwindcss.com), you might have come across a problem when you started trying to write Markdown content. As it states in the very top of the Tailwind documentation:
