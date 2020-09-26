@@ -58,12 +58,16 @@ module.exports = (eleventyConfig) => {
     return list.slice(0, n);
   });
 
+  const GITHUB_EMOJI_REGEX = /^\w*:[a-z_]+:/;
+
   eleventyConfig.addFilter('removeEmoji', function (commit) {
-    return commit.substr(commit.indexOf(':', 2) + 1);
+    const match = GITHUB_EMOJI_REGEX.exec(commit);
+    return match ? commit.replace(match, '') : commit;
   });
 
   eleventyConfig.addFilter('getEmoji', function (commit) {
-    return commit.substr(0, commit.indexOf(':', 2) + 1);
+    const match = GITHUB_EMOJI_REGEX.exec(commit);
+    return match ? match[0] : '';
   });
 
   eleventyConfig.addNunjucksAsyncShortcode('responsiveImage', responsiveImage);
