@@ -52,12 +52,12 @@ layout: layouts/base.njk
 
   <ul class="p-2">
     {%- for commit in commits | limit(5) -%}
-      <li class="flex items-center mb-2">
-        <div class="flex items-center justify-center w-8 h-8 mr-2 text-lg lg:w-12 lg:h-12 lg:text-2xl">
+      <li class="flex items-center mb-2 truncate ">
+        <div class="items-center justify-center hidden w-8 h-8 mr-2 text-lg md:flex lg:w-12 lg:h-12 lg:text-2xl">
           <span>{{commit.commit.message | getEmoji | emojify}}</span>
         </div>
         <div class="flex flex-col leading-tight">
-          <a href="{{commit.html_url}}" class="text-sm hover:underline lg:text-base">{{commit.commit.message | removeEmoji | emojify | firstLine}}</a>
+          <a href="{{commit.html_url}}" class="text-sm truncate hover:underline lg:text-base">{{commit.commit.message | removeEmoji | emojify | firstLine}}</a>
           <p class="text-xs text-nord3">{{commit.commit.committer.date | parseDate | formatDate('yyy/MM/dd HH:mm')}}</p>
         </div>
       </li>
