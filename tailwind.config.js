@@ -4,6 +4,10 @@ if (!process.env.NETLIFY) {
 }
 
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
   theme: {
     extend: {
       fontFamily: {
