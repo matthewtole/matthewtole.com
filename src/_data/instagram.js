@@ -23,6 +23,7 @@ module.exports = async () => {
       };
     });
   } catch (ex) {
+    console.error(ex);
     return [];
   }
 };

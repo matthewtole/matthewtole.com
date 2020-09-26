@@ -33,9 +33,11 @@ layout: layouts/base.njk
 
 <div class="max-w-6xl p-2 mx-auto">
 
+  {% if instagram.length > 0 %}
   <h2 class="m-2 font-serif text-2xl lg:text-3xl">
     <a href="https://instagram.com/matthewtole" class="hover:underline">Instagram Posts</a>
   </h2>
+  {% endif %}
   {% include "instagram.njk" %}
 
   <h2 class="m-2 font-serif text-2xl lg:text-3xl">
