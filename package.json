@@ -51,7 +51,7 @@
     "date-fns": "^2.16.1",
     "eleventy-plugin-svg-contents": "^0.5.1",
     "get-image-colors": "^2.0.1",
-    "highlight.js": "^10.2.0",
+    "highlight.js": "^10.4.1",
     "nord-highlightjs": "^0.1.0",
     "postcss-import": "^12.0.1",
     "tailwindcss": "^1.8.10"
