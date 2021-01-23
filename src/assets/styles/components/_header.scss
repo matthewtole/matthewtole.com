@@ -1,0 +1,34 @@
+.header {
+    padding: $spacing-y / 2 $spacing-x;
+    background-color: $text-color;
+    
+    background-image: url('/assets/images/matthew-tole.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header__left {
+    font-size: 3rem;
+    font-weight: 300;
+    font-family: $font-family-serif;
+    margin-left: 5rem;
+
+
+
+    a {
+        color: $bg-color;
+        text-decoration: none;
+
+        &:hover, &:active, &:focus {
+            background: linear-gradient(180deg, #FF5555 11.36%, #F09819 81.82%, #FFB86C 81.82%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}

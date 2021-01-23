@@ -1,0 +1,82 @@
+---
+layout: base
+permalink: /resume/
+eleventyNavigation:
+  key: Resume
+---
+
+{% import 'components/resume.njk' as resume %}
+{% import 'components/buttons.njk' as buttons %}
+
+<div class="container">
+  <div class="resume">
+    <section>
+      <p class="lead">
+        Front-end engineer with over ten years of professional software development experience. I am passionate about creating polished web experiences, with a focus on responsive, accessible, and performant UX, and writing testable, readable, and maintainable code.
+      </p>
+    </section>
+
+    <section>
+      {{ resume.header("Software Development Engineer, Secret Startup", "December 2020 - Present") }}
+      <p >At the end of 2020 I left the relative comfort of Dropbox to join a tiny startup. As of January 2021 the company has not yet launched so I am unable to talk about it but it's been a lot of fun.</p>
+    </section>
+
+    {{ resume.year("2020") }}
+
+    <section>
+      {{ resume.header("Senior Software Engineer", "August 2020 - December 2020") }}
+      <p >In September 2020 I was promoted to Senior Software Engineer in response to my years of hard work and leadership.</p>
+      {{ resume.header("Software Engineer, Dropbox", "Seattle - June 2017 - August 2020") }}
+      <p>I work on a team responsible for the search and browse experiences on the web and desktop. As the senior front-end engineer on the team, I have worked on many projects, from a complete rewrite of the search UI, to improvements in accessibility and performance. </p>
+      <p>I have mentored an intern and many of the new hires on the team, empowering them to do their best work and become incredible productive members of the team. </p>
+      <p>I was one of the organizers of an internal JS conference, given presentations to the wider company on my work, and conducted over 50 interviews.</p>
+    </section>
+
+    {{ resume.year("2017") }}
+
+    <section>
+    {{ resume.header("Software Engineer, Fitbit", "San Francisco - December 2016 - June 2017") }}
+
+    <p>After Pebble was acquired by Fitbit I was responsible for planning and overseeing the end of life process for the existing Pebble web services. I also worked on designing the architecture for the new Fitbit appstore.</p>
+    </section>
+
+    {{ resume.year("2016") }}
+
+    <section>
+      {{ resume.header("Web Developer, Pebble", "Redwood City — May 2014 - December 2016") }}
+      <p>
+        During my 2.5 years at Pebble, I worked on a variety of projects, including rebuilding the developer website from the ground up, designing and writing new features for the app store and developer portal, and architecting a brand new new analytics pipeline to build the foundation for new health data based products.
+      </p>
+    </section>
+
+    {{ resume.year("2014") }}
+
+    <section>
+      {{ resume.header("Consultant, Proven Legal Technologies", "London — 2010 - 2014") }}
+      <p>
+        I designed, built, maintained, and supported an internal web application, which was responsible for all project management, evidence tracking and billing of clients. I participated in the collection, extraction and investigation of multiple forensic cases, and built custom applications for extracting email fragments from hard drives.
+      </p>
+    </section>
+
+    {{ resume.year("2010") }}
+
+    <section>
+      {{ resume.header("MSc Computer Forensics", "De Montfort University — 2009 - 2012") }}
+      <p>
+        I learned the fundamentals of digital forensics and network security, including taking a forensic images of a variety of data sources, and the processes and methodologies of forensic analysis.
+      </p>
+    </section>
+
+    {{ resume.year("2009") }}
+
+    <section>
+      {{ resume.header("BEng Computer Science", "The University of York — 2005 - 2009") }}
+      <p>
+        This course provided me with an extensive understanding of a wide range of topics in computer science, from digital
+        electronics through to operating system design.
+      </p>
+    </section>
+
+    {{ resume.year("2005") }}
+  </div>
+</div>

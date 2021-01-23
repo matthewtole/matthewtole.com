@@ -1,0 +1,12 @@
+{% macro year(text) %}
+  <h3 class="resume__year">
+    {{text}}
+  </h3>
+{% endmacro %}
+
+{% macro header(title, subtitle) %}
+  <div class="resume__header">
+    <h3>{{ title }}</h3>
+    <h4>{{ subtitle }}</h4>
+  </div>
+{% endmacro %}

@@ -1,0 +1,60 @@
+.articles {
+  padding: 2rem 0;
+
+  section {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-family: $font-family-serif;
+      font-weight: 600;
+
+      a {
+        color: $text-color;
+        text-decoration: none;
+
+        &:hover, &:active, &:focus {
+            background: linear-gradient(180deg, #FF5555 11.36%, #F09819 81.82%, #FFB86C 81.82%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    }
+  } 
+}
+
+.article {
+  padding: 2rem 0;
+
+  h1 {
+    text-align: center;
+    background: linear-gradient(180deg, #FF5555 11.36%, #F09819 81.82%, #FFB86C 81.82%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 4rem;
+            margin: 0 0 2rem;
+  }
+  
+  h2 {
+    font-weight: normal;
+    margin: 2rem 0 1rem;
+  }
+  
+  .hljs {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  pre code {
+    font-size: 0.8rem;
+  }
+
+  blockquote {
+    background-color: $gray-light;
+    margin: 0.5rem 0 1rem;
+    padding: 1rem 2rem;
+    
+    p {
+      margin: 0;
+    }
+  }
+}

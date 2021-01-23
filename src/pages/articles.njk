@@ -1,0 +1,23 @@
+---
+layout: base
+permalink: /articles/ 
+eleventyNavigation:
+  key: Articles
+pagination:
+  data: collections.article
+  size: 6
+  alias: articles
+  reverse: true
+---
+<div class="container articles">
+
+  {%- for post in articles -%}
+    <section>
+      <h2>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h2>
+      <p>{{post.data.snippet }}</p>
+    </section>
+  {%- endfor -%}
+
+</div>
