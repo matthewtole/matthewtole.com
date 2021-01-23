@@ -7,12 +7,13 @@ const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const iconsprite = require('./utils/iconsprite.js')
 const screenshot = require('./utils/screenshot.js')
+const assert = require('assert');
 
 if (!process.env.NETLIFY) {
     require('dotenv').config();
   }
   
-  if (!process.env.SKIP_IMAGES) {
+  if (process.env.SKIP_IMAGES !== '0') {
     assert(
       process.env.SCREENSHOT_TOKEN,
       'You forgot to set the SCREENSHOT_TOKEN environment variable!'
