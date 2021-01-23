@@ -40,8 +40,8 @@ $brand-red: #fc6767;
 
 // Color Mappings
 
-$bg-color: #F8F8F2;
-$text-color: #282A36;
+$bg-color: var(--bg-color);
+$text-color: var(--text-color);
 $brand-color-primary: $brand-red;
 $brand-color-primary-offset: darken($brand-red, 6%);
 

@@ -38,3 +38,15 @@
 @import 'components/articles';
 @import 'components/hljs';
 @import 'components/projects';
+
+:root {
+  --bg-color: #F8F8F2;
+  --text-color: #282A36
+}
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --bg-color: #282A36;
+//     --text-color: #F8F8F2;
+//   }
+// }
