@@ -1,0 +1,45 @@
+.modal {
+    &__backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.75);
+        z-index: z('modal');
+    }
+
+    &__contents {
+        z-index: z('modal');
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+        display: grid;
+        place-items: center;
+        height: 100vh;
+        width: 100vw;
+        pointer-events: none;
+        padding: $spacing-y;
+    }
+
+    &__image-wrapper {
+        position: relative;
+        pointer-events: visible;
+        img {
+            max-width: calc(100vw - 4em);
+            max-height: calc(100vh - 4em);
+        }
+    }
+
+    &__image-caption {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        color: #fff;
+    }
+}

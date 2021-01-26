@@ -38,11 +38,17 @@
 @import 'components/articles';
 @import 'components/hljs';
 @import 'components/projects';
+@import 'components/modal';
 
 :root {
   --bg-color: #F8F8F2;
   --text-color: #282A36
 }
+
+[x-cloak] {
+  display: none;
+}
+
 
 // @media (prefers-color-scheme: dark) {
 //   :root {

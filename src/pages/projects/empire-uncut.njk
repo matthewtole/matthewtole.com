@@ -10,7 +10,7 @@ permalink: /projects/empire-uncut/
 <h1>Empire Uncut</h1>
 <article class="container">
 
-  <p>
+  <p class="lead">
     In 2012, my coworker <a href="https://www.linkedin.com/in/electronicsworkshop/">Tim Ayers</a> and I took part in Empire Uncut, a fan
     recreation of Empire Strikes Back. The movie was sliced up into 15 second
     segments, and thousands of participants from across the globe picked a scene
@@ -35,7 +35,7 @@ permalink: /projects/empire-uncut/
     loading="lazy"
 /></p>
   <p>Here is the combined video of the scenes that we filmed:</p>
-  <div>
+  <div class="video-embed">
     <div>
       <iframe
         src="https://www.youtube.com/embed/Sfc5woaKnlo"
@@ -50,13 +50,12 @@ permalink: /projects/empire-uncut/
     </div>
   </div>
   <h2>Behind the Scenes Photos</h2>
-  <div class="projects__gallery">
+  <div class="projects__gallery"   x-data="{ modal: null}">
     {% for photo in empire_uncut %}
       <div class="projects__gallery__thumbnail">
         <a
         data-id="{{ photo.id }}"
-        data-caption="{{ photo.caption }}"
-        data-modal="gallery"
+        x-on:click.prevent="modal = {image: '/assets/images/projects/empire-uncut/{{ photo.id }}.jpg', caption: '{{ photo.caption }}'}"
         href="/assets/images/projects/empire-uncut/{{ photo.id }}.jpg"
       >
           <img
@@ -66,6 +65,17 @@ permalink: /projects/empire-uncut/
         </a>
       </div>
     {% endfor %}
+
+    <div class="modal" x-ref="modal" x-show="modal != null" x-cloak>
+  <div class="modal__backdrop"  x-on:click="modal = null"></div>
+  <div class="modal__contents">
+    <div class="modal__image-wrapper">
+      <img x-bind:src="modal ? modal.image : ''" />
+      <div x-text="modal ? modal.caption : ''" class="modal__image-caption" />      
+    </div>
+  </div>
+</div>
+
   </div>
   </article>
 </div>
