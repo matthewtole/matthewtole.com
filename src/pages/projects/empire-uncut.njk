@@ -1,0 +1,81 @@
+---
+layout: base
+title: Empire Uncut
+permalink: /projects/empire-uncut/
+---
+
+{% import "components/projects.njk" as projects %}
+
+<div class="projects">
+<h1>Empire Uncut</h1>
+<article class="container">
+
+  <p class="lead">
+    In 2012, my coworker <a href="https://www.linkedin.com/in/electronicsworkshop/">Tim Ayers</a> and I took part in Empire Uncut, a fan
+    recreation of Empire Strikes Back. The movie was sliced up into 15 second
+    segments, and thousands of participants from across the globe picked a scene
+    and created it using whatever style they liked!
+  </p>
+  <p>
+    Read more about Empure Uncut and watch the finished film (plus the original
+    Star Wars Uncut) at
+    <a href="http://starwarsuncut.com/empire"
+      >starwarsuncut.com/empire</a
+    >.
+  </p>
+  <h2>Our Scenes</h2>
+  <p>
+    Tim and I chose two back-to-back scenes, so that we could double our chances
+    of getting picked, but only have to work on one set of characters and
+    backgrounds.
+  </p>
+  <p>This is a screenshot of the scene from the original film:</p>
+  <p><img style="width: 100%;  "
+    src="/assets/images/projects/empire-uncut/scene.jpg"
+    loading="lazy"
+/></p>
+  <p>Here is the combined video of the scenes that we filmed:</p>
+  <div class="video-embed">
+    <div>
+      <iframe
+        src="https://www.youtube.com/embed/Sfc5woaKnlo"
+        ref="video"
+        width="560"
+        height="315"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+  <h2>Behind the Scenes Photos</h2>
+  <div class="projects__gallery"   x-data="{ modal: null}">
+    {% for photo in empire_uncut %}
+      <div class="projects__gallery__thumbnail">
+        <a
+        data-id="{{ photo.id }}"
+        x-on:click.prevent="modal = {image: '/assets/images/projects/empire-uncut/{{ photo.id }}.jpg', caption: '{{ photo.caption }}'}"
+        href="/assets/images/projects/empire-uncut/{{ photo.id }}.jpg"
+      >
+          <img
+          src="/assets/images/projects/empire-uncut/thumbs/{{ photo.id }}.jpg"
+          loading="lazy"
+/>
+        </a>
+      </div>
+    {% endfor %}
+
+    <div class="modal" x-ref="modal" x-show="modal != null" x-cloak>
+  <div class="modal__backdrop"  x-on:click="modal = null"></div>
+  <div class="modal__contents">
+    <div class="modal__image-wrapper">
+      <img x-bind:src="modal ? modal.image : ''" />
+      <div x-text="modal ? modal.caption : ''" class="modal__image-caption" />      
+    </div>
+  </div>
+</div>
+
+  </div>
+  </article>
+</div>

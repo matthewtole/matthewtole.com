@@ -1,74 +1,23 @@
 ---
-layout: layouts/base.njk
+layout: base
+eleventyNavigation:
+  key: Home
+pagination:
+  data: collections.article
+  size: 3
+  alias: articles
 ---
 
-{% import "components/buttons.njk" as buttons %}
+<div class="container" style="padding: 2rem 0">
+    <p class="lead">Hello and welcome to my little piece of the web!</p>
 
-<header class="relative px-4 py-8 text-center text-nord0 bg-nord4 md:py-16">
-  <h1 class="font-serif text-5xl md:text-6xl">matthew tole</h1>
-  <div class="max-w-xl mx-auto leading-tight lg:text-xl">
-    <p>British web developer based in Seattle.</p>
-  </div>
-  <div class="flex flex-col justify-center p-8 md:flex-row">
-    {{ buttons.cta("RESUME", "/resume/", "mx-2") }}
-
-    <div class="py-2 md:hidden"></div>
-    {{ buttons.cta("PROJECTS", "/projects/", "mx-2") }}
-
-    <div class="py-2 md:hidden"></div>
-    {{ buttons.cta("ARTICLES", "/articles/", "mx-2") }}
-
-    <div class="py-2 md:hidden"></div>
-    {{ buttons.cta("GITHUB", "https://github.com/matthewtole", "mx-2") }}
-  </div>
-
-  <div class="absolute bottom-0 left-0 right-0 flex items-end overflow-hidden cotent-center">
-    {%- for commit in commits | limit(5) -%}
-      {%- for c in commit.sha.split('') -%}
-        <div class="flex-none w-4 bg-white" style="height: {{ c | parseInt(16) }}px"></div>
-      {%- endfor -%}
-    {%- endfor -%}
-  </div>
-</header>
-
-<div class="max-w-6xl p-2 mx-auto">
-
-  {% if instagram.length > 0 %}
-  <h2 class="m-2 font-serif text-2xl lg:text-3xl">
-    <a href="https://instagram.com/matthewtole" class="hover:underline">Instagram Posts</a>
-  </h2>
-  {% endif %}
-  {% include "instagram.njk" %}
-
-  <h2 class="m-2 font-serif text-2xl lg:text-3xl">
-    <a href="/articles" class="hover:underline">Latest Articles</a>
-  </h2>
-
-  <ul class="p-2">
-    {%- for post in collections.article | reverse | limit(5) -%}
-      <li class="mb-4">
-        <a href="{{ post.url }}" class="lg:text-xl hover:underline">{{ post.data.title }}</a>
-        <p class="mt-1 text-xs leading-tight lg:text-sm">{{post.data.snippet }}</p>
-      </li>
-    {%- endfor -%}
-  </ul>
-
-  <h2 class="m-2 font-serif text-2xl lg:text-3xl">
-    <a href="https://github.com/matthewtole/matthewtole.com" class="hover:underline">Recent Website Commits</a>
-  </h2>
-
-  <ul class="p-2">
-    {%- for commit in commits | limit(5) -%}
-      <li class="flex items-center mb-2 truncate ">
-        <div class="items-center justify-center hidden w-8 h-8 mr-2 text-lg md:flex lg:w-12 lg:h-12 lg:text-2xl">
-          <span>{{commit.commit.message | getEmoji | emojify}}</span>
-        </div>
-        <div class="flex flex-col leading-tight">
-          <a href="{{commit.html_url}}" class="text-sm truncate hover:underline lg:text-base">{{commit.commit.message | removeEmoji | emojify | firstLine}}</a>
-          <p class="text-xs text-nord3">{{commit.commit.committer.date | parseDate | formatDate('yyy/MM/dd HH:mm')}}</p>
-        </div>
-      </li>
-    {%- endfor -%}
-  </ul>
-
+<section>
+  <h2>Recent Articles</h2>
+     {%- for post in articles -%}
+      <h3>
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </h3>
+      <p>{{post.data.snippet }}</p>
+  {%- endfor -%}
+  </section>
 </div>

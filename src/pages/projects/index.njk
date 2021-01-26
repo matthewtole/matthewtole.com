@@ -1,0 +1,46 @@
+---
+layout: base
+title: Projects
+permalink: /projects/
+eleventyNavigation:
+  key: Projects
+---
+
+<div class="container projects">
+  <h1>Projects</h1>
+
+  <section x-data="{ modal: null }">
+    <h2>Websites</h2>
+    <div class="projects__gallery">
+    {% for website in collections.websites %}
+      <div class="projects__gallery__thumbnail">
+        <a
+    href="{{ website.data.linkUrl }}"
+    data-modal="website"
+    data-modal-content="website/{{ website.fileSlug }}"
+    aria-label="{{website.data.linkUrl}}"
+  >
+          {% websiteScreenshot website.data.linkUrl %}
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+
+    <div class="modal" x-ref="modal" x-show="modal != null" x-cloak>
+      <div class="modal__backdrop"  x-on:click="modal = null"></div>
+        <div class="modal__contents">
+          <div class="modal__image-wrapper">
+          <img x-bind:src="modal ? modal.image : ''" />
+          <div x-text="modal ? modal.caption : ''" class="modal__image-caption" />      
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Miscelleanous</h3>
+
+    <h3><a href="/projects/puns/">Puns</a></h3>
+    <h3><a href="/projects/empire-uncut/">Empire Uncut</a></h3>
+  </section>
+</div>

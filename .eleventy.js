@@ -1,99 +1,98 @@
-const { emojify } = require('node-emoji');
-const assert = require('assert');
-const parseJSON = require('date-fns/parseJSON');
-const format = require('date-fns/format');
-const {
-  responsiveImage,
-  instagramImage,
-  websiteScreenshot,
-} = require('./plugins/images');
-const markdownIt = require('markdown-it');
+const pluginRss = require('@11ty/eleventy-plugin-rss')
+const pluginNavigation = require('@11ty/eleventy-navigation')
+const markdownIt = require('markdown-it')
 const hljs = require('highlight.js');
+const filters = require('./utils/filters.js')
+const transforms = require('./utils/transforms.js')
+const shortcodes = require('./utils/shortcodes.js')
+const iconsprite = require('./utils/iconsprite.js')
+const screenshot = require('./utils/screenshot.js')
+const assert = require('assert');
 
 if (!process.env.NETLIFY) {
-  require('dotenv').config();
-}
+    require('dotenv').config();
+  }
+  
+  if (process.env.SKIP_IMAGES !== '0') {
+    assert(
+      process.env.SCREENSHOT_TOKEN,
+      'You forgot to set the SCREENSHOT_TOKEN environment variable!'
+    );
+  }
 
-if (!process.env.SKIP_IMAGES) {
-  assert(
-    process.env.SCREENSHOT_TOKEN,
-    'You forgot to set the SCREENSHOT_TOKEN environment variable!'
-  );
-}
+module.exports = function (config) {
+    // Plugins
+    config.addPlugin(pluginRss)
+    config.addPlugin(pluginNavigation)
 
-module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy('src/static');
-  eleventyConfig.addPassthroughCopy('src/**/_redirects');
-  eleventyConfig.addPlugin(require('eleventy-plugin-svg-contents'));
-  eleventyConfig.addPlugin(require('@11ty/eleventy-plugin-rss'));
+    // Filters
+    Object.keys(filters).forEach((filterName) => {
+        config.addFilter(filterName, filters[filterName])
+    })
 
-  eleventyConfig.addFilter('jsmin', (code) => {
-    const babel = require('@babel/core');
-    try {
-      const result = babel.transformSync(code, {
-        presets: [
-          '@babel/preset-env',
-          ...(process.env.ELEVENTY_ENV === 'prod' ? ['minify'] : []),
-        ],
-        plugins: ['@babel/plugin-proposal-class-properties'],
-      });
-      return result.code;
-    } catch (ex) {
-      console.error(ex);
-      return code;
+    // Transforms
+    Object.keys(transforms).forEach((transformName) => {
+        config.addTransform(transformName, transforms[transformName])
+    })
+
+    // Shortcodes
+    Object.keys(shortcodes).forEach((shortcodeName) => {
+        config.addShortcode(shortcodeName, shortcodes[shortcodeName])
+    })
+
+    // Icon Sprite
+    config.addNunjucksAsyncShortcode('iconsprite', iconsprite)
+
+    config.addNunjucksAsyncShortcode(
+        'websiteScreenshot',
+        screenshot
+      );
+
+    // Asset Watch Targets
+    config.addWatchTarget('./src/assets')
+ 
+    // Markdown
+    config.setLibrary(
+        'md',
+        markdownIt({
+            html: true,
+            breaks: true,
+            linkify: true,
+            typographer: true,
+            highlight: function (str, lang) {
+                return `<pre class="hljs"><code>${
+                  lang && hljs.getLanguage(lang)
+                    ? hljs.highlight(lang, str, true).value
+                    : md.utils.escapeHtml(str)
+                }</code></pre>`;
+              },
+        })
+    )
+
+    // Layouts
+    config.addLayoutAlias('base', 'base.njk')
+    config.addLayoutAlias('post', 'post.njk')
+
+    // Pass-through files
+    config.addPassthroughCopy('src/robots.txt')
+    config.addPassthroughCopy('src/site.webmanifest')
+    config.addPassthroughCopy('src/assets/images')
+    config.addPassthroughCopy('src/assets/fonts')
+
+    // Deep-Merge
+    config.setDataDeepMerge(true)
+
+    // Base Config
+    return {
+        dir: {
+            input: 'src',
+            output: 'dist',
+            includes: 'includes',
+            layouts: 'layouts',
+            data: 'data'
+        },
+        templateFormats: ['njk', 'md', '11ty.js'],
+        htmlTemplateEngine: 'njk',
+        markdownTemplateEngine: 'njk'
     }
-  });
-
-  eleventyConfig.addFilter('parseInt', parseInt);
-
-  eleventyConfig.addFilter('parseDate', parseJSON);
-
-  eleventyConfig.addFilter('formatDate', format);
-
-  eleventyConfig.addFilter('firstLine', (str) => str.split('\n')[0]);
-
-  eleventyConfig.addFilter('emojify', emojify);
-
-  eleventyConfig.addFilter('limit', function (list, n) {
-    return list.slice(0, n);
-  });
-
-  const GITHUB_EMOJI_REGEX = /^\w*:[a-z_]+:/;
-
-  eleventyConfig.addFilter('removeEmoji', function (commit) {
-    const match = GITHUB_EMOJI_REGEX.exec(commit);
-    return match ? commit.replace(match, '') : commit;
-  });
-
-  eleventyConfig.addFilter('getEmoji', function (commit) {
-    const match = GITHUB_EMOJI_REGEX.exec(commit);
-    return match ? match[0] : '';
-  });
-
-  eleventyConfig.addNunjucksAsyncShortcode('responsiveImage', responsiveImage);
-  eleventyConfig.addNunjucksAsyncShortcode(
-    'websiteScreenshot',
-    websiteScreenshot
-  );
-  eleventyConfig.addNunjucksAsyncShortcode('instagramImage', instagramImage);
-
-  const md = markdownIt({
-    linkify: true,
-    html: true,
-    highlight: function (str, lang) {
-      return `<pre class="hljs"><code>${
-        lang && hljs.getLanguage(lang)
-          ? hljs.highlight(lang, str, true).value
-          : md.utils.escapeHtml(str)
-      }</code></pre>`;
-    },
-  });
-  eleventyConfig.setLibrary('md', md);
-
-  return {
-    dir: {
-      input: './src',
-      output: './_site',
-    },
-  };
-};
+}

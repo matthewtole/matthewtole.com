@@ -1,0 +1,39 @@
+.resume {
+  border-left: 2px solid #F09819;
+  padding-bottom: 4rem;
+
+  section {
+    padding: 1rem;
+  }
+}
+
+.resume__year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 -2rem;
+  font-weight: bold;
+  background: #F09819;
+  color: $bg-color;
+  border-radius: 100%;
+  font-size: 1rem;
+}
+
+.resume__header {
+  display: flex;
+  align-items: flex-end;
+
+  h3 {
+    font-family: $font-family-serif;
+    font-size: 1.3em;
+  }
+
+  h4 {
+    font-family: $font-family-serif;
+    margin-left: 0.5em;
+    color: $gray-dark;
+    font-size: 1.2em;
+  }
+}

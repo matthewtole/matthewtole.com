@@ -1,59 +1,53 @@
 {
   "name": "matthewtole.com",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "The website of Matthew Tole",
-  "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
-    "build": "eleventy",
-    "dev": "eleventy --serve",
-    "favicon": "node scripts/favicon.js",
-    "eslint": "eslint .",
-    "prettier": "prettier {src,plugins,scripts}/**/*.js ./*.js --check",
-    "prettier:fix": "prettier {src,plugins,scripts}/**/*.js ./*.js  --write"
+    "start": "npm run dev",
+    "dev": "run-s clean eleventy:dev --print-label",
+    "build": "run-s clean eleventy:prod --print-label",
+    "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
+    "clean": "del-cli dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/matthewtole/matthewtole.git"
+    "url": "http://github.com/matthewtole/matthewtole.com"
   },
-  "keywords": [
-    "eleventy",
-    "tailwind"
-  ],
   "author": "Matthew Tole <matthewtole@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/matthewtole/matthewtole/issues"
-  },
-  "homepage": "https://github.com/matthewtole/matthewtole#readme",
-  "devDependencies": {
-    "dotenv": "^8.2.0",
-    "eslint": "^7.10.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "favicons": "^6.2.0",
-    "prettier": "^2.1.2",
-    "sharp": "^0.23.4",
-    "tailwindcss-debug-screens": "^0.1.0",
-    "tinify": "^1.6.0-beta.2"
-  },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "@11ty/eleventy-cache-assets": "^2.0.3",
-    "@11ty/eleventy-img": "^0.2.5",
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-img": "^0.7.8",
+    "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-rss": "^1.0.9",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
-    "@babel/preset-env": "^7.11.5",
-    "@fullhuman/postcss-purgecss": "^2.3.0",
-    "@tkh/tailwind-plugin-aspect-ratio": "^3.0.0",
-    "babel-preset-minify": "^0.5.1",
-    "cssnano": "^4.1.10",
-    "date-fns": "^2.16.1",
-    "eleventy-plugin-svg-contents": "^0.5.1",
-    "get-image-colors": "^2.0.1",
-    "highlight.js": "^10.4.1",
-    "nord-highlightjs": "^0.1.0",
-    "postcss-import": "^12.0.1",
-    "tailwindcss": "^1.8.10"
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "alpinejs": "^2.8.0",
+    "babel-loader": "^8.2.2",
+    "clean-css": "^4.2.3",
+    "critical": "^2.0.3",
+    "cssesc": "^3.0.0",
+    "del-cli": "^3.0.1",
+    "focus-trap": "^5.1.0",
+    "focus-visible": "^5.2.0",
+    "highlight.js": "^10.5.0",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.25.0",
+    "markdown-it": "^12.0.2",
+    "memfs": "^3.2.0",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
+    "svg-sprite": "^1.5.0",
+    "webpack": "^4.44.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0"
   }
 }

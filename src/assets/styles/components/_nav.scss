@@ -1,0 +1,47 @@
+.nav {
+    &__menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: $text-color;
+    }
+    &__link {
+        display: block;
+        padding: 0.5em 1em;
+        font-size: 1.2em;
+        color: $bg-color;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            background: linear-gradient(180deg, #FF5555 11.36%, #F09819 81.82%, #FFB86C 81.82%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+    }
+    
+    &__toggle {
+        @include button-reset;
+    }
+
+    @include mq-down(lg) {
+        &.is-open &__menu {
+            display: block;
+        }
+    }
+
+    @include mq(lg) {
+        &__toggle {
+            display: none;
+        }
+        &__menu {
+            display: flex;
+            position: static;
+            background-color: transparent;
+        }
+    }
+}
+

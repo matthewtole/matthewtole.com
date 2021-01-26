@@ -1,0 +1,18 @@
+{% macro cta(text, url, classes) %}
+  <a
+  href="{{url}}"
+  class="btn {{classes}} tracking-widest"
+  >{{text}}</a>
+{% endmacro %}
+
+{% macro cta_icon(icon, url, classes, id) %}
+  {% set icon_url %}/src/icons/icon-{{icon}}.svg{% endset %}
+  <a
+  href="{{url}}"
+  id="{{id}}"
+  class="btn btn--icon {{classes}}"
+  aria-label="{{icon}}"
+  >
+    {{ icon_url | svgContents | safe }}
+  </a>
+{% endmacro %}
