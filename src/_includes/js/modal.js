@@ -37,9 +37,8 @@ function showModalInstagram(trigger) {
   modalImage.onload = () => {
     modalImage.classList.remove('hidden');
   };
-  modalImage.parentElement.style.backgroundColor = trigger.querySelector(
-    'img'
-  ).style.backgroundColor;
+  modalImage.parentElement.style.backgroundColor =
+    trigger.querySelector('img').style.backgroundColor;
   modalImage.parentElement.style.backgroundImage = `url('${websiteImage}')`;
   modalImage.src = websiteImage.replace(/\-[0-9]+/, '');
   modalImage.classList.add('hidden');
@@ -57,7 +56,7 @@ function showModalWebsite(trigger) {
   document
     .querySelector(`.js-modal-content[data-modal-content="${modalContent}"]`)
     .querySelector('img')
-    .setAttribute('src', websiteImage.replace('-256', '-1024'));
+    .setAttribute('src', websiteImage.replace('-256', '-512'));
   showModalContent(modalContent);
 }
 

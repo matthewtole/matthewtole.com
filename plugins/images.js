@@ -74,7 +74,7 @@ async function websiteScreenshot(url) {
   }
 
   const screenshotWidth = 1024;
-  const screenshotUrl = `https://screenshotapi.net/api/v1/screenshot?url=${encodeURIComponent(
+  const screenshotUrl = `https://shot.screenshotapi.net/screenshot?url=${encodeURIComponent(
     url
   )}&output=image&width=${screenshotWidth}&height=${Math.round(
     (screenshotWidth / 16) * 9
