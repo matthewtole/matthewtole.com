@@ -36,6 +36,9 @@
     "tailwindcss-debug-screens": "^0.1.0",
     "tinify": "^1.6.1"
   },
+  "engines": {
+    "node": "^12"
+  },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-cache-assets": "^2.3.0",
