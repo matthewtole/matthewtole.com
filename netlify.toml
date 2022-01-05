@@ -1,2 +1,5 @@
 [[plugins]]
   package = "./plugins/cache-helper"
+
+[build.environment]
+  NODE_VERSION = "12"
