@@ -32,7 +32,7 @@
     "eslint-plugin-prettier": "^3.4.1",
     "favicons": "^6.2.2",
     "prettier": "^2.5.1",
-    "sharp": "^0.29.3",
+    "sharp": "^0.30.5",
     "tailwindcss-debug-screens": "^0.1.0",
     "tinify": "^1.6.1"
   },
