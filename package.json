@@ -1,7 +1,7 @@
 {
-  "name": "eleventy-base-blog",
-  "version": "7.0.0",
-  "description": "A starter repository for a blog web site using the Eleventy static site generator.",
+  "name": "matthewtole.com",
+  "version": "3.0.0",
+  "description": "The website of Matthew Tole.",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
@@ -12,18 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/11ty/eleventy-base-blog.git"
+    "url": "git://github.com/matthewtole/matthewtole.com.git"
   },
   "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
+    "name": "Matthew Tole",
+    "email": "matthewtole@gmail.com",
+    "url": "https://matthewtole.com/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/11ty/eleventy-base-blog/issues"
+    "url": "https://github.com/matthewtole/matthewtole.com/issues"
   },
-  "homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+  "homepage": "https://github.com/matthewtole/matthewtole.com#readme",
   "dependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-navigation": "^0.3.3",
