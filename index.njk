@@ -1,9 +1,19 @@
 ---
-layout: layouts/home.njk
+layout: layouts/base.njk
 eleventyNavigation:
   key: Home
   order: 1
 ---
+
+<header class="hero">
+  <h1>Matthew Tole</h1>
+  <img class="shadow-3 slide-in-right" src="https://assets.codepen.io/51949/image.png" />
+  <img class="shadow-2 slide-in-right" src="https://assets.codepen.io/51949/image.png" />
+  <img class="shadow-1 slide-in-right" src="https://assets.codepen.io/51949/image.png" />
+  <img class="slide-in-right" src="https://assets.codepen.io/51949/image.png" />
+</header>
+
+<main>
 {% set maxPosts = collections.posts.length | min(3) %}
 <h1>Latest {% if maxPosts == 1 %}Post{% else %}{{ maxPosts }} Posts{% endif %}</h1>
 
@@ -12,3 +22,5 @@ eleventyNavigation:
 {% include "postslist.njk" %}
 
 <p>More posts can be found in <a href="{{ '/posts/' | url }}">the archive</a>.</p>
+
+</main>

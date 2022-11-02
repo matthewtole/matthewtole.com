@@ -3,3 +3,5 @@ _site/
 .cache/
 node_modules/
 .env
+dist/
+.DS_Store
