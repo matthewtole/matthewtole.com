@@ -1,0 +1,76 @@
+header.hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  height: 8em;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  font-size: var(--font-size-xl);
+
+  background: var(--color-hero-bg);
+}
+
+header.hero h1 {
+  width: 100%;
+  padding: 0.5em;
+
+  color: var(--color-hero-bg);
+  font-weight: 600;
+  font-size: 2em;
+  font-family: Rubik, sans-serif;
+  line-height: 1;
+
+  background: var(--color-hero-fg);
+}
+
+header.hero img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  display: block;
+  height: 100%;
+}
+
+header.hero .shadow-1 {
+  --animation-speed: 0.96;
+  right: -1vw;
+
+  opacity: 0.3;
+  filter: blur(0.5px);
+}
+
+header.hero .shadow-2 {
+  --animation-speed: 0.93;
+  right: -2vw;
+
+  opacity: 0.3;
+  filter: blur(0.5px);
+}
+
+header.hero .shadow-3 {
+  --animation-speed: 0.9;
+  right: -3vw;
+
+  opacity: 0.3;
+  filter: blur(0.5px);
+}
+
+.slide-in-right {
+  animation: calc(1s * var(--animation-speed, 1)) slide-in-right 0s
+    cubic-bezier(0.77, 0, 0.175, 1) both;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(500px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

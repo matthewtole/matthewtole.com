@@ -2,7 +2,7 @@
 layout: layouts/post.njk
 title: 'Giving better presentations at work'
 date: 2022-10-24
-eleventyExcludeFromCollections: true
+eleventyExcludeFromCollections: false
 ---
 
 ## Know your audience
